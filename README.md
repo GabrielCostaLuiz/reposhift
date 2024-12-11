@@ -239,9 +239,37 @@ Um adendo: Alem do curso da rocketseat eu comprei a do curso.dev e o Filipe Desc
 Sempre irei iniciar falando o que aprendi assistindo os videos dele que normalmente assisto na ida e volta do trabalho e depois o que implementei no projeto
 Tentarei trazer atualizações diarias, porem as vezes possa ser que eu não traga, porem o cronograma continuara na sequencia do dia anterior.
 
+<<<<<<< HEAD
 Dia 1° -
+=======
+### Um adendo:
 
-Primeiro dia da promação do meu SaaS, realmente animado, que até no dia anterior ( que não foi o dia anterior né kkkk era o mesmo dia de hoje ) eu acabei indo dormir 3h da manhã sabendo que tinha que acordar as 6h do mesmo dia procurando nomes, conversando com gpt para alinhar algumas ideias, vendo cores e entre outras coisas que sempre imaginamos quando queremos começar um projeto né kkkkk porem parei um pouco e preferi dar um passo de cada vez, se não pdoderia acabar me desmotivando por um volume muito alto de demanda onde no final iria me frustar de não conseguir fazer metade e desistir logo no primeiro dia do projeto. Logo cedo indo para o trabalho eu fui assistindo as aulas do Filipe, e logo tarde voltando do trabalho tambem vim assistindo as aulas do Filipe kkkk aulas essas que foram mais tranquilas que eu em sin ja tinha conhecimento que era Git, GitHub, Deploy na Vercel e uma das coisas que não sabia que era as Issues e Milestone do GitHub.
+Além do curso da Rocketseat, comprei também o curso.dev, e o Filipe Deschamps é outro professor excepcional. Sempre pulava os vídeos dele por serem mais técnicos e de nível mais pleno/sênior. Antes, eu queria apenas fazer minhas Pokedex e não pensar nas partes mais difíceis da programação. Pois, escrever um código todo mundo sabe, mas e a parte mais densa da programação, de se tornar realmente um desenvolvedor competente com um foco muito grande na parte técnica? Então, comecei a acompanhar as aulas dele e sempre comento o que aprendi e como implementei isso no projeto.
+>>>>>>> 7585e20 (Cria a pagina em construção do nextjs)
+
+Estou construindo este SaaS com base no conteúdo do curso.dev, que considero extremamente valioso para qualquer desenvolvedor. Ele traz uma didática incrível e ensinamentos essenciais para o crescimento como dev.
+
+Sempre que aprender algo novo nas aulas do Filipe, vou compartilhar aqui o que implementei no projeto.
+
+---
+
+### Atualizações Diárias:
+
+Tentarei trazer atualizações diárias, mas pode ser que, em alguns dias, eu não consiga. No entanto, o cronograma seguirá a sequência do dia anterior.
+
+---
+
+## **Dia 1**:
+
+### Introdução
+
+Primeiro dia de programação do meu SaaS. Estava realmente animado, até porque no dia anterior (que na verdade era o mesmo dia de hoje 😂) eu fui dormir às 3h da manhã, sabendo que tinha que acordar às 6h. Estava procurando nomes, conversando com o GPT para alinhar algumas ideias, escolhendo cores e outras coisas que sempre imaginamos quando queremos começar um projeto, né? 😅
+
+No entanto, decidi dar um passo de cada vez para não me sobrecarregar e acabar me desmotivando com a grande demanda. A ideia era não me frustrar por não conseguir concluir metade das tarefas no primeiro dia e desistir.
+
+### Aprendizado
+
+Logo cedo, indo para o trabalho, fui assistindo as aulas do Filipe Deschamps. E à tarde, voltando do trabalho, também continuei assistindo as aulas. As aulas de hoje foram mais tranquilas, pois já tinha conhecimento sobre Git, GitHub e deploy na Vercel. Uma das novidades foi aprender sobre **Issues** e **Milestones** no GitHub.
 
 Comecei criando o repositorio RepoShift e criei algumas Issues e Milestones, logo em seguida fui concluindo algumas delas, a primeira Milestones foi a de "Em Construção" e vinculei algumas Issues a ela para conclui-las.
 Criei o projeto com TurboRepo, utilizei as configurações que aprendi no video da RocketSeat que tive a ideia desse SaaS e subi o projeto para o GitHub
