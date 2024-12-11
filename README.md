@@ -45,6 +45,7 @@ Então, bem-vindo(a) ao **REPOSHIFT**. Espero que você aproveite acompanhar ess
 
 Vamos lá? 🚀
 
+<<<<<<< HEAD
 ---
 
 ### Um adendo
@@ -233,3 +234,15 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 Apesar de eu ter planejado avançar mais no projeto, os problemas com a hospedagem tomaram mais tempo do que eu esperava. Como meu tempo de programação diária é limitado, entre 3 e 4 horas, esses contratempos atrasaram o progresso, mas, ao mesmo tempo, me proporcionaram muito aprendizado.
 
 Agora, tudo está funcionando, e o sistema está mais estável para os próximos passos. A experiência foi valiosa, e o importante é que tudo finalmente está funcionando conforme esperado. Vamos em frente! 💪
+=======
+Um adendo: Alem do curso da rocketseat eu comprei a do curso.dev e o Filipe Deschamps é outro professor excepcional, sempre pulava os videos dele por ser videos mais tecnicos e de nivel mais pleno/senior, antes eu queria somente fazer minhas Pokedex e não pensar nas partes mais dificeis da programação, pois escrever um codigo todo mundo sabe, mas e a parte mais densa de (coloque aqui uma palavra ou frase em realação ao que estou querendo dizer gpt), de ser realmente um Dev competente com foco muito grande na parte tecnica, então eu sempre estarei comentando ele, pois estou construindo esse SaaS através do curso.dev, que vejo como um curso muito mas muito valioso para qualquer tipo de Dev, pois ele traz uma didatica incrivel e ensinamentos valiosos para o crescimento com o Dev. Então esse foi mais um dos passos que eu dei para me tornar um Dev melhor que sou hoje.
+Sempre irei iniciar falando o que aprendi assistindo os videos dele que normalmente assisto na ida e volta do trabalho e depois o que implementei no projeto
+Tentarei trazer atualizações diarias, porem as vezes possa ser que eu não traga, porem o cronograma continuara na sequencia do dia anterior.
+
+Dia 1° -
+
+Primeiro dia da promação do meu SaaS, realmente animado, que até no dia anterior ( que não foi o dia anterior né kkkk era o mesmo dia de hoje ) eu acabei indo dormir 3h da manhã sabendo que tinha que acordar as 6h do mesmo dia procurando nomes, conversando com gpt para alinhar algumas ideias, vendo cores e entre outras coisas que sempre imaginamos quando queremos começar um projeto né kkkkk porem parei um pouco e preferi dar um passo de cada vez, se não pdoderia acabar me desmotivando por um volume muito alto de demanda onde no final iria me frustar de não conseguir fazer metade e desistir logo no primeiro dia do projeto. Logo cedo indo para o trabalho eu fui assistindo as aulas do Filipe, e logo tarde voltando do trabalho tambem vim assistindo as aulas do Filipe kkkk aulas essas que foram mais tranquilas que eu em sin ja tinha conhecimento que era Git, GitHub, Deploy na Vercel e uma das coisas que não sabia que era as Issues e Milestone do GitHub.
+
+Comecei criando o repositorio RepoShift e criei algumas Issues e Milestones, logo em seguida fui concluindo algumas delas, a primeira Milestones foi a de "Em Construção" e vinculei algumas Issues a ela para conclui-las.
+Criei o projeto com TurboRepo, utilizei as configurações que aprendi no video da RocketSeat que tive a ideia desse SaaS e subi o projeto para o GitHub
+>>>>>>> b4af4a5 (chore: cria o arquivo README.md)
