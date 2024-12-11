@@ -79,6 +79,15 @@ Logo cedo, indo para o trabalho, fui assistindo as aulas do Filipe Deschamps. E 
 
 ### Atividades no Projeto
 
+- **Criação do Repositório e Organização**:  
 Criei o repositório **RepoShift** e configurei algumas Issues e Milestones. A primeira Milestone foi a de "Em Construção" e vinculei algumas Issues a ela para organizá-las.
 
-Em seguida, configurei o projeto usando TurboRepo, aplicando as configurações que aprendi no vídeo da RocketSeat e subi o projeto para o GitHub.
+- **Configuração do Projeto**:  
+Configurei o projeto usando TurboRepo, aplicando as configurações que aprendi no vídeo da RocketSeat.
+
+- **Criação do Projeto Base com Next.js**:  
+Criei um projeto utilizando Next.js, que será a fundação do meu SaaS.
+
+- **Hospedagem na Vercel**:  
+Hospedei o projeto na Vercel, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
+
