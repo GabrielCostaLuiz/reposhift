@@ -2,6 +2,9 @@
 
 Olá! Neste repositório, vou compartilhar passo a passo como comecei do zero e desenvolvi o MVP do meu projeto, o **REPOSHIFT**. Vamos embarcar juntos nessa jornada?
 
+
+O REPOSHIFT é um MVP de SaaS que automatiza a criação de portfólios para desenvolvedores. A ideia central é permitir que usuários conectem suas contas do GitHub, extraiam informações de seus repositórios e gerem um portfólio completo com base em templates personalizáveis. O sistema permite visualizar prévias, editar o conteúdo, e baixar o código do portfólio para hospedagem. O projeto utiliza Next.js no front-end, Fastify no back-end, e foi inspirado em aprendizados da Rocketseat e curso.dev.
+
 ---
 
 ## **Como surgiu a ideia do projeto?**
