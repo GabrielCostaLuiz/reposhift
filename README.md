@@ -86,8 +86,16 @@ Criei o repositório **RepoShift** e configurei algumas Issues e Milestones. A p
 Configurei o projeto usando TurboRepo, aplicando as configurações que aprendi no vídeo da RocketSeat.
 
 - **Criação do Projeto Base com Next.js**:  
-Criei um projeto utilizando Next.js, que será a fundação do meu SaaS.
+Criei o projeto base utilizando Next.js, que será a fundação do meu SaaS.
 
 - **Hospedagem na Vercel**:  
 Hospedei o projeto na Vercel, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
 
+- **Conclusão das Issues da Milestone 0**:  
+Finalizei as Issues relacionadas à criação do repositório, modelagem das configurações do TurboRepo e criação da página "Em Construção", todas pertencentes à Milestone 0.
+
+- **Pesquisa e Escolha do Logo**:  
+Realizei uma pesquisa em alguns logos e escolhi um logo provisório para o **RepoShift**.
+
+- **Compra do Domínio**:  
+Comprei o domínio **reposhift.com.br** e atualizei as configurações na Vercel para apontar para o domínio adquirido.
