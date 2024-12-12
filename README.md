@@ -2,7 +2,6 @@
 
 Olá! Neste repositório, vou compartilhar passo a passo como comecei do zero e desenvolvi o MVP do meu projeto, o **REPOSHIFT**. Vamos embarcar juntos nessa jornada?
 
-
 O REPOSHIFT é um MVP de SaaS que automatiza a criação de portfólios para desenvolvedores. A ideia central é permitir que usuários conectem suas contas do GitHub, extraiam informações de seus repositórios e gerem um portfólio completo com base em templates personalizáveis. O sistema permite visualizar prévias, editar o conteúdo, e baixar o código do portfólio para hospedagem. O projeto utiliza Next.js no front-end, Fastify no back-end, e foi inspirado em aprendizados da Rocketseat e curso.dev.
 
 ---
@@ -62,8 +61,6 @@ Sempre que aprender algo novo nas aulas do Filipe, vou compartilhar aqui o que i
 
 Tentarei trazer atualizações diárias, mas pode ser que, em alguns dias, eu não consiga. No entanto, o cronograma seguirá a sequência do dia anterior.
 
----
-
 ## **Dia 1**:
 
 ### Introdução
@@ -79,22 +76,45 @@ Logo cedo, indo para o trabalho, fui assistindo as aulas do Filipe Deschamps. E 
 ### Atividades no Projeto
 
 - **Criação do Repositório e Organização**:  
-Criei o repositório **RepoShift** e configurei algumas Issues e Milestones. A primeira Milestone foi a de "Em Construção" e vinculei algumas Issues a ela para organizá-las.
+  Criei o repositório **RepoShift** e configurei algumas Issues e Milestones. A primeira Milestone foi a de "Em Construção" e vinculei algumas Issues a ela para organizá-las.
 
 - **Configuração do Projeto**:  
-Configurei o projeto usando TurboRepo, aplicando as configurações que aprendi no vídeo da RocketSeat.
+  Configurei o projeto usando TurboRepo, aplicando as configurações que aprendi no vídeo da RocketSeat.
 
 - **Criação do Projeto Base com Next.js**:  
-Criei o projeto base utilizando Next.js, que será a fundação do meu SaaS.
+  Criei o projeto base utilizando Next.js, que será a fundação do meu SaaS.
 
 - **Hospedagem na Vercel**:  
-Hospedei o projeto na Vercel, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
+  Hospedei o projeto na Vercel, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
 
 - **Conclusão das Issues da Milestone 0**:  
-Finalizei as Issues relacionadas à criação do repositório, modelagem das configurações do TurboRepo e criação da página "Em Construção", todas pertencentes à Milestone 0.
+  Finalizei as Issues relacionadas à criação do repositório, modelagem das configurações do TurboRepo e criação da página "Em Construção", todas pertencentes à Milestone 0.
 
 - **Pesquisa e Escolha do Logo**:  
-Realizei uma pesquisa em alguns logos e escolhi um logo provisório para o **RepoShift**.
+  Realizei uma pesquisa em alguns logos e escolhi um logo provisório para o **RepoShift**.
 
 - **Compra do Domínio**:  
-Comprei o domínio **reposhift.com.br** e atualizei as configurações na Vercel para apontar para o domínio adquirido.
+  Comprei o domínio **reposhift.com.br** e atualizei as configurações na Vercel para apontar para o domínio adquirido.
+
+## **Dia 2**:
+
+### Atividades no Projeto
+
+- **Finalização da compra do dominio e implementação na vercel**:  
+  reposhift.com.br no ar 😀 Hoje finalizei a implementação do dominio na vercel configurando o dns no registro.br.
+
+- **Adição da Milestone 01: Fundação e Milestone 1.1: Fundação web**:  
+  Criei mais duas Milestones no repositorio do github e adicionei e finalizei algumas issues da milestone 01.
+
+- **Criação da primeira api do frontend e rota do backend**:  
+  Criei uma rota no backend para utilizar a api criada no frontend, com o intuito de testar a conexão do backend com o frontend, realizei o acesso a url localhost:port/api/v1/status só para um teste de status da conexão.
+
+- **Primeiro teste**:  
+  No backend fiz a adição do primeiro teste, era o teste da conexão da api, assim esperando que retornace os dados que a api devolvia no acesso a mesma.
+
+- **Criação do banco de dados local**:  
+  Subi o docker locamente na minha maquina, fiz a adição do compose.yml para executar o docker compose para subir um container da imagem do postgre que será o banco de dados usado na aplicação.
+
+### Considerações Finais
+
+Hoje irei mudar um pouco o meu computador, estarei instalando o linux nele, apesar que irei manter um dual boot né, mas vamos ver se vou voltar feliz ou triste por ter feito alguma merda no computador kkkk mas enfim, por hoje foi isso.
