@@ -3,8 +3,15 @@
   "include": ["src/**/*", "@types/*.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
+    "esModuleInterop": true,
+    "target": "ESNext", // Alvo de compilação moderno
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    // "module": "ESNext",
+    // "moduleResolution": "Node",
+    // "skipLibCheck": true,
+    // "allowJs": true,
+    // "noEmit": true
   }
 }
