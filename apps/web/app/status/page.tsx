@@ -21,7 +21,6 @@ const BackendStatusPage = () => {
           {
             name: data.name,
             status: response.ok ? 'online' : 'offline',
-
           },
         ]
 
