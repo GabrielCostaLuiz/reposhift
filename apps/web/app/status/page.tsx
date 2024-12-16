@@ -1,6 +1,6 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import { CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react'
+import { AlertTriangle, CheckCircle2, Loader2 } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
 
 const BackendStatusPage = () => {
   const [serviceStatuses, setServiceStatuses] = useState([
