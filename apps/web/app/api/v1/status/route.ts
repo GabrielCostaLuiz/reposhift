@@ -16,6 +16,6 @@ export async function GET() {
     {
       data,
     },
-    { status: response.status }
+    { status: response.status },
   )
 }
