@@ -48,6 +48,7 @@ Vamos lá? 🚀
 <<<<<<< HEAD
 ---
 
+<<<<<<< HEAD
 ### Um adendo
 
 Além do curso da Rocketseat, comprei também o curso.dev, e o Filipe Deschamps é outro professor excepcional. Sempre pulava os vídeos dele por serem mais técnicos e de nível mais pleno/sênior. Antes, eu queria apenas fazer minhas Pokedex e não pensar nas partes mais difíceis da programação. Pois, escrever um código todo mundo sabe, mas e a parte mais densa da programação, de se tornar realmente um desenvolvedor competente com um foco muito grande na parte técnica? Então, comecei a acompanhar as aulas dele e sempre comento o que aprendi e como implementei isso no projeto.
@@ -239,13 +240,9 @@ Um adendo: Alem do curso da rocketseat eu comprei a do curso.dev e o Filipe Desc
 Sempre irei iniciar falando o que aprendi assistindo os videos dele que normalmente assisto na ida e volta do trabalho e depois o que implementei no projeto
 Tentarei trazer atualizações diarias, porem as vezes possa ser que eu não traga, porem o cronograma continuara na sequencia do dia anterior.
 
-<<<<<<< HEAD
-Dia 1° -
-=======
-### Um adendo:
+### Um adendo
 
 Além do curso da Rocketseat, comprei também o curso.dev, e o Filipe Deschamps é outro professor excepcional. Sempre pulava os vídeos dele por serem mais técnicos e de nível mais pleno/sênior. Antes, eu queria apenas fazer minhas Pokedex e não pensar nas partes mais difíceis da programação. Pois, escrever um código todo mundo sabe, mas e a parte mais densa da programação, de se tornar realmente um desenvolvedor competente com um foco muito grande na parte técnica? Então, comecei a acompanhar as aulas dele e sempre comento o que aprendi e como implementei isso no projeto.
->>>>>>> 7585e20 (Cria a pagina em construção do nextjs)
 
 Estou construindo este SaaS com base no conteúdo do curso.dev, que considero extremamente valioso para qualquer desenvolvedor. Ele traz uma didática incrível e ensinamentos essenciais para o crescimento como dev.
 
@@ -253,24 +250,112 @@ Sempre que aprender algo novo nas aulas do Filipe, vou compartilhar aqui o que i
 
 ---
 
-### Atualizações Diárias:
+### Atualizações Diárias
 
 Tentarei trazer atualizações diárias, mas pode ser que, em alguns dias, eu não consiga. No entanto, o cronograma seguirá a sequência do dia anterior.
 
 ---
 
-## **Dia 1**:
+
+## **Dia 1 - Introdução ao Projeto**
+
 
 ### Introdução
 
-Primeiro dia de programação do meu SaaS. Estava realmente animado, até porque no dia anterior (que na verdade era o mesmo dia de hoje 😂) eu fui dormir às 3h da manhã, sabendo que tinha que acordar às 6h. Estava procurando nomes, conversando com o GPT para alinhar algumas ideias, escolhendo cores e outras coisas que sempre imaginamos quando queremos começar um projeto, né? 😅
+Primeiro dia de programação do meu **SaaS**. Estava realmente animado, até porque no dia anterior (que na verdade era o mesmo dia de hoje 😂) eu fui dormir às 3h da manhã, sabendo que tinha que acordar às 6h. Estava procurando nomes, conversando com o **GPT** para alinhar algumas ideias, escolhendo cores e outras coisas que sempre imaginamos quando queremos começar um projeto, né? 😅
 
-No entanto, decidi dar um passo de cada vez para não me sobrecarregar e acabar me desmotivando com a grande demanda. A ideia era não me frustrar por não conseguir concluir metade das tarefas no primeiro dia e desistir.
+No entanto, decidi dar um passo de cada vez para não me sobrecarregar e acabar me desmotivando com a grande demanda. A ideia era **não me frustrar por não conseguir concluir metade das tarefas no primeiro dia e desistir**.
 
-### Aprendizado
+### Aprendizado do Dia 1
 
-Logo cedo, indo para o trabalho, fui assistindo as aulas do Filipe Deschamps. E à tarde, voltando do trabalho, também continuei assistindo as aulas. As aulas de hoje foram mais tranquilas, pois já tinha conhecimento sobre Git, GitHub e deploy na Vercel. Uma das novidades foi aprender sobre **Issues** e **Milestones** no GitHub.
+Logo cedo, indo para o trabalho, fui assistindo as aulas do **Filipe Deschamps**. E à tarde, voltando do trabalho, também continuei assistindo as aulas. As aulas de hoje foram mais tranquilas, pois já tinha conhecimento sobre **Git**, **GitHub** e **deploy na Vercel**. Uma das novidades foi aprender sobre **Issues** e **Milestones** no GitHub.
+
 
 Comecei criando o repositorio RepoShift e criei algumas Issues e Milestones, logo em seguida fui concluindo algumas delas, a primeira Milestones foi a de "Em Construção" e vinculei algumas Issues a ela para conclui-las.
 Criei o projeto com TurboRepo, utilizei as configurações que aprendi no video da RocketSeat que tive a ideia desse SaaS e subi o projeto para o GitHub
->>>>>>> b4af4a5 (chore: cria o arquivo README.md)
+
+=======
+### Atividades no Projeto - Dia 1
+
+- **Criação do Repositório e Organização**:  
+  Criei o repositório **RepoShift** e configurei algumas **Issues** e **Milestones**. A primeira Milestone foi a de `"Em Construção"` e vinculei algumas Issues a ela para organizá-las.
+
+- **Configuração do Projeto**:  
+  Configurei o projeto usando **TurboRepo**, aplicando as configurações que aprendi no vídeo da **RocketSeat**.
+
+- **Criação do Projeto Base com Next.js**:  
+  Criei o projeto base utilizando **Next.js**, que será a fundação do meu SaaS.
+
+- **Hospedagem na Vercel**:  
+  Hospedei o projeto na **Vercel**, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
+
+- **Conclusão das Issues da Milestone 0**:  
+  Finalizei as Issues relacionadas à criação do repositório, modelagem das configurações do **TurboRepo** e criação da página `"Em Construção"`, todas pertencentes à Milestone 0.
+
+- **Pesquisa e Escolha do Logo**:  
+  Realizei uma pesquisa em alguns logos e escolhi um **logo provisório** para o **RepoShift**.
+
+- **Compra do Domínio**:  
+  Comprei o domínio **reposhift.com.br** e atualizei as configurações na **Vercel** para apontar para o domínio adquirido.
+
+---
+
+## **Dia 2 - Conexão Backend e Frontend**
+
+### Avanços no Projeto - Dia 2
+
+- **Finalização da Compra do Domínio e Implementação na Vercel**:  
+  **reposhift.com.br no ar** 😀 Hoje finalizei a implementação do domínio na **Vercel**, configurando o **DNS** no **registro.br**.
+
+- **Adição da Milestone 01: Fundação e Milestone 1.1: Fundação Web**:  
+  Criei mais duas **Milestones** no repositório do **GitHub** e adicionei e finalizei algumas Issues da Milestone 01.
+
+- **Criação da Primeira API do Frontend e Rota do Backend**:  
+  Criei uma rota no backend para utilizar a **API criada no frontend**, com o intuito de testar a conexão do backend com o frontend. Realizei o acesso à URL `localhost:port/api/v1/status` só para testar o status da conexão.
+
+- **Primeiro Teste do Sistema**:  
+  No backend, fiz a adição do **primeiro teste**, que verificava se a conexão da API estava funcionando corretamente, retornando os dados esperados.
+
+- **Criação do Banco de Dados Local**:  
+  Subi o **Docker** localmente na minha máquina, fiz a adição do `docker-compose.yml` e executei o comando para subir um container da imagem do **PostgreSQL**, que será o banco de dados usado na aplicação.
+
+### Considerações do Dia 2
+
+Hoje irei mudar um pouco o meu computador, instalando o **Linux** nele. Apesar disso, vou manter um dual boot, né? Vamos ver se vou voltar feliz ou triste por ter feito alguma **merda no computador kkkk**, mas enfim, por hoje foi isso.
+
+---
+
+## **Dia 3 - Configuração do Prisma e Testes**
+
+### Introdução ao Dia 3
+
+Hoje foi um dia de grandes avanços no meu projeto, agora programando diretamente no meu **Linux**, e felizmente tudo deu certo com a instalação! 🐧 Além disso, aprendi bastante sobre testes e configurações no backend, o que deixou o sistema mais robusto e organizado.
+
+### Aprendizado do Dia 3
+
+Dediquei boa parte do meu tempo a aprender e configurar o **Prisma** no projeto. Já tinha ouvido falar bastante sobre ele, mas agora foi a hora de colocar em prática. Além disso, explorei o uso do **Fastify Swagger** para documentar a API de forma automatizada e compreendi como estruturar as **variáveis de ambiente** para melhorar a manutenção do código. O dia também foi de bastante prática com testes e integração entre os serviços do projeto.
+
+### Atividades no Projeto - Dia 3
+
+- **Integração do Prisma no Projeto**:  
+  Adicionei o **Prisma** ao backend e configurei o banco de dados para trabalhar com o **PostgreSQL** no container Docker. Também criei uma **seed** para popular dados iniciais no banco, o que facilita testes e desenvolvimento inicial.
+
+- **Configuração de Variáveis de Ambiente**:  
+  Centralizei todas as configurações sensíveis no arquivo `.env`, como credenciais do banco de dados e configurações do servidor. Além disso, ajustei o arquivo `docker-compose.yml` para utilizar essas variáveis de ambiente, deixando o setup mais organizado e seguro.
+
+- **Criação de Testes**:  
+  Desenvolvi **testes básicos** para verificar a conexão do backend com o banco de dados e a integração com o frontend.
+
+  - **Teste 1**: Verificava a conexão do backend com o banco.
+  - **Teste 2**: Validava o retorno da rota `/status` do frontend, que por sua vez fazia uma chamada ao backend e verificava a resposta.
+
+- **Página de Status do Sistema**:  
+  Criei uma **página de status** no frontend para monitorar o funcionamento das APIs e a conexão com o banco de dados. Isso vai ser útil para acompanhar a saúde do sistema durante o desenvolvimento e em produção.
+
+- **Documentação Automática da API**:  
+  Integrei o **Fastify Swagger** ao backend para gerar documentação gráfica automática das rotas da API. Agora é possível acessar `/docs` no servidor (quando o backend estiver hospedado) para visualizar e testar as rotas diretamente na interface.
+
+### Considerações do Dia 3
+
+Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado. 😊
+

@@ -16,6 +16,10 @@ export async function GET() {
     {
       data,
     },
+<<<<<<< HEAD
     { status: response.status },
+=======
+    { status: response.status }
+>>>>>>> 53be771 (build: teste deploy vercel)
   )
 }
