@@ -52,7 +52,7 @@ app.register(getStatus)
 
 const start = async () => {
   try {
-    await app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
+    await app.listen({ port: env.PORT, host: env.HOST }).then(() => {
       console.log('HTTP server running!')
     })
   } catch (err) {

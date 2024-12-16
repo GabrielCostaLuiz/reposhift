@@ -4,6 +4,7 @@ import { z } from 'zod'
 export const env = createEnv({
   server: {
     PORT: z.coerce.number().default(3333),
+    HOST: z.string().default('0.0.0.0'),
     DATABASE_URL: z.string().url(),
     BACKEND_URL: z.string().url(),
     WEB_URL: z.string().url(),
@@ -26,6 +27,7 @@ export const env = createEnv({
   //pegar todas variaveis e colocar aqui, mais para o frontend, se ele não encontra process.env, ele elimina, isso aqui necessita, se não a variavel não aparece no codigo next
   runtimeEnv: {
     PORT: process.env.SERVER_PORT,
+    HOST: process.env.HOST,
     DATABASE_URL: process.env.DATABASE_URL,
     BACKEND_URL: process.env.BACKEND_URL,
     WEB_URL: process.env.WEB_URL,
