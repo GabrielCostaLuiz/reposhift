@@ -8,14 +8,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        cache: 'pnpm'
+      # Checkout do código
+      - uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: npm ci
+      # Configurar Node.js e PNPM
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
 
-    - name: Run Unit Tests
-      run: pnpm run test
+      # Instalar PNPM globalmente
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      # Instalar dependências usando PNPM
+      - name: Install dependencies
+        run: pnpm install
+
+      # Rodar os testes
+      - name: Run Unit Tests
+        run: pnpm run test
