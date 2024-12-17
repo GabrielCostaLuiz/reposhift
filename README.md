@@ -210,7 +210,7 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
   ### O que fazer se o sistema não estiver "ONLINE":
 
   1. **Tente novamente mais tarde**:  
-     Caso o serviço tenha sido inativado por inatividade no **Render** ou no **Neon** (serviços gratuitos), pode ser que os servidores estejam temporariamente inativos. Tente acessar a página novamente após alguns minutos.
+     Caso o serviço tenha sido inativado por inatividade no **Render** (plano gratuito), pode ser que o servidor esteja temporariamente inativo. Tente acessar a página novamente após alguns minutos.
 
   2. **Verifique sua conexão com a internet**:  
      Às vezes, problemas de conectividade local podem afetar a resposta do servidor. Certifique-se de que a sua conexão com a internet está estável e tente acessar novamente a página.
@@ -221,14 +221,14 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
   4. **O que pode ter causado o problema?**:
 
      - **Inatividade no Render**: Como o **Render** oferece um plano gratuito, ele pode desativar o serviço após um período de inatividade. Isso pode causar lentidão ou falha ao tentar acessar a aplicação. Se isso ocorrer, o suporte da aplicação pode ser necessário para reiniciar os serviços manualmente.
-     - **Inatividade no Neon**: O **Neon** também pode ter limitações nos planos gratuitos. Caso o banco de dados tenha sido inativado, a aplicação pode não conseguir se conectar. Isso pode ser resolvido ao reativar o banco de dados ou pelo suporte da aplicação.
+     - **Inatividade no Neon**: O **Neon**, no entanto, não possui essa funcionalidade conhecida de inativar a instância devido à inatividade, então esse problema não é esperado em relação ao banco de dados.
 
   5. **Aguarde a reativação automática**:  
-     Dependendo das configurações dos servidores gratuitos, o serviço pode ser reativado automaticamente após um tempo. Se o problema for com o banco de dados ou o backend, a aplicação pode voltar a funcionar após o processo de reativação.
+     Dependendo das configurações do **Render**, o serviço pode ser reativado automaticamente após um tempo. Se o problema for com o banco de dados ou o backend, a aplicação pode voltar a funcionar após o processo de reativação.
 
   ### Como garantir que o serviço continue ativo?
 
-  Caso o problema seja recorrente, é importante saber que os serviços gratuitos como o **Render** e o **Neon** têm limitações de uso, principalmente em planos gratuitos. Se o problema de inatividade persistir, pode ser necessário entrar em contato com o suporte para verificar se há opções de atualização para planos pagos, que oferecem maior estabilidade e garantia de uptime.
+  Caso o problema seja recorrente, é importante saber que o **Render** tem limitações de uso nos planos gratuitos, especialmente em termos de inatividade. Se o serviço ficar inativo por muito tempo, a instância gratuita pode precisar ser reativada manualmente, o que pode causar atrasos nas solicitações, de até 50 segundos ou mais. Se o problema de inatividade persistir, pode ser necessário entrar em contato com o suporte ou considerar a atualização para um plano pago no **Render**, que oferece maior estabilidade e garante maior tempo de uptime.
 
 ### Considerações do Dia 4
 
