@@ -1,7 +1,7 @@
 import { env } from '@saas/env'
 
 export async function GET() {
-  const response = await fetch(`${env.BACKEND_URL}/status`)
+  const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/status`)
   const data = await response.json()
 
   if (!response.ok) {

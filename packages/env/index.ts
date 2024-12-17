@@ -4,9 +4,8 @@ import { z } from 'zod'
 export const env = createEnv({
   server: {
     PORT: z.coerce.number().default(3333),
-    HOST: z.string().default('0.0.0.0'),
+    // HOST: z.string().default('0.0.0.0'),
     DATABASE_URL: z.string().url(),
-    BACKEND_URL: z.string().url(),
     WEB_URL: z.string().url(),
     POSTGRES_DB: z.string(),
 
@@ -20,16 +19,16 @@ export const env = createEnv({
   // client: {},
 
   //variaveis compartilhadas pelo back e front
-  // shared: {
-  //   NEXT_PUBLIC_API_URL: z.string().url(),
-  // },
+  shared: {
+    NEXT_PUBLIC_API_URL: z.string().url(),
+  },
 
   //pegar todas variaveis e colocar aqui, mais para o frontend, se ele não encontra process.env, ele elimina, isso aqui necessita, se não a variavel não aparece no codigo next
   runtimeEnv: {
     PORT: process.env.SERVER_PORT,
-    HOST: process.env.HOST,
+    // HOST: process.env.HOST,
     DATABASE_URL: process.env.DATABASE_URL,
-    BACKEND_URL: process.env.BACKEND_URL,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     WEB_URL: process.env.WEB_URL,
     POSTGRES_DB: process.env.POSTGRES_DB,
     // POSTGRES_USER: process.env.POSTGRES_USER,
