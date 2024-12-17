@@ -155,4 +155,81 @@ Dediquei boa parte do meu tempo a aprender e configurar o **Prisma** no projeto.
 
 ### Considerações do Dia 3
 
-Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado. 
+Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado.
+
+---
+
+## **Dia 4 - Hospedagem e Ajustes no Backend**
+
+### Introdução ao Dia 4
+
+Hoje foi um daqueles dias intensos, em que o trabalho parecia não avançar como esperado, mas a persistência deu frutos no final. Com o auxílio dos vídeos da **Rocketseat** e do **curso.dev**, consegui finalmente hospedar o banco de dados na **Neon** e o backend no **Render**. Foi um verdadeiro teste de paciência, mas ao final, tudo deu certo! Kkkk
+
+### Aprendizado do Dia 4
+
+O dia foi repleto de ajustes e descobertas. Enfrentei alguns problemas no processo de **git no GitHub para fazer o deploy na Vercel**, principalmente devido a mudanças no meu setup e ao fato de não estar subindo todos os arquivos necessários. Além disso, a configuração do banco de dados na **Neon** foi tranquila, mas a integração com o **Render** gerou bastante confusão, com diversos erros de configuração e build.
+
+Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os problemas. Hoje, o sistema está mais próximo de estar funcional e pronto para a produção.
+
+### Atividades no Projeto - Dia 4
+
+- **Resolução de Erros de git no GitHub**:  
+  Inicialmente, meus gits no GitHub para deploy na vercel estavam dando erro. Acredito que isso tenha ocorrido devido à mudança para o **Linux** e a alteração do **username no GitHub**. Depois, percebi que o erro era causado por eu estar subindo apenas o arquivo alterado e não o **package.json**, o **lock do pnpm** e o **pnpm-workspace**. Após subir todos os arquivos necessários, o deploy finalmente funcionou!
+
+- **Criação de Conta na Neon e Render**:  
+  Criei contas nas plataformas **Neon** e **Render**. No **Neon**, consegui criar o banco de dados sem problemas, pegando os parâmetros de conexão necessários para a produção.
+
+- **Configuração da Conexão com o Banco de Dados no Render**:  
+  Implementei as variáveis de ambiente no **Render** com os parâmetros de conexão do banco de dados na **Neon** para que o backend se conectasse corretamente à base de dados na produção.
+
+- **Ajustes na Configuração do Render**:  
+  No **Render**, enfrentei alguns problemas com as configurações do projeto. Primeiramente, precisei corrigir a estrutura da pasta **config**, onde acabei colocando arquivos do **TS** no **eslint** e vice-versa, mas não estava gerando erro, apenas foi algo que percebi ao revisar.
+
+- **Correção de Erros de Build**:  
+  Durante o build do frontend, estava recebendo erros relacionados à falta das variáveis de ambiente. Corrigi o comando de build para que as variáveis fossem carregadas corretamente, o que resolveu o problema.
+
+- **Configuração do Prisma no Render**:  
+  No **Render**, precisei configurar o **Prisma** para gerar as migrations e rodar o deploy corretamente. Também configurei um domínio personalizado, pois a URL padrão do **Render** não me interessava.
+
+- **Atualização do DNS no Registro.br**:  
+  Para conectar o domínio **reposhift.com.br** ao **Render**, fiz a configuração no **DNS** do **registro.br**, ajustando as entradas para apontar para o novo domínio personalizado.
+
+- **Sincronização das Variáveis de Ambiente entre Vercel e Render**:  
+  Ajustei as variáveis de ambiente tanto na **Vercel** quanto no **Render** para garantir que ambas as plataformas tivessem as mesmas configurações e evitassem erros de variáveis faltando.
+
+- **Finalização das Configurações e Testes**:  
+  Após os ajustes, fiz uma última revisão nas configurações e, felizmente, todos os serviços estavam funcionando corretamente! O banco de dados estava na **Neon**, e o **Render** estava operando sem problemas.
+
+- **Teste no FrontEnd**:  
+  Depois de todos esses ajustes, através da URL [https://reposhift.com.br/status](https://reposhift.com.br/status), é possível verificar se o banco de dados/backend está funcionando corretamente. Se a página retornar "ONLINE", significa que o sistema está ativo e funcionando como esperado, pois a rota testa tanto a conexão com o backend quanto com o banco de dados. Quando tudo está certo, você verá a mensagem "Banco de Dados ONLINE".
+
+  Se a página não retornar "ONLINE" ou apresentar outro erro, pode ser que o serviço tenha sido inativado devido à inatividade dos servidores gratuitos que estamos utilizando. Aqui estão algumas ações que o **usuário** pode tomar para resolver a situação:
+
+  ### O que fazer se o sistema não estiver "ONLINE":
+
+  1. **Tente novamente mais tarde**:  
+     Caso o serviço tenha sido inativado por inatividade no **Render** ou no **Neon** (serviços gratuitos), pode ser que os servidores estejam temporariamente inativos. Tente acessar a página novamente após alguns minutos.
+
+  2. **Verifique sua conexão com a internet**:  
+     Às vezes, problemas de conectividade local podem afetar a resposta do servidor. Certifique-se de que a sua conexão com a internet está estável e tente acessar novamente a página.
+
+  3. **Entre em contato com o suporte**:  
+     Se o problema persistir por um longo período, você pode entrar em contato com o suporte da aplicação através de um canal específico, caso tenha esse recurso disponível. Eles poderão verificar o status do serviço e ajudar a reativar o banco de dados ou o backend.
+
+  4. **O que pode ter causado o problema?**:
+
+     - **Inatividade no Render**: Como o **Render** oferece um plano gratuito, ele pode desativar o serviço após um período de inatividade. Isso pode causar lentidão ou falha ao tentar acessar a aplicação. Se isso ocorrer, o suporte da aplicação pode ser necessário para reiniciar os serviços manualmente.
+     - **Inatividade no Neon**: O **Neon** também pode ter limitações nos planos gratuitos. Caso o banco de dados tenha sido inativado, a aplicação pode não conseguir se conectar. Isso pode ser resolvido ao reativar o banco de dados ou pelo suporte da aplicação.
+
+  5. **Aguarde a reativação automática**:  
+     Dependendo das configurações dos servidores gratuitos, o serviço pode ser reativado automaticamente após um tempo. Se o problema for com o banco de dados ou o backend, a aplicação pode voltar a funcionar após o processo de reativação.
+
+  ### Como garantir que o serviço continue ativo?
+
+  Caso o problema seja recorrente, é importante saber que os serviços gratuitos como o **Render** e o **Neon** têm limitações de uso, principalmente em planos gratuitos. Se o problema de inatividade persistir, pode ser necessário entrar em contato com o suporte para verificar se há opções de atualização para planos pagos, que oferecem maior estabilidade e garantia de uptime.
+
+### Considerações do Dia 4
+
+Apesar de eu ter planejado avançar mais no projeto, os problemas com a hospedagem tomaram mais tempo do que eu esperava. Como meu tempo de programação diária é limitado, entre 3 e 4 horas, esses contratempos atrasaram o progresso, mas, ao mesmo tempo, me proporcionaram muito aprendizado.
+
+Agora, tudo está funcionando, e o sistema está mais estável para os próximos passos. A experiência foi valiosa, e o importante é que tudo finalmente está funcionando conforme esperado. Vamos em frente! 💪
