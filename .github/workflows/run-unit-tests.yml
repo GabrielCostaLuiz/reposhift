@@ -23,7 +23,7 @@ jobs:
 
       # Instalar dependências usando PNPM
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm install
 
       # Rodar os testes
       - name: Run Unit Tests
