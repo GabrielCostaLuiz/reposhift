@@ -13,7 +13,7 @@ export default function Home() {
         </p>
 
         <p className="text-lg font-bold text-red-500">
-          Em construção !!!! teste preview2
+          Em construção !!!! 
         </p>
       </main>
     </div>
