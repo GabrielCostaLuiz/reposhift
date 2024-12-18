@@ -1,0 +1,35 @@
+name: Run Unit Test
+
+on: [push, pull_request]
+env:
+  DATABASE_URL: "postgresql://local_user:local_password@localhost:5432/reposhift-saas?schema=public"
+  super_duper_var: totally_awesome
+
+jobs:
+  run-unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - uses: actions/checkout@v3
+
+      # Configurar Node.js e PNPM
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Instalar PNPM globalmente
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      # Instalar dependências usando PNPM
+      - name: Install dependencies
+        run: pnpm install
+
+      # Rodar os testes
+      - name: Run Unit Tests
+        run: pnpm run test
+        env: 
+          DATABASE_URL: ${{env.DATABASE_URL}}
