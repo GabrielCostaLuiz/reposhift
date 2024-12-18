@@ -1,6 +1,9 @@
 name: Run Unit Test
 
-on: [push, pull_request]
+on: 
+  workflow_dispatch:
+env:
+  env_var: ${{ vars.NEXT_PUBLIC_API_URL}}
 
 jobs:
   run-unit-tests:
@@ -59,5 +62,4 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           WEB_URL: ${{ secrets.WEB_URL }}
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          SUPER_SECRET: ${{ secrets.SuperSecret }}
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
