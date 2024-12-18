@@ -2,8 +2,12 @@ name: Run Unit Test
 
 on: 
   workflow_dispatch:
+  push:
+    branches:
+      - main
+
 env:
-  env_var: ${{ vars.NEXT_PUBLIC_API_URL}}
+  NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
 
 jobs:
   run-unit-tests:
@@ -26,40 +30,36 @@ jobs:
           --health-retries=5
 
     steps:
-      # Checkout do código
+      # 1. Checkout do código
       - uses: actions/checkout@v3
 
-      # Configurar Node.js e PNPM
+      # 2. Configurar Node.js e PNPM
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # Instalar PNPM globalmente
+      # 3. Instalar PNPM globalmente
       - name: Install PNPM
         run: npm install -g pnpm
 
-      # Instalar dependências usando PNPM
+      # 4. Instalar dependências
       - name: Install dependencies
         run: pnpm install
 
-      # Definir variáveis de ambiente
-      - name: Set environment variables
+      # 5. Definir variáveis de ambiente no arquivo .env
+      - name: Configure environment variables
         run: |
           echo "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/reposhift?schema=public" >> .env
           echo "WEB_URL=http://localhost:3000" >> .env
           echo "POSTGRES_DB=reposhift" >> .env
-          echo "NEXT_PUBLIC_API_URL=http://localhost:3000/api" >> .env
+          echo "NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}" >> .env
 
+      # 6. Rodar testes unitários
       - name: Run Unit Tests
-        run: |
-          echo "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/reposhift?schema=public" > .env
-          echo "WEB_URL=http://localhost:3000" >> .env
-          echo "POSTGRES_DB=reposhift" >> .env
-          echo "NEXT_PUBLIC_API_URL=http://localhost:3333" >> .env
-          pnpm run test
+        run: pnpm run test
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          WEB_URL: ${{ secrets.WEB_URL }}
-          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/reposhift?schema=public
+          WEB_URL: http://localhost:3000
+          POSTGRES_DB: reposhift
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
