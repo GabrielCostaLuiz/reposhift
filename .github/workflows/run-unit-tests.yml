@@ -1,6 +1,6 @@
 name: Run Unit Test
 
-on: 
+on:
   workflow_dispatch:
   push:
     branches:
@@ -47,19 +47,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # 5. Definir variáveis de ambiente no arquivo .env
-      - name: Configure environment variables
-        run: |
-          echo "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/reposhift?schema=public" >> .env
-          echo "WEB_URL=http://localhost:3000" >> .env
-          echo "POSTGRES_DB=reposhift" >> .env
-          echo "NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}" >> .env
-
       # 6. Rodar testes unitários
       - name: Run Unit Tests
         run: pnpm run test
         env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/reposhift?schema=public
-          WEB_URL: http://localhost:3000
-          POSTGRES_DB: reposhift
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
+          WEB_URL: ${{secrets.WEB_URL}}
+          POSTGRES_DB: ${{secrets.POSTGRES_DB}}
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
