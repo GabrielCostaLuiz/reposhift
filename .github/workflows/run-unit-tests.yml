@@ -31,7 +31,8 @@ jobs:
 
     steps:
       # 1. Checkout do código
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       # 2. Configurar Node.js e PNPM
       - name: Setup Node.js
@@ -47,13 +48,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # 5. Definir variáveis de ambiente no arquivo .env
-      - name: Configure environment variables
+      # 5. Configurar variáveis de ambiente e criar arquivo .env
+      - name: Set environment variables and create .env
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          WEB_URL: ${{ secrets.WEB_URL }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
         run: |
-          echo "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/reposhift?schema=public" >> .env
-          echo "WEB_URL=http://localhost:3000" >> .env
-          echo "POSTGRES_DB=reposhift" >> .env
-          echo "NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}" >> .env
+          cat <<EOF > .env
+          DATABASE_URL=$DATABASE_URL
+          WEB_URL=$WEB_URL
+          POSTGRES_DB=$POSTGRES_DB
+          NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+          EOF
 
       # 6. Rodar testes unitários
       - name: Run Unit Tests
