@@ -2,7 +2,7 @@ name: Run Unit Test
 
 on: [push, pull_request]
 env:
-  DATABASE_URL: "postgresql://local_user:local_password@localhost:5432/reposhift-saas?schema=public"
+  DATABASE_URL: "postgresql://local_user:local_password@localhost:2157/reposhift?schema=public"
   super_duper_var: totally_awesome
 
 jobs:
@@ -28,8 +28,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # Rodar os testes
       - name: Run Unit Tests
-        run: pnpm run test
-        env: 
-          DATABASE_URL: ${{env.DATABASE_URL}}
+        run: |
+          echo "DATABASE_URL=${{ env.DATABASE_URL }}" > .env
+          pnpm run test
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
