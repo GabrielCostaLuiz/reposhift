@@ -11,7 +11,7 @@ export default function Home() {
           pessoas a alcançarem seus objetivos com rapidez e eficiência.
         </p>
 
-        <p className="text-lg font-bold text-red-500">Em construção !!!!</p>
+        <p className="text-lg font-bold text-red-500">Em construção !!!! teste preview</p>
       </main>
     </div>
   )
