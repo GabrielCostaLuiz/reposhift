@@ -8,8 +8,7 @@
     "env:load": "dotenv -e ../../.env --",
     "build": "tsup",
     "start": "node dist/http/server.js",
-    "test": "pnpm env:load prisma migrate dev && pnpm env:load vitest run",
-    "test:dev": "pnpm env:load vitest run",
+    "test": "pnpm env:load vitest run",
     "test:watch": "pnpm env:load vitest"
   },
   "dependencies": {
