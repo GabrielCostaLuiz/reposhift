@@ -49,10 +49,11 @@ jobs:
 
       # 6. Rodar testes unitários
       - name: Run Unit Tests
-        run: pnpm run test
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATABASE_URL: ${{secrets.DATABASE_URL}}
-          WEB_URL: ${{secrets.WEB_URL}}
-          POSTGRES_DB: ${{secrets.POSTGRES_DB}}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          WEB_URL: ${{ secrets.WEB_URL }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
+        run: pnpm run test
+        
