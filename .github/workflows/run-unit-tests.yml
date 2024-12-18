@@ -8,10 +8,6 @@ on:
 
 env:
   NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
-  DATABASE_URL: ${{ vars.DATABASE_URL }}
-  WEB_URL: ${{ vars.WEB_URL }}
-  POSTGRES_DB: ${{ vars.POSTGRES_DB }}
-
 
 jobs:
   run-unit-tests:
@@ -55,8 +51,7 @@ jobs:
       - name: Run Unit Tests
         run: pnpm run test
         env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/reposhift?schema=public
+          WEB_URL: http://localhost:3000
+          POSTGRES_DB: reposhift
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
-          DATABASE_URL: ${{ vars.DATABASE_URL }}
-          WEB_URL: ${{ vars.WEB_URL }}
-          POSTGRES_DB: ${{ vars.POSTGRES_DB }}
-
