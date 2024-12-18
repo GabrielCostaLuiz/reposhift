@@ -8,7 +8,7 @@ test('GET to /api/v1/status should return 200', async () => {
   const { data } = await response.json()
 
   const parsedDate = new Date(data.updated_at).toISOString()
-  console.log(data)
+
   expect(data).toMatchObject({
     name: 'Banco de Dados',
     status: 'On',
