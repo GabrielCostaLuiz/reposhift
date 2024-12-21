@@ -12,9 +12,7 @@ export default function Home() {
           Preview
         </p>
 
-        <p className="text-lg font-bold text-red-500">
-          Em construção !!!! 
-        </p>
+        <p className="text-lg font-bold text-red-500">Em construção !!!!</p>
       </main>
     </div>
   )
