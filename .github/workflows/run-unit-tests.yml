@@ -46,7 +46,7 @@ jobs:
 
       # 4. Instalar dependências
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       # 5. Definir variáveis de ambiente no arquivo .env
       - name: Configure environment variables
