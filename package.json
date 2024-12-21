@@ -9,11 +9,11 @@
     "test": "pnpm run services:up && turbo test",
     "services:up": "node ./scripts/docker/up-docker.js",
     "services:stop": "node ./scripts/docker/stop-docker.js",
-    "services:down": "node ./scripts/docker/down-docker.js",
-    "commitlint": "pnpm --dir config/commit-lint commitlint"
+    "services:down": "node ./scripts/docker/down-docker.js"
   },
   "devDependencies": {
-    "husky": "^9.1.7",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "turbo": "^2.3.3"
   },
   "packageManager": "pnpm@9.0.0",
