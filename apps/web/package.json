@@ -10,19 +10,20 @@
     "env:load": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@saas/env": "workspace:*",
     "lucide-react": "0.468.0",
     "next": "15.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "@saas/env": "workspace:*"
+    "swr": "^2.2.5"
   },
   "devDependencies": {
-    "@types/node": "20",
-    "@types/react": "19",
-    "@types/react-dom": "19",
     "@saas/eslint-config": "workspace:*",
     "@saas/prettier": "workspace:*",
     "@saas/tsconfig": "workspace:*",
+    "@types/node": "20",
+    "@types/react": "19",
+    "@types/react-dom": "19",
     "dotenv-cli": "7.4.1",
     "postcss": "8",
     "tailwindcss": "3.4.1",

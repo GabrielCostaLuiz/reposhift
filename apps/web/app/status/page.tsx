@@ -1,6 +1,7 @@
 'use client'
+
 import { AlertTriangle, CheckCircle2, Loader2 } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const BackendStatusPage = () => {
   const [serviceStatuses, setServiceStatuses] = useState([
@@ -9,18 +10,17 @@ const BackendStatusPage = () => {
       status: 'loading',
     },
   ])
-  const [retryInfo, setRetryInfo] = useState<{
-    isOffline: boolean
-    countdown: number
-  }>({
+  const [retryInfo, setRetryInfo] = useState({
     isOffline: false,
     countdown: 0,
   })
 
+  const countdownRef = useRef(0) // Armazena o valor do countdown sem causar re-renders
+
   const checkBackendServices = async () => {
     try {
       const response = await fetch(`/api/v1/status`, {
-        signal: AbortSignal.timeout(10000), // 10-second timeout
+        signal: AbortSignal.timeout(10000), // Timeout de 10 segundos
       })
 
       const { data } = await response.json()
@@ -39,20 +39,19 @@ const BackendStatusPage = () => {
         startRetryCountdown()
       }
     } catch (error) {
-      const updatedStatuses = [
+      setServiceStatuses([
         {
           name: 'Banco de Dados',
           status: 'offline',
         },
-      ]
-
-      setServiceStatuses(updatedStatuses)
+      ])
       startRetryCountdown()
     }
   }
 
   const startRetryCountdown = () => {
-    const randomWaitTime = Math.floor(Math.random() * (120 - 60 + 1)) + 60 // 1-2 minutes
+    const randomWaitTime = Math.floor(Math.random() * (120 - 60 + 1)) + 60 // Entre 60 e 120 segundos
+    countdownRef.current = randomWaitTime // Define o valor inicial do countdown
 
     setRetryInfo({
       isOffline: true,
@@ -60,23 +59,24 @@ const BackendStatusPage = () => {
     })
 
     const countdownInterval = setInterval(() => {
-      setRetryInfo((prev) => {
-        const newCountdown = prev.countdown - 1
+      countdownRef.current -= 1 // Atualiza o valor diretamente no `ref`
 
-        if (newCountdown <= 0) {
-          clearInterval(countdownInterval)
-          checkBackendServices()
-          return { isOffline: true, countdown: 0 }
-        }
-
-        return { ...prev, countdown: newCountdown }
-      })
+      if (countdownRef.current <= 0) {
+        clearInterval(countdownInterval)
+        checkBackendServices() // Reexecuta a verificação
+      } else {
+        // Apenas atualiza o estado visualmente de vez em quando, não a cada segundo
+        setRetryInfo((prev) => ({
+          ...prev,
+          countdown: countdownRef.current,
+        }))
+      }
     }, 1000)
   }
 
   useEffect(() => {
     checkBackendServices()
-    const intervalId = setInterval(checkBackendServices, 30000) // Recheck every 30 seconds
+    const intervalId = setInterval(checkBackendServices, 10000) // Reverifica a cada 10 segundos
     return () => clearInterval(intervalId)
   }, [])
 
@@ -94,7 +94,6 @@ const BackendStatusPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-12">
       <div className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-xl">
-        {/* Retry Information Banner */}
         {retryInfo.isOffline && (
           <div className="mb-4 flex items-center space-x-3 border-l-4 border-yellow-500 bg-yellow-100 p-4">
             <AlertTriangle className="text-yellow-600" />
@@ -103,9 +102,11 @@ const BackendStatusPage = () => {
                 Serviço Temporariamente Indisponível
               </p>
               <p className="text-sm text-yellow-600">
-                Tentando reconectar em {retryInfo.countdown} segundos. O backend
-                está hospedado em um plano gratuito e pode levar tempo para
-                reativar.
+                Tentando reconectar. O backend está hospedado em um plano
+                gratuito e pode levar tempo para reativar.
+              </p>
+              <p className="mt-1 text-sm text-yellow-600">
+                Tentando novamente em {retryInfo.countdown} segundos...
               </p>
             </div>
           </div>
@@ -137,16 +138,16 @@ const BackendStatusPage = () => {
                     service.status === 'online'
                       ? 'text-green-600'
                       : service.status === 'offline'
-                        ? 'text-red-600'
-                        : 'text-yellow-600'
+                      ? 'text-red-600'
+                      : 'text-yellow-600'
                   }
                 `}
               >
                 {service.status === 'loading'
                   ? 'Verificando...'
                   : service.status === 'online'
-                    ? 'Online'
-                    : 'Offline'}
+                  ? 'Online'
+                  : 'Offline'}
               </span>
             </div>
           ))}
