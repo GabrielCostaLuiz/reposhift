@@ -28,7 +28,7 @@ try {
   console.error("Erro ao executar o servidor de desenvolvimento:", err.message);
 } finally {
   // Finaliza os serviços mesmo que o servidor falhe
-  console.log("\nFinalizando serviços devido a erro....");
+  console.log("\nFinalizando serviços devido a erro...");
   try {
     execSync("pnpm run services:stop", { stdio: "inherit" });
     console.log("Serviços finalizados com sucesso!");
