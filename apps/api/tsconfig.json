@@ -7,7 +7,7 @@
     "target": "ESNext", // Alvo de compilação moderno
     "paths": {
       "@/*": ["./src/*"]
-    },
+    }
     // "module": "ESNext",
     // "moduleResolution": "Node",
     // "skipLibCheck": true,

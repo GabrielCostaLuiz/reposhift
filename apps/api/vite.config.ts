@@ -3,7 +3,9 @@ import tsConfigPaths from 'vite-plugin-tsconfig-paths'
 
 export default defineConfig({
   plugins: [tsConfigPaths()],
+
   test: {
     globals: true,
+    testTimeout: 60000,
   },
 })
