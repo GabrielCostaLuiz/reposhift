@@ -233,3 +233,63 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 Apesar de eu ter planejado avançar mais no projeto, os problemas com a hospedagem tomaram mais tempo do que eu esperava. Como meu tempo de programação diária é limitado, entre 3 e 4 horas, esses contratempos atrasaram o progresso, mas, ao mesmo tempo, me proporcionaram muito aprendizado.
 
 Agora, tudo está funcionando, e o sistema está mais estável para os próximos passos. A experiência foi valiosa, e o importante é que tudo finalmente está funcionando conforme esperado. Vamos em frente! 💪
+
+---
+
+## **Dia 5 - Criação do Banco de Dados de Teste e Preview na Vercel**
+
+### Introdução ao Dia 5
+
+Hoje foi um dia focado na criação do banco de dados de teste e no deploy de um **preview** da aplicação na **Vercel**. Foi ótimo ver o sistema rodando na Vercel pela primeira vez, mesmo que em um ambiente de teste. Além disso, aprendi bastante sobre como preparar o banco de dados para testes e a importância de um ambiente de staging.
+
+### Aprendizado do Dia 5
+
+O principal aprendizado de hoje foi sobre a criação e configuração de um banco de dados de teste, para garantir que o backend e o frontend pudessem ser validados de forma isolada antes de qualquer deploy de produção. Também, consegui configurar um **preview** na **Vercel**, o que me permitiu ver a aplicação rodando de forma mais próxima do ambiente de produção.
+
+### Atividades no Projeto - Dia 5
+
+- **Criação do Banco de Dados de Teste**:  
+  Criei um banco de dados separado para o ambiente de testes, garantindo que os dados não fossem misturados com os de produção. Esse banco de dados é usado exclusivamente para garantir que o sistema funcione corretamente sem afetar a integridade dos dados reais.
+
+- **Deploy na Vercel (Preview)**:  
+  Configurei um deploy de preview na **Vercel**, o que me permite testar a aplicação antes de fazer o deploy para produção. Isso é essencial para validar alterações sem afetar a aplicação ao vivo.
+
+- **Testes de Integração com o Banco de Dados de Teste**:  
+  Realizei testes para verificar se o sistema estava utilizando corretamente o banco de dados de teste. Isso envolveu criar e excluir dados temporários para garantir que o comportamento do sistema estava conforme o esperado.
+
+### Considerações do Dia 5
+
+O dia foi bastante produtivo e me permitiu testar o sistema de forma mais segura, sem comprometer os dados reais. Além disso, ver a aplicação rodando na Vercel, mesmo que em um ambiente de teste, foi uma grande conquista! Agora posso focar em preparar a versão de produção com mais confiança.
+
+---
+
+## **Dia 6 - Organização dos Scripts no `package.json` e Estabilização do `pnpm test` e `pnpm dev`**
+
+### Introdução ao Dia 6
+
+Hoje o foco foi na organização dos scripts no **`package.json`** para facilitar o gerenciamento de comandos como **`pnpm test`** e **`pnpm dev`**. Também investi tempo estabilizando o fluxo de desenvolvimento, garantindo que os testes rodassem corretamente e que o servidor fosse iniciado sem problemas.
+
+### Aprendizado do Dia 6
+
+A principal lição de hoje foi a importância de manter o **`package.json`** bem organizado, com scripts claros e úteis para facilitar o fluxo de trabalho, tanto para testes quanto para o desenvolvimento contínuo. Além disso, o processo de estabilização dos scripts me ajudou a resolver alguns problemas com a configuração do ambiente.
+
+### Atividades no Projeto - Dia 6
+
+- **Organização dos Scripts no `package.json`**:  
+  Organizei os scripts dentro do **`package.json`** para melhorar a manutenção e o fluxo de trabalho. Isso incluiu comandos para rodar os testes e iniciar o servidor de desenvolvimento com **`pnpm dev`**. A ideia foi garantir que o projeto fosse executado sem complicações.
+
+  - **Script `pnpm dev`**:  
+    Configurado para rodar o servidor de desenvolvimento e garantir que a aplicação esteja rodando no ambiente de desenvolvimento sem erros.
+
+  - **Script `pnpm test`**:  
+    Organizei os testes para serem rodados com o comando **`pnpm test`**, simplificando o processo de verificação do código durante o desenvolvimento. Isso também inclui a integração com o framework de testes utilizado no projeto.
+
+- **Estabilização do `pnpm test`**:  
+  Ajustei a configuração para que os testes fossem executados corretamente em todos os ambientes. Isso envolveu a instalação de dependências adicionais e ajustes nos arquivos de configuração.
+
+- **Estabilização do `pnpm dev`**:  
+  Resolvi problemas com a execução do servidor de desenvolvimento, corrigindo erros de configuração e garantindo que o ambiente fosse iniciado sem problemas.
+
+### Considerações do Dia 6
+
+Hoje foi um dia de ajustes finais para garantir que o fluxo de desenvolvimento fosse o mais tranquilo possível. Organizar os scripts no **`package.json`** e estabilizar os comandos foi um passo importante para tornar o projeto mais eficiente e fácil de manter. Agora, o ambiente de desenvolvimento está mais estável, e posso focar em avançar com o desenvolvimento das funcionalidades principais.

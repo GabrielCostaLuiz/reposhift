@@ -8,10 +8,13 @@ export default function Home() {
           Estou criando, neste exato momento, um novo espaço na internet para
           quem busca agilidade na construção de seu portfólio. Neste projeto,
           busco unir precisão e empatia, com um único objetivo: ajudar as
-          pessoas a alcançarem seus objetivos com rapidez e eficiência.
+          pessoas a alcançarem seus objetivos com rapidez e eficiência. Teste
+          Preview
         </p>
 
-        <p className="text-lg font-bold text-red-500">Em construção !!!!</p>
+        <p className="text-lg font-bold text-red-500">
+          Em construção !!!! 
+        </p>
       </main>
     </div>
   )
