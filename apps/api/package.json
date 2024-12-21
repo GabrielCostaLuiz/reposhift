@@ -2,13 +2,10 @@
   "name": "@saas/api",
   "version": "1.0.0",
   "scripts": {
-<<<<<<< HEAD
+
     "dev": "pnpm run wait-for-postgres && pnpm db:migrate && pnpm env:load tsx watch ./src/http/server.ts",
     "db:migrate": "pnpm env:load prisma migrate dev",
-=======
-    "dev": "pnpm env:load tsx watch ./src/http/server.ts",
-    "db:migrate": "pnpm env:load prisma migrate dev --schema ./src/infra/prisma/schema.prisma",
->>>>>>> preview
+
     "db:studio": "pnpm env:load prisma studio",
     "env:load": "dotenv -e ../../.env --",
     "build": "tsup",
