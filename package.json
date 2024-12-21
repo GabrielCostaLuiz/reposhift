@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "pnpm run services:up && turbo dev",
+    "dev": "node ./scripts/dev/dev.js",
     "lint": "turbo lint -- --fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "pnpm run services:up && turbo test",
+    "posttest":"pnpm run services:stop",
     "services:up": "node ./scripts/docker/up-docker.js",
     "services:stop": "node ./scripts/docker/stop-docker.js",
     "services:down": "node ./scripts/docker/down-docker.js",
