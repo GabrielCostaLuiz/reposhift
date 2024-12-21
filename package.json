@@ -3,16 +3,13 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "pnpm run servicesl:up && turbo dev",
+    "dev": "pnpm run services:up && turbo dev",
     "lint": "turbo lint -- --fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "turbo run test",
-    "servicesl:up": "sudo docker compose up -d",
-    "servicesl:stop": "sudo docker compose stop",
-    "servicesl:down": "sudo docker compose down",
-    "servicesw:up": "sudo docker compose up -d",
-    "servicesw:stop": "sudo docker compose stop",
-    "servicesw:down": "sudo docker compose down"
+    "test": "pnpm run services:up && turbo test",
+    "services:up": "node ./scripts/docker/up-docker.js",
+    "services:stop": "node ./scripts/docker/stop-docker.js",
+    "services:down": "node ./scripts/docker/down-docker.js"
   },
   "devDependencies": {
     "turbo": "^2.3.3"
