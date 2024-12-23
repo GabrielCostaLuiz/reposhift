@@ -1,5 +1,6 @@
-import { isAuthenticated } from '@/auth/auth'
 import { redirect } from 'next/navigation'
+
+import { isAuthenticated } from '@/auth/auth'
 import NavBar from '@/components/navbar'
 
 export default async function AppLayout({

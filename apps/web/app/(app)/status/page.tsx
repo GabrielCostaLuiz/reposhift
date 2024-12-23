@@ -1,8 +1,18 @@
 'use client'
-import { FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa'
-import { BiLoaderAlt } from 'react-icons/bi'
 import React from 'react'
+import { BiLoaderAlt } from 'react-icons/bi'
+import { FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa'
 import useSWR from 'swr'
+
+interface Database {
+  version: string
+  max_connections: number
+  open_connections: number
+}
+
+interface Dependencies {
+  database: Database
+}
 
 interface DataProps {
   name: string
@@ -12,16 +22,6 @@ interface DataProps {
   dependencies: Dependencies
 }
 
-interface Dependencies {
-  database: Database
-}
-
-interface Database {
-  version: string
-  max_connections: number
-  open_connections: number
-}
-
 interface ErrorResponse {
   name: string
   message: string
@@ -29,7 +29,7 @@ interface ErrorResponse {
   status: number
 }
 
-async function fetcher(key: string): Promise<DataProps | ErrorResponse> {
+async function fetcher(key: string) {
   try {
     const response = await fetch(key)
 
@@ -42,20 +42,28 @@ async function fetcher(key: string): Promise<DataProps | ErrorResponse> {
       })
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
     const data: DataProps = await response.json()
 
-    return data
-  } catch (error: any) {
-    const errorResponse: ErrorResponse = {
-      name: 'Erro de requisição',
-      message:
-        error.cause.statusText === 'Not Found'
-          ? 'Serviço indisponível'
-          : error.message,
-      action: 'Tente novamente mais tarde ou entre em contato com o suporte.',
-      status: error.cause.status, // Código de erro genérico
+    if (
+      !data ||
+      typeof data.name !== 'string' ||
+      typeof data.status !== 'string'
+    ) {
+      throw new Error('Dados inválidos da API')
     }
-    throw errorResponse
+
+    return data
+  } catch (error: unknown) {
+    if (error instanceof Error && error.cause) {
+      const errorResponse: ErrorResponse = {
+        name: error.name,
+        message: error.message,
+        action: 'Tente novamente mais tarde',
+        status: (error.cause as { status?: number }).status || 500,
+      }
+      throw errorResponse
+    }
   }
 }
 
@@ -65,7 +73,7 @@ const BackendStatusPage = () => {
     fetcher,
     {
       refreshInterval: 10000, // 10 segundos
-    }
+    },
   )
 
   const getStatusIcon = (status: string) => {
@@ -79,6 +87,11 @@ const BackendStatusPage = () => {
     }
   }
 
+  const formattedDate = new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  }).format(new Date())
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-12">
       <div className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-xl">
@@ -87,11 +100,10 @@ const BackendStatusPage = () => {
             <FaExclamationTriangle className="text-yellow-600" />
             <div>
               <p className="font-medium text-yellow-700">
-                Serviço Temporariamente Indisponível
+                {error.message || 'Erro desconhecido'}
               </p>
               <p className="text-sm text-yellow-600">
-                Tentando reconectar. O backend está hospedado em um plano
-                gratuito e pode levar entre 2 minutos para reativar.
+                {error.action || 'Tente novamente mais tarde.'}
               </p>
               <br />
               <p className="mt-1 text-sm text-yellow-600">
@@ -164,7 +176,7 @@ const BackendStatusPage = () => {
         </div>
 
         <div className="pt-4 text-center text-sm text-gray-400">
-          Última verificação: {new Date().toLocaleString()}
+          Última verificação: {formattedDate}
         </div>
       </div>
     </div>

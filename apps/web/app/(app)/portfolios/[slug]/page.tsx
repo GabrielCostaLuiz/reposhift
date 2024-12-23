@@ -29,7 +29,13 @@
 //   }
 // }
 
-export default async function Portfolios({ params }) {
+export default async function Portfolios({
+  params,
+}: {
+  params: {
+    slug: string
+  }
+}) {
   // let repo = await getRepos(params.id)
 
   const { slug } = await params
