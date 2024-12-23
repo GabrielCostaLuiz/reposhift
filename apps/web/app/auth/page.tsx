@@ -1,0 +1,30 @@
+import { Button } from '@/components/ui/button'
+import { TbBrandGithubFilled } from 'react-icons/tb'
+import { signInWithGithub } from './actions'
+import { redirect } from 'next/navigation'
+import { isAuthenticated } from '@/auth/auth'
+
+export default async function Auth() {
+  const responseCookieToken = await isAuthenticated()
+
+  if (responseCookieToken) {
+    redirect('/')
+  }
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-slate-900 text-center text-white">
+      <div className="min-h-fit space-y-10">
+        <h1 className=" text-4xl font-bold">RepoShift Auth</h1>
+
+        <form action={signInWithGithub}>
+          <Button
+            type="submit"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-white p-4 text-black hover:bg-gray-200"
+          >
+            <TbBrandGithubFilled size={24} /> Login com GitHub
+          </Button>
+        </form>
+      </div>
+    </div>
+  )
+}
