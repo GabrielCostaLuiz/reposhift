@@ -9,11 +9,11 @@ export const env = createEnv({
     WEB_URL: z.string().url(),
     POSTGRES_DB: z.string(),
 
-    // JWT_SECRET: z.string(),
+    JWT_SECRET: z.string(),
 
-    // GITHUB_OAUTH_CLIENT_ID: z.string(),
-    // GITHUB_OAUTH_CLIENT_SECRET: z.string(),
-    // GITHUB_OAUTH_CLIENT_REDIRECT_URI: z.string().url(),
+    GITHUB_OAUTH_CLIENT_ID: z.string(),
+    GITHUB_OAUTH_CLIENT_SECRET: z.string(),
+    GITHUB_OAUTH_CLIENT_REDIRECT_URI: z.string().url(),
   },
   //variaveis para o client server, não é uma variavel para o web/api, é a variavel que users podem ver, CUIDADO
   // client: {},
@@ -36,11 +36,11 @@ export const env = createEnv({
     // POSTGRES_HOST: process.env.POSTGRES_HOST,
     // POSTGRES_PORT: process.env.POSTGRES_PORT,
 
-    // JWT_SECRET: process.env.JWT_SECRET,
-    // GITHUB_OAUTH_CLIENT_ID: process.env.GITHUB_OAUTH_CLIENT_ID,
-    // GITHUB_OAUTH_CLIENT_SECRET: process.env.GITHUB_OAUTH_CLIENT_SECRET,
-    // GITHUB_OAUTH_CLIENT_REDIRECT_URI:
-    //   process.env.GITHUB_OAUTH_CLIENT_REDIRECT_URI,
+    JWT_SECRET: process.env.JWT_SECRET,
+    GITHUB_OAUTH_CLIENT_ID: process.env.GITHUB_OAUTH_CLIENT_ID,
+    GITHUB_OAUTH_CLIENT_SECRET: process.env.GITHUB_OAUTH_CLIENT_SECRET,
+    GITHUB_OAUTH_CLIENT_REDIRECT_URI:
+      process.env.GITHUB_OAUTH_CLIENT_REDIRECT_URI,
     // NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   //variavel ambiente com valor vazio, trate como undefined
