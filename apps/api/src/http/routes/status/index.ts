@@ -27,7 +27,7 @@ export async function getStatus(app: FastifyInstance) {
 
       return reply.status(200).send({
         name: 'Banco de Dados',
-        status: 'On',
+        status: 'online',
         message: 'Database is connected',
         // uptime: new Date().getTime() - process.uptime(),
         updated_at: updatedAt,
@@ -45,7 +45,7 @@ export async function getStatus(app: FastifyInstance) {
 
       return reply.status(500).send({
         name: 'Banco de Dados',
-        status: 'Off',
+        status: 'offline',
         message: 'Database is not connected',
         error: errorMessage,
         // uptime: new Date().getTime() - process.uptime(),
