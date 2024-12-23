@@ -1,7 +1,6 @@
-import { Input } from '@/components/ui/input'
-
-import PortfolioGrid from '@/components/portfolio-grid'
 import HeroSection from '@/components/hero-section'
+import PortfolioGrid from '@/components/portfolio-grid'
+// import { Input } from '@/components/ui/input'
 
 export default function Home() {
   return (

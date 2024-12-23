@@ -1,5 +1,15 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import {
+  FaFolderOpen,
+  FaHeart,
+  FaRegFolderOpen,
+  FaRegHeart,
+} from 'react-icons/fa'
+import { PiHouseBold, PiHouseFill } from 'react-icons/pi'
+
+import FormSignOutGithub from '@/components/form-sign-out'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   DropdownMenu,
@@ -9,15 +19,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import FormSignOutGithub from '@/components/form-sign-out'
-import { PiHouseBold, PiHouseFill } from 'react-icons/pi'
-import { usePathname } from 'next/navigation'
-import {
-  FaHeart,
-  FaRegHeart,
-  FaRegFolderOpen,
-  FaFolderOpen,
-} from 'react-icons/fa'
 
 const itemsNavBar = [
   {
@@ -55,7 +56,7 @@ export default function NavBar() {
               <li
                 key={item.name}
                 className={`${
-                  currentLink ? 'bg-gray-500 border-purple-500 border' : ''
+                  currentLink ? 'border border-purple-500 bg-gray-500' : ''
                 } w-20 rounded-xl p-2 transition-all hover:scale-105 hover:cursor-pointer`}
               >
                 <Link href={item.href}>
