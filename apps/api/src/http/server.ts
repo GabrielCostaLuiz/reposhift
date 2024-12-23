@@ -9,7 +9,9 @@ import {
 import fastifyCors from '@fastify/cors'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
-import { getStatus } from './routes/status'
+import { routes } from './routes/routes'
+import fastifyJwt from '@fastify/jwt'
+import { errorHandler } from '@/error-handler'
 
 const app = fastify({
   logger: {
@@ -21,6 +23,8 @@ const app = fastify({
 
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
+
+app.setErrorHandler(errorHandler)
 
 app.register(fastifySwagger, {
   openapi: {
@@ -37,18 +41,29 @@ app.register(fastifySwagger, {
       // },
       version: '1.0.0',
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
   },
   transform: jsonSchemaTransform,
 })
-
 app.register(fastifySwaggerUI, {
   routePrefix: '/docs',
 })
 
+app.register(fastifyJwt, {
+  secret: env.JWT_SECRET,
+})
+
 app.register(fastifyCors)
 
-// Definindo uma rota básica
-app.register(getStatus)
+app.register(routes)
 
 const start = async () => {
   try {
