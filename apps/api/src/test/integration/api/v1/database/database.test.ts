@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma'
 
-describe("TEST Backend", () => {
-  describe("Prisma", () => {
+describe('TEST Backend', () => {
+  describe('Prisma', () => {
     test('should be able to connect to the prisma', async () => {
       await prisma.$connect()
       expect(prisma).toBeDefined()
@@ -12,6 +12,4 @@ describe("TEST Backend", () => {
       expect(users).toBeDefined()
     })
   })
-  
 })
-
