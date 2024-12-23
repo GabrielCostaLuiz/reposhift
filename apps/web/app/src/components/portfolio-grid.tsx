@@ -1,6 +1,9 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { useEffect, useState } from 'react'
+
+import PortfolioCard from '@/components/portfolio-card'
+import { Badge } from '@/components/ui/badge'
 import {
   Select,
   SelectContent,
@@ -8,9 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Badge } from '@/components/ui/badge'
-import PortfolioCard from '@/components/portfolio-card'
-import { useEffect, useState } from 'react'
 
 export interface PortfoliosProps {
   id: number
@@ -73,7 +73,7 @@ export default function PortfolioGrid() {
     if (filterCategories !== 'all') {
       filteredProjects = filteredProjects.filter(
         (portfolio) =>
-          portfolio.category.toLocaleLowerCase() === filterCategories
+          portfolio.category.toLocaleLowerCase() === filterCategories,
       )
     }
 
@@ -82,7 +82,7 @@ export default function PortfolioGrid() {
       case 'recent':
         // Ordena pelos projetos mais recentes (com base na data)
         filteredProjects.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
         )
         break
       case 'popular':

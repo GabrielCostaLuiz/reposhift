@@ -1,8 +1,10 @@
-import { Button } from '@/components/ui/button'
-import { TbBrandGithubFilled } from 'react-icons/tb'
-import { signInWithGithub } from './actions'
 import { redirect } from 'next/navigation'
+import { TbBrandGithubFilled } from 'react-icons/tb'
+
 import { isAuthenticated } from '@/auth/auth'
+import { Button } from '@/components/ui/button'
+
+import { signInWithGithub } from './actions'
 
 export default async function Auth() {
   const responseCookieToken = await isAuthenticated()
