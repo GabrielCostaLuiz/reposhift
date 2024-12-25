@@ -4,7 +4,7 @@ import PortfolioGrid from '@/components/portfolio-grid'
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full">
+    <div className="w-full">
       {/* Hero Section */}
       <HeroSection
         title="Modelos de Portfólio"

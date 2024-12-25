@@ -235,3 +235,145 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 Apesar de eu ter planejado avançar mais no projeto, os problemas com a hospedagem tomaram mais tempo do que eu esperava. Como meu tempo de programação diária é limitado, entre 3 e 4 horas, esses contratempos atrasaram o progresso, mas, ao mesmo tempo, me proporcionaram muito aprendizado.
 
 Agora, tudo está funcionando, e o sistema está mais estável para os próximos passos. A experiência foi valiosa, e o importante é que tudo finalmente está funcionando conforme esperado. Vamos em frente! 💪
+
+---
+
+## **Dia 5 - Criação do Banco de Dados de Teste e Preview na Vercel**
+
+### Introdução ao Dia 5
+
+Hoje foi um dia focado na criação do banco de dados de teste e no deploy de um **preview** da aplicação na **Vercel**. Foi ótimo ver o sistema rodando na Vercel pela primeira vez, mesmo que em um ambiente de teste. Além disso, aprendi bastante sobre como preparar o banco de dados para testes e a importância de um ambiente de staging.
+
+### Aprendizado do Dia 5
+
+O principal aprendizado de hoje foi sobre a criação e configuração de um banco de dados de teste, para garantir que o backend e o frontend pudessem ser validados de forma isolada antes de qualquer deploy de produção. Também, consegui configurar um **preview** na **Vercel**, o que me permitiu ver a aplicação rodando de forma mais próxima do ambiente de produção.
+
+### Atividades no Projeto - Dia 5
+
+- **Criação do Banco de Dados de Teste**:  
+  Criei um banco de dados separado para o ambiente de testes, garantindo que os dados não fossem misturados com os de produção. Esse banco de dados é usado exclusivamente para garantir que o sistema funcione corretamente sem afetar a integridade dos dados reais.
+
+- **Deploy na Vercel (Preview)**:  
+  Configurei um deploy de preview na **Vercel**, o que me permite testar a aplicação antes de fazer o deploy para produção. Isso é essencial para validar alterações sem afetar a aplicação ao vivo.
+
+- **Testes de Integração com o Banco de Dados de Teste**:  
+  Realizei testes para verificar se o sistema estava utilizando corretamente o banco de dados de teste. Isso envolveu criar e excluir dados temporários para garantir que o comportamento do sistema estava conforme o esperado.
+
+### Considerações do Dia 5
+
+O dia foi bastante produtivo e me permitiu testar o sistema de forma mais segura, sem comprometer os dados reais. Além disso, ver a aplicação rodando na Vercel, mesmo que em um ambiente de teste, foi uma grande conquista! Agora posso focar em preparar a versão de produção com mais confiança.
+
+---
+
+## **Dia 6 - Organização dos Scripts no `package.json` e Estabilização do `pnpm test` e `pnpm dev`**
+
+### Introdução ao Dia 6
+
+Hoje o foco foi na organização dos scripts no **`package.json`** para facilitar o gerenciamento de comandos como **`pnpm test`** e **`pnpm dev`**. Também investi tempo estabilizando o fluxo de desenvolvimento, garantindo que os testes rodassem corretamente e que o servidor fosse iniciado sem problemas.
+
+### Aprendizado do Dia 6
+
+A principal lição de hoje foi a importância de manter o **`package.json`** bem organizado, com scripts claros e úteis para facilitar o fluxo de trabalho, tanto para testes quanto para o desenvolvimento contínuo. Além disso, o processo de estabilização dos scripts me ajudou a resolver alguns problemas com a configuração do ambiente.
+
+### Atividades no Projeto - Dia 6
+
+- **Organização dos Scripts no `package.json`**:  
+  Organizei os scripts dentro do **`package.json`** para melhorar a manutenção e o fluxo de trabalho. Isso incluiu comandos para rodar os testes e iniciar o servidor de desenvolvimento com **`pnpm dev`**. A ideia foi garantir que o projeto fosse executado sem complicações.
+
+  - **Script `pnpm dev`**:  
+    Configurado para rodar o servidor de desenvolvimento e garantir que a aplicação esteja rodando no ambiente de desenvolvimento sem erros.
+
+  - **Script `pnpm test`**:  
+    Organizei os testes para serem rodados com o comando **`pnpm test`**, simplificando o processo de verificação do código durante o desenvolvimento. Isso também inclui a integração com o framework de testes utilizado no projeto.
+
+- **Estabilização do `pnpm test`**:  
+  Ajustei a configuração para que os testes fossem executados corretamente em todos os ambientes. Isso envolveu a instalação de dependências adicionais e ajustes nos arquivos de configuração.
+
+- **Estabilização do `pnpm dev`**:  
+  Resolvi problemas com a execução do servidor de desenvolvimento, corrigindo erros de configuração e garantindo que o ambiente fosse iniciado sem problemas.
+
+### Considerações do Dia 6
+
+Hoje foi um dia de ajustes finais para garantir que o fluxo de desenvolvimento fosse o mais tranquilo possível. Organizar os scripts no **`package.json`** e estabilizar os comandos foi um passo importante para tornar o projeto mais eficiente e fácil de manter. Agora, o ambiente de desenvolvimento está mais estável, e posso focar em avançar com o desenvolvimento das funcionalidades principais.
+
+---
+
+## **Dia 7 - Criação de Telas no Frontend, Padronização de Commits e Fluxo de Autenticação com GitHub Apps no Backend**
+
+### Introdução ao Dia 7
+
+Hoje foi um dia produtivo focado no desenvolvimento de funcionalidades essenciais tanto no frontend quanto no backend. No frontend, criei telas principais da aplicação, enquanto no backend implementei o fluxo de autenticação com **GitHub Apps**, permitindo login seguro e integrado. Também instalei o **Commitizen** para padronizar os commits no repositório.
+
+---
+
+### Aprendizado do Dia 7
+
+- **Frontend**:  
+  Desenvolvi interfaces organizadas e práticas para navegação do usuário.
+- **Backend**:  
+  Aprendi a integrar o fluxo de autenticação via **GitHub Apps**, usando OAuth para login.
+- **Controle de Versão**:  
+  A integração do **Commitizen** trouxe clareza e consistência ao histórico de commits.
+
+---
+
+### Atividades no Projeto - Dia 7
+
+#### **Frontend**
+
+1. **Tela de Login**:  
+   Desenvolvi a tela de login com integração ao fluxo de autenticação do **GitHub Apps**. O botão "Entrar com GitHub" redireciona o usuário para a página de autorização da API do GitHub.
+
+2. **Tela Home**:  
+   Criação da tela inicial da aplicação com informações relevantes para o usuário.
+
+3. **Tela de Portfólios**:  
+   Desenvolvi a tela de exibição e gerenciamento de portfólios, permitindo uma navegação prática.
+
+4. **Tela de Favoritos**:  
+   Tela para visualização e gerenciamento de itens favoritos, personalizada para o usuário.
+
+---
+
+#### **Backend - Fluxo de Autenticação com GitHub Apps**
+
+1. **Integração com GitHub Apps**:
+
+   - Configurei um aplicativo no GitHub Developer Apps para obter as **credenciais de cliente** (client_id e client_secret).
+   - O frontend redireciona o usuário para a página de autenticação do GitHub, onde ele concede acesso ao aplicativo.
+
+2. **Recepção do Código de Autorização**:
+
+   - Após a autenticação, o GitHub redireciona para o backend com um **código de autorização**.
+   - O backend troca esse código por um **access token** usando a API OAuth do GitHub.
+
+3. **Geração e Armazenamento do Token**:
+
+   - O token recebido do GitHub é usado para obter os dados básicos do usuário (nome, email, avatar, etc.).
+   - Um token JWT é gerado pelo backend para autenticação nas próximas requisições.
+   - O token JWT é armazenado em **cookies HTTP-only**, garantindo maior segurança contra ataques como XSS.
+
+4. **Validação do Token em Rotas Protegidas**:
+
+   - Um middleware verifica a validade do token JWT para todas as rotas protegidas.
+   - Caso o token seja inválido ou ausente, o usuário é redirecionado para a tela de login.
+
+5. **Logout**:
+   - Endpoint para limpar os cookies, removendo o token do cliente e encerrando a sessão do usuário.
+
+---
+
+#### **Padronização de Commits**
+
+1. **Instalação do Commitizen**:  
+   Adicionei o Commitizen ao repositório para padronizar mensagens de commit no formato **Conventional Commits**.
+
+2. **Verificação de Commits**:  
+   Configurei ferramentas como **Husky** e **Lint-Staged** para garantir que apenas commits válidos sejam aceitos.
+
+---
+
+### Considerações do Dia 7
+
+O dia de hoje foi um marco para o desenvolvimento do projeto. Concluí telas importantes no frontend e implementei o fluxo completo de autenticação com **GitHub Apps**, garantindo uma experiência de login segura e integrada. Além disso, a padronização dos commits trouxe mais organização e clareza ao histórico do repositório, melhorando a manutenção e colaboração no projeto.
+
