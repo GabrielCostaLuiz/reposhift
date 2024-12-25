@@ -1,19 +1,20 @@
-import React from 'react'
 import {
-  Heart,
-  Share2,
-  Eye,
-  Globe,
   Calendar,
-  Tag,
   Download,
   ExternalLink,
+  Eye,
+  Globe,
+  Heart,
+  Share2,
+  Tag,
 } from 'lucide-react'
+import React from 'react'
+import { FaGithub } from 'react-icons/fa'
+
+import BackButton from '@/components/backButton'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import BackButton from '@/components/backButton'
-import { FaGithub } from 'react-icons/fa'
 
 type Params = Promise<{ slug: string }>
 
