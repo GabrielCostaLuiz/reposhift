@@ -1,7 +1,8 @@
-import { FaGithub } from "react-icons/fa";
-import { Button } from "./ui/button";
-import { Globe } from "lucide-react";
-import { TbShare2 } from "react-icons/tb";
+import { Globe } from 'lucide-react'
+import { FaGithub } from 'react-icons/fa'
+import { TbShare2 } from 'react-icons/tb'
+
+import { Button } from './ui/button'
 
 export default function Footer() {
   return (
