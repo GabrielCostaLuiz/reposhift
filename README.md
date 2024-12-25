@@ -293,3 +293,84 @@ A principal lição de hoje foi a importância de manter o **`package.json`** be
 ### Considerações do Dia 6
 
 Hoje foi um dia de ajustes finais para garantir que o fluxo de desenvolvimento fosse o mais tranquilo possível. Organizar os scripts no **`package.json`** e estabilizar os comandos foi um passo importante para tornar o projeto mais eficiente e fácil de manter. Agora, o ambiente de desenvolvimento está mais estável, e posso focar em avançar com o desenvolvimento das funcionalidades principais.
+
+---
+
+## **Dia 7 - Criação de Telas no Frontend, Padronização de Commits e Fluxo de Autenticação com GitHub Apps no Backend**
+
+### Introdução ao Dia 7
+
+Hoje foi um dia produtivo focado no desenvolvimento de funcionalidades essenciais tanto no frontend quanto no backend. No frontend, criei telas principais da aplicação, enquanto no backend implementei o fluxo de autenticação com **GitHub Apps**, permitindo login seguro e integrado. Também instalei o **Commitizen** para padronizar os commits no repositório.
+
+---
+
+### Aprendizado do Dia 7
+
+- **Frontend**:  
+  Desenvolvi interfaces organizadas e práticas para navegação do usuário.
+- **Backend**:  
+  Aprendi a integrar o fluxo de autenticação via **GitHub Apps**, usando OAuth para login.
+- **Controle de Versão**:  
+  A integração do **Commitizen** trouxe clareza e consistência ao histórico de commits.
+
+---
+
+### Atividades no Projeto - Dia 7
+
+#### **Frontend**
+
+1. **Tela de Login**:  
+   Desenvolvi a tela de login com integração ao fluxo de autenticação do **GitHub Apps**. O botão "Entrar com GitHub" redireciona o usuário para a página de autorização da API do GitHub.
+
+2. **Tela Home**:  
+   Criação da tela inicial da aplicação com informações relevantes para o usuário.
+
+3. **Tela de Portfólios**:  
+   Desenvolvi a tela de exibição e gerenciamento de portfólios, permitindo uma navegação prática.
+
+4. **Tela de Favoritos**:  
+   Tela para visualização e gerenciamento de itens favoritos, personalizada para o usuário.
+
+---
+
+#### **Backend - Fluxo de Autenticação com GitHub Apps**
+
+1. **Integração com GitHub Apps**:
+
+   - Configurei um aplicativo no GitHub Developer Apps para obter as **credenciais de cliente** (client_id e client_secret).
+   - O frontend redireciona o usuário para a página de autenticação do GitHub, onde ele concede acesso ao aplicativo.
+
+2. **Recepção do Código de Autorização**:
+
+   - Após a autenticação, o GitHub redireciona para o backend com um **código de autorização**.
+   - O backend troca esse código por um **access token** usando a API OAuth do GitHub.
+
+3. **Geração e Armazenamento do Token**:
+
+   - O token recebido do GitHub é usado para obter os dados básicos do usuário (nome, email, avatar, etc.).
+   - Um token JWT é gerado pelo backend para autenticação nas próximas requisições.
+   - O token JWT é armazenado em **cookies HTTP-only**, garantindo maior segurança contra ataques como XSS.
+
+4. **Validação do Token em Rotas Protegidas**:
+
+   - Um middleware verifica a validade do token JWT para todas as rotas protegidas.
+   - Caso o token seja inválido ou ausente, o usuário é redirecionado para a tela de login.
+
+5. **Logout**:
+   - Endpoint para limpar os cookies, removendo o token do cliente e encerrando a sessão do usuário.
+
+---
+
+#### **Padronização de Commits**
+
+1. **Instalação do Commitizen**:  
+   Adicionei o Commitizen ao repositório para padronizar mensagens de commit no formato **Conventional Commits**.
+
+2. **Verificação de Commits**:  
+   Configurei ferramentas como **Husky** e **Lint-Staged** para garantir que apenas commits válidos sejam aceitos.
+
+---
+
+### Considerações do Dia 7
+
+O dia de hoje foi um marco para o desenvolvimento do projeto. Concluí telas importantes no frontend e implementei o fluxo completo de autenticação com **GitHub Apps**, garantindo uma experiência de login segura e integrada. Além disso, a padronização dos commits trouxe mais organização e clareza ao histórico do repositório, melhorando a manutenção e colaboração no projeto.
