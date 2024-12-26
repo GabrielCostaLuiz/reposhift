@@ -3,8 +3,9 @@ import { redirect } from 'next/navigation'
 import { auth, isAuthenticated } from '@/auth-user/auth'
 import Footer from '@/components/footer'
 import NavBar from '@/components/navbar'
-import Providers from './providers'
 import { Toaster } from '@/components/ui/toaster'
+
+import Providers from './providers'
 
 export default async function AppLayout({
   children,

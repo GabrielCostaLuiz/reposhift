@@ -11,8 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { useUserStore } from '@/store/user'
-import { set } from 'date-fns'
 
 // export interface templatesProps {
 //   id: number
@@ -69,7 +67,7 @@ export default function PortfolioGrid({
     // }
     if (filterCategories !== 'all') {
       filteredProjects = filteredProjects.filter((portfolio) =>
-        portfolio.types.includes(filterCategories)
+        portfolio.types.includes(filterCategories),
       )
     }
 
@@ -79,7 +77,7 @@ export default function PortfolioGrid({
         // Ordena pelos projetos mais recentes (com base na data)
         filteredProjects.sort(
           (a, b) =>
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
         )
         break
       case 'popular':
@@ -110,7 +108,7 @@ export default function PortfolioGrid({
   useEffect(() => {
     // Extrai categorias únicas dos projetos
     const uniqueCategories = Array.from(
-      new Set(templates.flatMap((template) => template.types))
+      new Set(templates.flatMap((template) => template.types)),
     )
     setCategories(uniqueCategories)
   }, [templates])

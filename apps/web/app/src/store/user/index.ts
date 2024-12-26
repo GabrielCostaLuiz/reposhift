@@ -1,6 +1,7 @@
-import type { User } from '@/http/get-profile'
 import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { createJSONStorage, persist } from 'zustand/middleware'
+
+import type { User } from '@/http/get-profile'
 
 // State types
 interface States {
@@ -16,7 +17,7 @@ type Store = States & Actions
 // useCounterStore
 export const useUserStore = create<Store>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       user: null,
       updateUser: (user: User) => {
         set({ user })
@@ -25,6 +26,6 @@ export const useUserStore = create<Store>()(
     {
       name: 'user-storage',
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 )
