@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import PortfolioCard from '@/components/portfolio-card'
@@ -11,18 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-
-// export interface templatesProps {
-//   id: number
-//   title: string
-//   image: string
-//   creator: string
-//   slug: string
-//   date: string
-//   category: string
-//   like: number
-//   isFavorite: boolean
-// }
+import { useTemplatesStore } from '@/store/templates'
 
 export interface Template {
   id: string
@@ -38,15 +28,15 @@ export interface Template {
   updatedAt: string
 }
 
-export default function PortfolioGrid({
-  templates,
-}: {
-  templates: Template[]
-}) {
-  const [filterProjects, setFilterProjects] = useState<Template[]>(templates)
+export default function PortfolioGrid() {
+  const { templates, refreshTemplates } = useTemplatesStore()
+
+  const [filterProjects, setFilterProjects] = useState<Template[]>([])
   const [filterCategories, setFilterCategories] = useState<string>('all')
   const [orderBy, setOrderBy] = useState<string>('recent')
   const [categories, setCategories] = useState<string[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
+  const pathName = usePathname()
 
   function handleChangeCategories(category: string) {
     setFilterCategories(category)
@@ -57,56 +47,48 @@ export default function PortfolioGrid({
   }
 
   useEffect(() => {
+    const fetchTemplates = async () => {
+      setLoading(true)
+      await refreshTemplates(pathName)
+      setLoading(false)
+    }
+
+    fetchTemplates()
+  }, [refreshTemplates])
+
+  useEffect(() => {
     let filteredProjects = [...templates]
 
-    // Filtragem por categoria
-    // if (filterCategories !== 'all') {
-    //   filteredProjects = filteredProjects.filter((portfolio) =>
-    //     portfolio.types.includes(filterCategories)
-    //   )
-    // }
     if (filterCategories !== 'all') {
       filteredProjects = filteredProjects.filter((portfolio) =>
         portfolio.types.includes(filterCategories),
       )
     }
 
-    // Ordenação
     switch (orderBy) {
       case 'recent':
-        // Ordena pelos projetos mais recentes (com base na data)
         filteredProjects.sort(
           (a, b) =>
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
         )
         break
       case 'popular':
-        // Ordena pelos projetos mais populares (por exemplo, com base no campo `isFavorite`)
         filteredProjects.sort((a, b) => b.likes - a.likes)
         break
       case 'nameZa':
-        // Ordena de A a Z pelo nome do projeto
         filteredProjects.sort((a, b) => a.name.localeCompare(b.name))
         break
       case 'nameAz':
-        // Ordena de Z a A pelo nome do projeto
         filteredProjects.sort((a, b) => b.name.localeCompare(a.name))
         break
       default:
         break
     }
 
-    // Atualiza o estado com os projetos filtrados e ordenados
     setFilterProjects(filteredProjects)
   }, [filterCategories, orderBy, templates])
 
-  // useEffect(() => {
-  //   setFilterProjects(templates)
-
-  //   console.log(templates)
-  // })
   useEffect(() => {
-    // Extrai categorias únicas dos projetos
     const uniqueCategories = Array.from(
       new Set(templates.flatMap((template) => template.types)),
     )
@@ -178,17 +160,21 @@ export default function PortfolioGrid({
 
       {/* Portfolio Grid */}
       <div className="container mx-auto px-4 py-6 sm:py-8">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {filterProjects.length >= 1 ? (
-            filterProjects.map((portfolio) => (
+        {loading ? (
+          <div className="flex items-center justify-center">
+            <p>Carregando modelos...</p>
+          </div>
+        ) : filterProjects.length >= 1 ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+            {filterProjects.map((portfolio) => (
               <PortfolioCard key={portfolio.id} portfolio={portfolio} />
-            ))
-          ) : (
-            <div className="col-span-3 flex items-center justify-center">
-              <p className="w-full">Nenhum modelo encontrado</p>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="col-span-3 flex items-center justify-center">
+            <p className="w-full">Nenhum modelo encontrado</p>
+          </div>
+        )}
       </div>
     </div>
   )

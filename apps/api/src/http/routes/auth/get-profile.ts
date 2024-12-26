@@ -26,6 +26,16 @@ export async function getProfile(app: FastifyInstance) {
                 htmlUrl: z.string().url(),
                 reposUrl: z.string().url(),
                 admin: z.boolean().optional(),
+                templatesLiked: z.array(
+                  z.object({
+                    id: z.string(),
+                  })
+                ),
+                templatesFavorite: z.array(
+                  z.object({
+                    id: z.string(),
+                  })
+                ),
               }),
             }),
           },
@@ -42,6 +52,16 @@ export async function getProfile(app: FastifyInstance) {
             avatarUrl: true,
             htmlUrl: true,
             reposUrl: true,
+            templatesLiked: {
+              select: {
+                id: true,
+              },
+            },
+            templatesFavorite: {
+              select: {
+                id: true,
+              },
+            },
           },
           where: {
             id: userId,

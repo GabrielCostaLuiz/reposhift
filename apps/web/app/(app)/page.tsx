@@ -3,13 +3,10 @@ import { Suspense } from 'react'
 import HeroSection from '@/components/hero-section'
 import LoadingPortfolios from '@/components/loading-portfolios'
 import PortfolioGrid from '@/components/portfolio-grid'
-import { getTemplates } from '@/http/get-templates'
 
 // import { Input } from '@/components/ui/input'
 
 export default async function Home() {
-  const { templates } = await getTemplates()
-
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -19,7 +16,7 @@ export default async function Home() {
       />
 
       <Suspense fallback={<LoadingPortfolios addCss="mt-10" />}>
-        <PortfolioGrid templates={templates} />
+        <PortfolioGrid />
       </Suspense>
     </div>
   )
