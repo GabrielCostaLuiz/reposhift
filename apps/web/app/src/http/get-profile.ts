@@ -7,6 +7,8 @@ export interface User {
   avatarUrl: string | null
   htmlUrl: string
   reposUrl: string
+  templatesLiked: string[]
+  templatesFavorite: string[]
 }
 
 export interface GetProfileResponse {
@@ -15,5 +17,6 @@ export interface GetProfileResponse {
 
 export async function getProfile() {
   const result = await api.get('profile').json<GetProfileResponse>()
+  console.log(result)
   return result
 }
