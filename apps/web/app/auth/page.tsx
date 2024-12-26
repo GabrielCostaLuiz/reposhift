@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 import { TbBrandGithubFilled } from 'react-icons/tb'
 
-import { isAuthenticated } from '@/auth/auth'
+import { isAuthenticated } from '@/auth-user/auth'
 import { Button } from '@/components/ui/button'
 
 import { signInWithGithub } from './actions'
