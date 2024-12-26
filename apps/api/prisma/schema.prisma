@@ -27,6 +27,7 @@ model User {
   tokens              Token[]
   accounts            Account[]
   templatesLiked      Templates[] @relation("UserLikedTemplates")
+  templatesFavorite   Templates[] @relation("UserFavoriteTemplates")
   templatesDownloaded Templates[] @relation("UserDownloadedTemplates")
 
   @@map("users")
@@ -68,9 +69,9 @@ model Templates {
   name        String
   slug        String
   reference   String
-  imgTemplate String @map("img_template")
-  urlGithub   String @map("url_github")
-  urlDemo     String @map("url_demo")
+  imgTemplate String   @map("img_template")
+  urlGithub   String   @map("url_github")
+  urlDemo     String   @map("url_demo")
   likes       Int
   types       String[]
 
@@ -78,6 +79,7 @@ model Templates {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   likedBy      User[] @relation("UserLikedTemplates")
+  favoriteBy   User[] @relation("UserFavoriteTemplates")
   downloadedBy User[] @relation("UserDownloadedTemplates")
 
   @@map("templates")

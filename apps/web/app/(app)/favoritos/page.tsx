@@ -1,6 +1,7 @@
 import HeroSection from '@/components/hero-section'
+import PortfolioGrid from '@/components/portfolio-grid'
 
-export default function Favoritos() {
+export default async function Favoritos() {
   return (
     <div>
       <HeroSection
@@ -8,7 +9,7 @@ export default function Favoritos() {
         description="Aqui estão os seus portfólios favoritos. Gerencie e explore suas preferências com facilidade."
       />
 
-      {/* <PortfolioGrid /> */}
+      <PortfolioGrid />
     </div>
   )
 }
