@@ -499,3 +499,80 @@ Hoje foi um dia produtivo focado no desenvolvimento de funcionalidades essenciai
 
 O dia de hoje foi um marco para o desenvolvimento do projeto. Concluí telas importantes no frontend e implementei o fluxo completo de autenticação com **GitHub Apps**, garantindo uma experiência de login segura e integrada. Além disso, a padronização dos commits trouxe mais organização e clareza ao histórico do repositório, melhorando a manutenção e colaboração no projeto.
 
+---
+
+## **Dia 8 - Tela de Administração, Ajustes na Home e Implementação de Templates**
+
+### Introdução ao Dia 8
+
+Hoje avancei no desenvolvimento da aplicação com foco na criação e gerenciamento de templates e na organização do fluxo administrativo. Concentrei-me em criar uma tela de administração restrita para usuários com permissões de administrador, além de realizar melhorias na home e nas rotas da API.
+
+---
+
+### Aprendizado do Dia 8
+
+- **Frontend**:  
+  Aprimorei o fluxo de gerenciamento de templates e conectei o frontend ao backend para buscar os dados do banco.
+- **Backend**:  
+  Configurei novas rotas para criar e buscar templates, além de preparar o backend para manipular os dados cadastrados.
+- **Organização**:  
+  Planejei melhorias futuras para edição e exclusão de templates, criando uma base sólida para adicionar funcionalidades posteriormente.
+
+---
+
+### Atividades no Projeto - Dia 8
+
+#### **Tela de Administração**
+
+1. **Acesso Restrito**:
+
+   - Criei uma tela exclusiva para administradores, com autenticação e validação para acesso seguro.
+   - Apenas usuários com permissão de administrador podem visualizar e utilizar essa tela.
+
+2. **Controle de Portfólios**:
+
+   - Adicionei funcionalidade para que o administrador possa adicionar novos portfólios ao projeto.
+   - A interface permite visualizar todos os portfólios cadastrados no sistema, facilitando o gerenciamento.
+
+3. **Botões de Edição e Exclusão**:
+   - Adicionei botões para edição e exclusão de portfólios, mas a implementação dessas funcionalidades será realizada futuramente.
+
+---
+
+#### **Ajustes na Home**
+
+1. **Exibição Dinâmica de Projetos**:
+   - Ajustei a home para buscar os projetos diretamente do banco de dados.
+   - Agora, a listagem de projetos é carregada dinamicamente, garantindo que as informações estejam sempre atualizadas.
+
+---
+
+#### **Criação e Visualização de Templates**
+
+1. **Fluxo de Adição**:
+
+   - Adicionei uma funcionalidade na tela de administração para criar novos templates e salvar no banco de dados.
+
+2. **Visualização de Templates**:
+
+   - Agora, consigo listar todos os templates já cadastrados no sistema na tela de administração.
+   - Essa funcionalidade facilita o controle e a organização dos templates existentes.
+
+3. **Rotas de API**:
+   - Configurei as rotas do backend para:
+     - **GET**: Buscar todos os templates cadastrados no banco.
+     - **POST**: Criar novos templates com as informações enviadas pelo frontend.
+
+---
+
+### Planejamento Futuro
+
+- Implementar as funcionalidades de edição e exclusão de templates, aproveitando os botões já adicionados à interface.
+- Aprimorar o design das telas para proporcionar uma melhor experiência ao usuário, especialmente na área administrativa.
+
+---
+
+### Considerações do Dia 8
+
+O dia de hoje foi focado em organizar o fluxo administrativo e estruturar o gerenciamento de portfólios e templates. A tela de administração trouxe um controle mais robusto, enquanto os ajustes na home conectaram a interface ao banco de dados, tornando o conteúdo dinâmico e atualizado. Com essas melhorias, o projeto está mais próximo de ser um produto funcional e escalável.
+

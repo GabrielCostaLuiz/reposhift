@@ -21,7 +21,6 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { useUserStore } from '@/store/user'
 import useStore from '@/store/useStore'
-import { useState } from 'react'
 
 const itemsNavBar = [
   {
