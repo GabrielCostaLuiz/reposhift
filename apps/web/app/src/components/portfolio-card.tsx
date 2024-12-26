@@ -5,10 +5,10 @@ import { useState } from 'react'
 import { AiOutlineLike } from 'react-icons/ai'
 import { FaFileDownload } from 'react-icons/fa'
 
+import type { Template } from './portfolio-grid'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
-import type { Template } from './portfolio-grid'
 
 export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
   const [isFavorite, setIsFavorite] = useState(false)

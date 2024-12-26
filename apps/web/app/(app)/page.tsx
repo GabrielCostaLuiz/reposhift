@@ -1,9 +1,9 @@
-import { auth } from '@/auth-user/auth'
+import { Suspense } from 'react'
+
 import HeroSection from '@/components/hero-section'
 import LoadingPortfolios from '@/components/loading-portfolios'
 import PortfolioGrid from '@/components/portfolio-grid'
 import { getTemplates } from '@/http/get-templates'
-import { Suspense } from 'react'
 
 // import { Input } from '@/components/ui/input'
 

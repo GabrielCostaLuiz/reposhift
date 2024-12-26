@@ -1,8 +1,12 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { PlusCircle } from 'lucide-react'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -14,27 +18,9 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { createSlug } from '@/utils/create-slug'
-import { create } from 'domain'
-import { PlusCircle } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { z } from 'zod'
-import { createTemplate } from '@/http/create-template'
 import { toast } from '@/hooks/use-toast'
-
-interface Template {
-  id: string
-  name: string
-  slug: string
-  reference: string
-  imgTemplate: string
-  urlGithub: string
-  urlDemo: string
-  likes: number
-  types: string
-  createdAt: string
-  updatedAt: string
-}
+import { createTemplate } from '@/http/create-template'
+import { createSlug } from '@/utils/create-slug'
 
 export default function DialogActionsTemplate() {
   const createTemplateFormSchema = z.object({
@@ -57,7 +43,6 @@ export default function DialogActionsTemplate() {
     formState: { errors },
   } = useForm<createTemplateFormData>({
     resolver: zodResolver(createTemplateFormSchema),
-    
   })
   const watchName = watch('name')
 
