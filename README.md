@@ -454,3 +454,71 @@ Hoje avancei no desenvolvimento da aplicação com foco na criação e gerenciam
 
 O dia de hoje foi focado em organizar o fluxo administrativo e estruturar o gerenciamento de portfólios e templates. A tela de administração trouxe um controle mais robusto, enquanto os ajustes na home conectaram a interface ao banco de dados, tornando o conteúdo dinâmico e atualizado. Com essas melhorias, o projeto está mais próximo de ser um produto funcional e escalável.
 
+---
+
+## **Dia 9 - Funcionalidades de Curtir e Salvar como Favorito**
+
+### Introdução ao Dia 9
+
+Hoje, implementei funcionalidades de curtir e salvar projetos como favoritos, permitindo que os usuários marquem os projetos que mais gostam. Além disso, criei a página de favoritos, onde é possível visualizar todos os projetos que o usuário marcou como favoritos. Esse avanço facilita a personalização da experiência do usuário na plataforma.
+
+---
+
+### Aprendizado do Dia 9
+
+- **Frontend**:
+
+  - Adicionei as opções de curtir e salvar como favorito diretamente na interface de visualização dos projetos.
+  - A página de favoritos foi criada para exibir os projetos que o usuário marcou como favoritos.
+
+- **Backend**:
+  - Criei rotas para gerenciar a adição e remoção de favoritos.
+  - Implementei o sistema de persistência de favoritos no banco de dados, associando os usuários aos projetos que escolheram como favoritos.
+
+---
+
+### Atividades no Projeto - Dia 9
+
+#### **Funcionalidade de Curtir e Salvar como Favorito**
+
+1. **Botões de Curtir e Salvar**:
+
+   - Adicionei botões de "curtir" e "salvar como favorito" na página de visualização dos projetos.
+   - O usuário pode clicar nesses botões para marcar projetos como seus favoritos.
+
+2. **Persistência no Banco de Dados**:
+   - Quando um projeto é marcado como favorito, o sistema armazena essa informação no banco de dados, associando o usuário ao projeto favorito.
+   - A funcionalidade também permite remover um projeto dos favoritos quando o usuário clicar novamente no botão de "favoritar".
+
+---
+
+#### **Página de Favoritos**
+
+1. **Exibição dos Favoritos**:
+
+   - Criei a página `/favoritos`, que lista todos os projetos que o usuário marcou como favoritos.
+   - A página é dinâmica e exibe os projetos salvos diretamente do banco de dados.
+
+2. **Interação do Usuário**:
+   - Quando o usuário acessa a página de favoritos, ele pode visualizar os projetos que escolheu marcar como favoritos e pode interagir com eles da mesma forma que na página principal (curtir, comentar, etc.).
+
+---
+
+#### **Rotas de API**
+
+1. **GET - Listar Favoritos**:
+
+   - Criei uma rota **GET** para buscar todos os projetos favoritos de um usuário. A rota retorna os projetos favoritos armazenados no banco de dados.
+
+2. **POST - Adicionar Favorito**:
+
+   - Implementei a rota **POST** para adicionar um projeto aos favoritos do usuário. Essa ação é registrada no banco de dados.
+
+3. **DELETE - Remover Favorito**:
+   - Adicionei uma rota **DELETE** para remover um projeto da lista de favoritos de um usuário. Isso garante que o usuário possa gerenciar sua lista de favoritos de forma eficiente.
+
+---
+
+### Considerações do Dia 9
+
+Hoje, consegui implementar uma funcionalidade interessante para melhorar a experiência do usuário, permitindo que ele salve projetos como favoritos e visualize esses projetos na página dedicada. A integração com o banco de dados para persistir os favoritos está funcionando bem, e a estrutura do projeto foi enriquecida com essas novas funcionalidades. No futuro, posso adicionar mais interações e visualizações para tornar a página de favoritos ainda mais útil e dinâmica.
