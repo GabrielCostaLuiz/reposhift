@@ -14,7 +14,7 @@ export default async function Auth() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-900 text-center text-white">
+    <div className="flex min-h-screen items-center justify-center bg-[#18181B] text-center text-white">
       <div className="min-h-fit space-y-10">
         <h1 className=" text-4xl font-bold">RepoShift Auth</h1>
 

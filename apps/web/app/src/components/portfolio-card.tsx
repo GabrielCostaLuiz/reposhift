@@ -1,19 +1,16 @@
 'use client'
-import { Heart } from 'lucide-react'
+
 import Link from 'next/link'
-import { useState } from 'react'
-import { AiOutlineLike } from 'react-icons/ai'
 import { FaFileDownload } from 'react-icons/fa'
 
+import ButtonFavorite from './buttonFavorite'
+import ButtonLike from './buttonLike'
 import type { Template } from './portfolio-grid'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 
 export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
-  const [isFavorite, setIsFavorite] = useState(false)
-  const [isLike, setIsLike] = useState(false)
-
   return (
     <Card className="group overflow-hidden border-gray-800 bg-[#18181B]">
       <CardHeader className="relative p-0">
@@ -23,29 +20,8 @@ export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
           className="h-48 w-full object-cover transition-transform group-hover:scale-105 sm:h-56 md:h-64"
         />
         <div className="absolute right-2 top-2 space-x-2  sm:right-4 sm:top-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsFavorite(!isFavorite)}
-            className="bg-black/50 backdrop-blur-sm hover:bg-black/70"
-          >
-            <Heart
-              className={
-                isFavorite ? 'fill-purple-500 text-purple-500' : 'text-gray-400'
-              }
-            />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsLike(!isLike)}
-            className={`w-fit bg-black/50 p-2 backdrop-blur-sm hover:bg-black/70 ${
-              isLike ? 'fill-purple-500 text-purple-500' : 'text-gray-400'
-            }`}
-          >
-            <AiOutlineLike />
-            <span className="text-sm ">{portfolio.likes}</span>
-          </Button>
+          <ButtonFavorite idPortfolio={portfolio.id} />
+          <ButtonLike likes={portfolio.likes} idPortfolio={portfolio.id} />
 
           <Button
             variant="ghost"
