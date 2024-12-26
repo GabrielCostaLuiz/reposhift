@@ -1,8 +1,15 @@
+import { Suspense } from 'react'
+
 import HeroSection from '@/components/hero-section'
+import LoadingPortfolios from '@/components/loading-portfolios'
 import PortfolioGrid from '@/components/portfolio-grid'
+import { getTemplates } from '@/http/get-templates'
+
 // import { Input } from '@/components/ui/input'
 
-export default function Home() {
+export default async function Home() {
+  const { templates } = await getTemplates()
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -11,7 +18,9 @@ export default function Home() {
         description="Encontre a inspiração perfeita para o seu próximo portfólio"
       />
 
-      <PortfolioGrid />
+      <Suspense fallback={<LoadingPortfolios addCss="mt-10" />}>
+        <PortfolioGrid templates={templates} />
+      </Suspense>
     </div>
   )
 }

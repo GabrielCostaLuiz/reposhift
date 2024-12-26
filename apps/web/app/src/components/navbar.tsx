@@ -19,6 +19,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { useUserStore } from '@/store/user'
+import useStore from '@/store/useStore'
 
 const itemsNavBar = [
   {
@@ -43,6 +45,7 @@ const itemsNavBar = [
 
 export default function NavBar() {
   const pathName = usePathname()
+  const user = useStore(useUserStore, (state) => state.user)
 
   return (
     <div className="flex h-16 flex-row items-center justify-between p-3 md:h-full md:flex-col md:p-5">
@@ -78,8 +81,11 @@ export default function NavBar() {
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar className="h-8 w-8 md:h-10 md:w-10">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarImage
+                src={user?.avatarUrl || '/default-avatar.png'}
+                alt={user?.name || 'Avatar'}
+              />
+              <AvatarFallback>{user?.name?.charAt(0) || 'U'}</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -88,8 +94,17 @@ export default function NavBar() {
             align="end"
             sideOffset={5}
           >
-            <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
+            <DropdownMenuLabel>
+              {user ? user.name : 'Minha Conta'}
+            </DropdownMenuLabel>
             <DropdownMenuSeparator className="mb-2 bg-gray-300" />
+            {user?.admin && (
+              <DropdownMenuItem>
+                <Link href="/admin/templates" className="w-full">
+                  Adicionar Portfolio
+                </Link>
+              </DropdownMenuItem>
+            )}
             <DropdownMenuItem className="rounded-md bg-red-500 font-bold text-white focus:bg-red-500 focus:text-white">
               <FormSignOutGithub />
             </DropdownMenuItem>

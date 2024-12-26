@@ -5,16 +5,12 @@ import { useState } from 'react'
 import { AiOutlineLike } from 'react-icons/ai'
 import { FaFileDownload } from 'react-icons/fa'
 
-import type { PortfoliosProps } from './portfolio-grid'
+import type { Template } from './portfolio-grid'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 
-export default function PortfolioCard({
-  portfolio,
-}: {
-  portfolio: PortfoliosProps
-}) {
+export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
   const [isFavorite, setIsFavorite] = useState(false)
   const [isLike, setIsLike] = useState(false)
 
@@ -22,8 +18,8 @@ export default function PortfolioCard({
     <Card className="group overflow-hidden border-gray-800 bg-[#18181B]">
       <CardHeader className="relative p-0">
         <img
-          src={portfolio.image}
-          alt={portfolio.title}
+          src={portfolio.imgTemplate}
+          alt={`imagem do portfolio ${portfolio.name}`}
           className="h-48 w-full object-cover transition-transform group-hover:scale-105 sm:h-56 md:h-64"
         />
         <div className="absolute right-2 top-2 space-x-2  sm:right-4 sm:top-4">
@@ -48,7 +44,7 @@ export default function PortfolioCard({
             }`}
           >
             <AiOutlineLike />
-            <span className="text-sm ">{portfolio.like}</span>
+            <span className="text-sm ">{portfolio.likes}</span>
           </Button>
 
           <Button
@@ -62,18 +58,28 @@ export default function PortfolioCard({
         </div>
       </CardHeader>
       <CardContent className="p-4 sm:p-6">
-        <h3 className="mb-2 line-clamp-1 text-lg font-semibold text-white sm:text-xl">
-          {portfolio.title}
+        <h3 className="mb-2 line-clamp-1 text-lg font-semibold capitalize text-white sm:text-xl">
+          {portfolio.name}
         </h3>
         <div className="flex items-center justify-between text-xs text-gray-400 sm:text-sm">
-          <span className="line-clamp-1">por {portfolio.creator}</span>
-          <span>{new Date(portfolio.date).toLocaleDateString()}</span>
+          <span className="line-clamp-1 capitalize">
+            por {portfolio.reference}
+          </span>
+          <span>{new Date(portfolio.createdAt).toLocaleDateString()}</span>
         </div>
       </CardContent>
       <CardFooter className="flex flex-col items-stretch justify-between gap-3 p-4 pt-0 sm:flex-row sm:items-center sm:gap-0 sm:p-6">
-        <Badge className="bg-purple-500/10 text-center text-purple-400 hover:bg-purple-500/20 sm:text-left">
-          {portfolio.category}
-        </Badge>
+        <div className="space-x-2">
+          {portfolio.types.map((type) => (
+            <Badge
+              key={type}
+              className="bg-purple-500/10 text-center capitalize text-purple-400 hover:bg-purple-500/20 sm:text-left"
+            >
+              {type}
+            </Badge>
+          ))}
+        </div>
+
         <Button
           asChild
           variant="outline"

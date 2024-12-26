@@ -64,12 +64,15 @@ model Account {
 }
 
 model Templates {
-  id        String   @id @default(uuid())
-  name      String
-  slug      String
-  reference String
-  likes     Int
-  types     String[]
+  id          String   @id @default(uuid())
+  name        String
+  slug        String
+  reference   String
+  imgTemplate String @map("img_template")
+  urlGithub   String @map("url_github")
+  urlDemo     String @map("url_demo")
+  likes       Int
+  types       String[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
