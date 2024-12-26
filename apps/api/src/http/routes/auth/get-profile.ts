@@ -19,23 +19,21 @@ export async function getProfile(app: FastifyInstance) {
           response: {
             200: z.object({
               user: z.object({
-                id: z.string().uuid(),
+                // id: z.string().uuid(),
                 name: z.string().nullable(),
                 email: z.string().email(),
                 avatarUrl: z.string().url().nullable(),
                 htmlUrl: z.string().url(),
                 reposUrl: z.string().url(),
+                admin: z.boolean().optional(),
               }),
             }),
           },
         },
       },
       async (request, reply) => {
-        console.log('Kkkkk')
-
         const userId = await request.getCurrentUserId()
 
-        console.log(userId)
         const user = await prisma.user.findUnique({
           select: {
             id: true,
@@ -52,6 +50,15 @@ export async function getProfile(app: FastifyInstance) {
 
         if (!user) {
           throw new BadRequestError('User not found.')
+        }
+
+        if (user.id === '91f2592c-9963-490d-bfd4-ef8c76495c40') {
+          return reply.send({
+            user: {
+              ...user,
+              admin: true,
+            },
+          })
         }
 
         return reply.send({ user })
