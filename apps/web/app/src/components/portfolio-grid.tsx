@@ -11,55 +11,47 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useUserStore } from '@/store/user'
+import { set } from 'date-fns'
 
-export interface PortfoliosProps {
-  id: number
-  title: string
-  image: string
-  creator: string
+// export interface templatesProps {
+//   id: number
+//   title: string
+//   image: string
+//   creator: string
+//   slug: string
+//   date: string
+//   category: string
+//   like: number
+//   isFavorite: boolean
+// }
+
+export interface Template {
+  id: string
+  name: string
   slug: string
-  date: string
-  category: string
-  like: number
-  isFavorite: boolean
+  reference: string
+  imgTemplate: string
+  urlGithub: string
+  likes: number
+  urlDemo: string
+  types: string[]
+  createdAt: string
+  updatedAt: string
 }
 
-const portfolios = [
-  {
-    id: 1,
-    title: 'Modern Portfolio',
-    image: '/api/placeholder/400/300',
-    creator: 'John Doe',
-    slug: 'modern-portfolio',
-    date: '2024-03-20',
-    category: 'Personal',
-    like: 20,
-    isFavorite: false,
-  },
-  {
-    id: 2,
-    title: 'Creative Agency',
-    image: '/api/placeholder/400/300',
-    creator: 'Jane Smith',
-    slug: 'creative-agency',
-    date: '2024-03-18',
-    category: 'Agency',
-    like: 4,
-    isFavorite: true,
-  },
-]
-
-export default function PortfolioGrid() {
-  const [filterProjects, setFilterProjects] = useState(portfolios)
+export default function PortfolioGrid({
+  templates,
+}: {
+  templates: Template[]
+}) {
+  const [filterProjects, setFilterProjects] = useState<Template[]>(templates)
   const [filterCategories, setFilterCategories] = useState<string>('all')
   const [orderBy, setOrderBy] = useState<string>('recent')
+  const [categories, setCategories] = useState<string[]>([])
 
   function handleChangeCategories(category: string) {
-    if (category === 'all') {
-      setFilterCategories('all')
-    } else {
-      setFilterCategories(category)
-    }
+    setFilterCategories(category)
   }
 
   function handleChangeOrderBy(order: string) {
@@ -67,13 +59,17 @@ export default function PortfolioGrid() {
   }
 
   useEffect(() => {
-    let filteredProjects = [...portfolios]
+    let filteredProjects = [...templates]
 
     // Filtragem por categoria
+    // if (filterCategories !== 'all') {
+    //   filteredProjects = filteredProjects.filter((portfolio) =>
+    //     portfolio.types.includes(filterCategories)
+    //   )
+    // }
     if (filterCategories !== 'all') {
-      filteredProjects = filteredProjects.filter(
-        (portfolio) =>
-          portfolio.category.toLocaleLowerCase() === filterCategories,
+      filteredProjects = filteredProjects.filter((portfolio) =>
+        portfolio.types.includes(filterCategories)
       )
     }
 
@@ -82,20 +78,21 @@ export default function PortfolioGrid() {
       case 'recent':
         // Ordena pelos projetos mais recentes (com base na data)
         filteredProjects.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
         )
         break
       case 'popular':
         // Ordena pelos projetos mais populares (por exemplo, com base no campo `isFavorite`)
-        filteredProjects.sort((a, b) => b.like - a.like)
+        filteredProjects.sort((a, b) => b.likes - a.likes)
         break
       case 'nameZa':
         // Ordena de A a Z pelo nome do projeto
-        filteredProjects.sort((a, b) => a.title.localeCompare(b.title))
+        filteredProjects.sort((a, b) => a.name.localeCompare(b.name))
         break
       case 'nameAz':
         // Ordena de Z a A pelo nome do projeto
-        filteredProjects.sort((a, b) => b.title.localeCompare(a.title))
+        filteredProjects.sort((a, b) => b.name.localeCompare(a.name))
         break
       default:
         break
@@ -103,17 +100,27 @@ export default function PortfolioGrid() {
 
     // Atualiza o estado com os projetos filtrados e ordenados
     setFilterProjects(filteredProjects)
-  }, [filterCategories, orderBy])
+  }, [filterCategories, orderBy, templates])
+
+  // useEffect(() => {
+  //   setFilterProjects(templates)
+
+  //   console.log(templates)
+  // })
+  useEffect(() => {
+    // Extrai categorias únicas dos projetos
+    const uniqueCategories = Array.from(
+      new Set(templates.flatMap((template) => template.types))
+    )
+    setCategories(uniqueCategories)
+  }, [templates])
 
   return (
     <div>
       <div className="container mx-auto px-4 py-6 sm:py-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-            <Select
-              defaultValue="all"
-              onValueChange={(e) => handleChangeCategories(e)}
-            >
+            <Select defaultValue="all" onValueChange={handleChangeCategories}>
               <SelectTrigger className="w-full border-gray-800 bg-[#18181B] text-gray-300 sm:w-[180px]">
                 <SelectValue placeholder="Categoria" />
               </SelectTrigger>
@@ -121,15 +128,15 @@ export default function PortfolioGrid() {
                 <SelectItem value="all" className="text-gray-300">
                   Todas Categorias
                 </SelectItem>
-                <SelectItem value="personal" className="text-gray-300">
-                  Personal
-                </SelectItem>
-                <SelectItem value="agency" className="text-gray-300">
-                  Agency
-                </SelectItem>
-                <SelectItem value="corporate" className="text-gray-300">
-                  Corporate
-                </SelectItem>
+                {categories.map((category) => (
+                  <SelectItem
+                    key={category}
+                    value={category}
+                    className="text-gray-300"
+                  >
+                    {category}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
