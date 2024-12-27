@@ -1,7 +1,11 @@
 import { api } from './api-client'
 
+export interface GetTemplateRequest {
+  templateSlug: string
+}
+
 export interface GetTemplateResponse {
-  templates: {
+  template: {
     id: string
     name: string
     slug: string
@@ -10,16 +14,20 @@ export interface GetTemplateResponse {
     urlGithub: string
     likes: number
     urlDemo: string
-    description: string
     types: string[]
     techs: string[]
+    description: string
     createdAt: string
     updatedAt: string
-  }[]
+  }
 }
 
-export async function getTemplates() {
-  const result = await api.get('templates').json<GetTemplateResponse>()
+export async function getTemplate({
+  templateSlug,
+}: GetTemplateRequest): Promise<GetTemplateResponse> {
+  const result = await api
+    .get(`templates/${templateSlug}`)
+    .json<GetTemplateResponse>()
 
   return result
 }

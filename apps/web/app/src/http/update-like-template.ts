@@ -21,6 +21,5 @@ export async function updateLikeTemplate({
     })
     .json<UpdateLikeTemplateResponse>()
 
-  console.log(result)
   return result
 }

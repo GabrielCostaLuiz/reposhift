@@ -11,6 +11,8 @@ export interface GetTemplateFavoriteResponse {
     likes: number
     urlDemo: string
     types: string[]
+    techs: string[]
+    description: string
     createdAt: string
     updatedAt: string
   }[]

@@ -1,12 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  FaFolderOpen,
-  FaHeart,
-  FaRegFolderOpen,
-  FaRegHeart,
-} from 'react-icons/fa'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { PiHouseBold, PiHouseFill } from 'react-icons/pi'
 
 import FormSignOutGithub from '@/components/form-sign-out'
@@ -29,12 +24,12 @@ const itemsNavBar = [
     icon: <PiHouseBold size={24} />,
     iconCurrentLink: <PiHouseFill size={24} />,
   },
-  {
-    name: 'Portfólios',
-    href: '/portfolios',
-    icon: <FaRegFolderOpen size={24} />,
-    iconCurrentLink: <FaFolderOpen size={24} />,
-  },
+  // {
+  //   name: 'Portfólios',
+  //   href: '/portfolios',
+  //   icon: <FaRegFolderOpen size={24} />,
+  //   iconCurrentLink: <FaFolderOpen size={24} />,
+  // },
   {
     name: 'Favoritos',
     href: '/favoritos',
@@ -49,7 +44,6 @@ export default function NavBar() {
 
   return (
     <div className="flex h-16 flex-row items-center justify-between p-3 md:h-full md:flex-col md:p-5">
-      {/* Navigation Links */}
       <nav className="flex-1">
         <ul className="flex flex-row items-center justify-center gap-8 md:flex-col md:gap-4">
           {itemsNavBar.map((item) => {
@@ -76,7 +70,6 @@ export default function NavBar() {
         </ul>
       </nav>
 
-      {/* User Menu */}
       <div className="relative">
         <DropdownMenu>
           <DropdownMenuTrigger>

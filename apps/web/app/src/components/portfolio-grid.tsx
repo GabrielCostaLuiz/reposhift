@@ -24,6 +24,8 @@ export interface Template {
   likes: number
   urlDemo: string
   types: string[]
+  techs: string[]
+  description: string
   createdAt: string
   updatedAt: string
 }
@@ -158,7 +160,6 @@ export default function PortfolioGrid() {
         </div>
       </div>
 
-      {/* Portfolio Grid */}
       <div className="container mx-auto px-4 py-6 sm:py-8">
         {loading ? (
           <div className="flex items-center justify-center">
