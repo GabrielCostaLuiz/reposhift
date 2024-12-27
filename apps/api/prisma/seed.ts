@@ -16,8 +16,6 @@ async function seed() {
       },
     })
 
-    console.log(`Usuário criado: ${user.name}`)
-
     // Criação de um token vinculado ao usuário
     const token = await prisma.token.create({
       data: {
@@ -29,8 +27,6 @@ async function seed() {
         },
       },
     })
-
-    console.log(`Token criado: ${token.type} para o usuário ${user.name}`)
 
     // Criação de uma conta vinculada ao usuário
     const account = await prisma.account.create({
@@ -44,8 +40,6 @@ async function seed() {
         },
       },
     })
-
-    console.log(`Conta criada: ${account.provider} para o usuário ${user.name}`)
   } catch (error) {
     console.error('Erro ao rodar o seed:', error)
   } finally {

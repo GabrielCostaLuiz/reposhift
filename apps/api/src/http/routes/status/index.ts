@@ -21,7 +21,6 @@ export async function getStatus(app: FastifyInstance) {
       const databaseOpenConnectionsResult: [{ count: number }] =
         await prisma.$queryRaw`SELECT COUNT(*)::int FROM pg_stat_database WHERE datname = ${databaseName};`
 
-      // console.log(databaseOpenConnectionsResult)
       const databaseOpenConnectionsValue =
         databaseOpenConnectionsResult[0].count
 

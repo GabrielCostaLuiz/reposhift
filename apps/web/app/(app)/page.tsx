@@ -9,7 +9,6 @@ import PortfolioGrid from '@/components/portfolio-grid'
 export default async function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section */}
       <HeroSection
         title="Modelos de Portfólio"
         description="Encontre a inspiração perfeita para o seu próximo portfólio"

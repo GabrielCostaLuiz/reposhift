@@ -20,6 +20,5 @@ export async function updateFavoriteTemplate({
     })
     .json<UpdateFavoriteTemplateResponse>()
 
-  console.log(result)
   return result
 }

@@ -8,6 +8,8 @@ export interface Template {
   urlGithub: string
   urlDemo: string
   types: string[]
+  techs: string[]
+  description: string
 }
 
 interface CreateTemplateRequest {

@@ -1,9 +1,3 @@
-import { Globe } from 'lucide-react'
-import { FaGithub } from 'react-icons/fa'
-import { TbShare2 } from 'react-icons/tb'
-
-import { Button } from './ui/button'
-
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-zinc-800 bg-zinc-900/50">
@@ -14,11 +8,11 @@ export default function Footer() {
               Sobre o Projeto
             </h4>
             <p className="text-sm text-gray-400">
-              Este projeto foi desenvolvido com foco em performance,
-              acessibilidade e design moderno. Contribuições são bem-vindas!
+              Este projeto foi desenvolvido com foco em ajudar devs a fazer seu
+              portfolio mais rapidamente. Contribuições são bem-vindas!
             </p>
           </div>
-          <div>
+          {/* <div>
             <h4 className="mb-4 text-lg font-semibold text-purple-400">
               Recursos
             </h4>
@@ -56,7 +50,7 @@ export default function Footer() {
                 <TbShare2 className="h-5 w-5" />
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-8 border-t border-zinc-800 pt-8 text-center text-sm text-gray-400">
           © 2024 Seu Portfolio. Todos os direitos reservados.

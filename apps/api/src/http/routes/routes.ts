@@ -3,6 +3,8 @@ import { getStatus } from './status'
 import { authenticateWithGithub, getProfile } from './auth'
 import {
   createTemplate,
+  deleteTemplate,
+  getTemplate,
   getTemplates,
   getTemplatesFavorite,
   updateFavorite,
@@ -18,4 +20,6 @@ export async function routes(app: FastifyInstance) {
   app.register(updateLike)
   app.register(getTemplatesFavorite)
   app.register(updateFavorite)
+  app.register(getTemplate)
+  app.register(deleteTemplate)
 }

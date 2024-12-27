@@ -23,6 +23,8 @@ export async function createTemplate(app: FastifyInstance) {
             urlGithub: z.string().url(),
             urlDemo: z.string().url(),
             types: z.array(z.string()),
+            techs: z.array(z.string()),
+            description: z.string(),
           }),
           response: {
             201: z.object({
@@ -34,7 +36,13 @@ export async function createTemplate(app: FastifyInstance) {
       async (request, reply) => {
         const userId = await request.getCurrentUserId()
 
-        if (userId !== '91f2592c-9963-490d-bfd4-ef8c76495c40') {
+        const user = await prisma.user.findFirst({
+          where: {
+            id: userId,
+          },
+        })
+
+        if (user?.email !== 'gabrielbragacostaluiz@gmail.com') {
           throw new Error('User not allowed to create a template.')
         }
 
@@ -46,6 +54,8 @@ export async function createTemplate(app: FastifyInstance) {
           urlGithub,
           urlDemo,
           types,
+          techs,
+          description,
         } = request.body
 
         const templateWithSameSlug = await prisma.templates.findFirst({
@@ -68,6 +78,8 @@ export async function createTemplate(app: FastifyInstance) {
             urlGithub,
             urlDemo,
             types,
+            description,
+            techs,
             likes: 0,
           },
         })

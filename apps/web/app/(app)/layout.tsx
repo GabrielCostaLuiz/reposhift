@@ -20,8 +20,6 @@ export default async function AppLayout({
 
   const { user } = await auth()
 
-  console.log(user)
-
   return (
     <Providers user={user}>
       <div className="min-h-screen">
@@ -30,7 +28,7 @@ export default async function AppLayout({
             <NavBar />
           </aside>
           <div className="md:pl-24">
-            <main className="w-full md:pb-0 ">{children}</main>
+            <main className="min-h-[80vh] w-full md:pb-0">{children}</main>
             <Toaster />
 
             <Footer />
