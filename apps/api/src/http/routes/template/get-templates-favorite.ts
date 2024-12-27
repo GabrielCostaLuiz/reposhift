@@ -27,6 +27,8 @@ export async function getTemplatesFavorite(app: FastifyInstance) {
                   urlGithub: z.string(),
                   urlDemo: z.string(),
                   types: z.array(z.string()),
+                  techs: z.array(z.string()),
+                  description: z.string(),
                   likes: z.number(),
                   createdAt: z.string(), // ISO format
                   updatedAt: z.string(), // ISO format
@@ -63,6 +65,8 @@ export async function getTemplatesFavorite(app: FastifyInstance) {
               urlDemo: true,
               types: true,
               likes: true,
+              techs: true,
+              description: true,
               createdAt: true,
               updatedAt: true,
             },

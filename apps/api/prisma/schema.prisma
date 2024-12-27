@@ -74,6 +74,8 @@ model Templates {
   urlDemo     String   @map("url_demo")
   likes       Int
   types       String[]
+  techs       String[]
+  description String
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")

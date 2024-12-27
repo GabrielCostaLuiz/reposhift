@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { FaFileDownload } from 'react-icons/fa'
 
 import ButtonFavorite from './buttonFavorite'
 import ButtonLike from './buttonLike'
@@ -19,24 +18,27 @@ export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
           alt={`imagem do portfolio ${portfolio.name}`}
           className="h-48 w-full object-cover transition-transform group-hover:scale-105 sm:h-56 md:h-64"
         />
-        <div className="absolute right-2 top-2 space-x-2  sm:right-4 sm:top-4">
-          <ButtonFavorite idPortfolio={portfolio.id} />
-          <ButtonLike likes={portfolio.likes} idPortfolio={portfolio.id} />
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className={`w-fit bg-black/50 p-2 text-purple-500 backdrop-blur-sm hover:bg-black/70`}
-          >
-            <FaFileDownload />
-            <span className="text-sm ">20</span>
-          </Button>
-        </div>
       </CardHeader>
       <CardContent className="p-4 sm:p-6">
-        <h3 className="mb-2 line-clamp-1 text-lg font-semibold capitalize text-white sm:text-xl">
-          {portfolio.name}
-        </h3>
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="mb-2 line-clamp-1 text-lg font-semibold capitalize text-white sm:text-xl">
+            {portfolio.name}
+          </h3>
+          <div className=" space-x-2">
+            <ButtonFavorite idPortfolio={portfolio.id} />
+            <ButtonLike likes={portfolio.likes} idPortfolio={portfolio.id} />
+
+            {/* <Button
+              variant="ghost"
+              size="icon"
+              className={`w-fit bg-black/50 p-2 text-purple-500 backdrop-blur-sm hover:bg-black/70`}
+            >
+              <FaFileDownload />
+              <span className="text-sm ">20</span>
+            </Button> */}
+          </div>
+        </div>
+
         <div className="flex items-center justify-between text-xs text-gray-400 sm:text-sm">
           <span className="line-clamp-1 capitalize">
             por {portfolio.reference}

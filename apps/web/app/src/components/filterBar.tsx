@@ -25,7 +25,6 @@ export function FilterBar({
     <div className="container mx-auto px-4 py-6">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-          {/* Category Filter */}
           <Select defaultValue="all" onValueChange={onCategoryChange}>
             <SelectTrigger className="w-full border-gray-800 bg-[#18181B] text-gray-300 sm:w-[180px]">
               <SelectValue placeholder="Categoria" />
@@ -46,7 +45,6 @@ export function FilterBar({
             </SelectContent>
           </Select>
 
-          {/* Sort Order */}
           <Select defaultValue="recent" onValueChange={onSortChange}>
             <SelectTrigger className="w-full border-gray-800 bg-[#18181B] text-gray-300 sm:w-[180px]">
               <SelectValue placeholder="Ordenar por" />
@@ -68,7 +66,6 @@ export function FilterBar({
           </Select>
         </div>
 
-        {/* Results Counter */}
         <div className="w-full sm:w-auto">
           <Badge
             variant="secondary"
