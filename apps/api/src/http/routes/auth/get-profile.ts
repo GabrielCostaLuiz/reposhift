@@ -72,7 +72,7 @@ export async function getProfile(app: FastifyInstance) {
           throw new BadRequestError('User not found.')
         }
 
-        if (user.id === '91f2592c-9963-490d-bfd4-ef8c76495c40') {
+        if (user.email === 'gabrielbragacostaluiz@gmail.com') {
           return reply.send({
             user: {
               ...user,
