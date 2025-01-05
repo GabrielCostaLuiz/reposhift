@@ -27,26 +27,26 @@ const itemsNavBar = [
   {
     name: 'Home',
     href: '/',
-    icon: <PiHouseBold size={24} />,
-    iconCurrentLink: <PiHouseFill size={24} />,
+    icon: <PiHouseBold size={20} />,
+    iconCurrentLink: <PiHouseFill size={20} />,
   },
   {
     name: 'Favoritos',
     href: '/favoritos',
-    icon: <FaRegHeart size={24} />,
-    iconCurrentLink: <FaHeart size={24} />,
+    icon: <FaRegHeart size={18} />,
+    iconCurrentLink: <FaHeart size={18} />,
   },
   {
     name: 'Jornada',
     href: '/jornada',
-    icon: <IoRocketOutline size={24} />,
-    iconCurrentLink: <IoRocket size={24} />,
+    icon: <IoRocketOutline size={20} />,
+    iconCurrentLink: <IoRocket size={20} />,
   },
   {
     name: 'Status',
     href: '/status',
-    icon: <MdSignalWifiStatusbar3Bar size={24} />,
-    iconCurrentLink: <MdSignalWifiStatusbar4Bar size={24} />,
+    icon: <MdSignalWifiStatusbar3Bar size={20} />,
+    iconCurrentLink: <MdSignalWifiStatusbar4Bar size={20} />,
   },
 ]
 
@@ -56,16 +56,16 @@ export default function NavBar() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 shadow-lg md:sticky md:top-0 md:h-screen md:w-20 lg:w-24">
-      <div className="flex h-16 flex-row items-center justify-between p-3 md:h-full md:flex-col md:p-4">
+      <div className="flex h-14 flex-row items-center justify-between p-2 md:h-full md:flex-col md:p-3">
         <nav className="flex-1 w-full">
-          <ul className="flex flex-row items-center justify-around gap-2 md:flex-col md:gap-6">
+          <ul className="flex flex-row items-center justify-around gap-1 md:flex-col md:gap-4">
             {itemsNavBar.map((item) => {
               const currentLink = pathName === item.href
               return (
                 <li
                   key={item.name}
                   className={`
-                    group relative flex w-16 flex-col items-center rounded-xl p-2 transition-all
+                    group relative flex w-14 flex-col items-center rounded-xl p-1.5 transition-all
                     ${currentLink ? 'bg-purple-500/20 text-purple-400' : 'text-gray-400 hover:text-purple-400'}
                     md:w-full
                   `}
@@ -74,12 +74,9 @@ export default function NavBar() {
                     <span className="text-current transition-colors">
                       {currentLink ? item.iconCurrentLink : item.icon}
                     </span>
-                    <span className="mt-1 text-xs text-current transition-colors md:text-sm">
+                    <span className="mt-0.5 text-[10px] text-current transition-colors md:text-xs">
                       {item.name}
                     </span>
-                    {currentLink && (
-                      <span className="absolute -left-1 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-purple-500 md:left-0 md:top-0 md:h-full md:w-1 md:translate-y-0" />
-                    )}
                   </Link>
                 </li>
               )
@@ -90,7 +87,7 @@ export default function NavBar() {
         <div className="relative md:mt-auto">
           <DropdownMenu>
             <DropdownMenuTrigger className="outline-none">
-              <Avatar className="h-8 w-8 ring-2 ring-purple-500 ring-offset-2 ring-offset-zinc-950 transition-all hover:ring-purple-400 md:h-10 md:w-10">
+              <Avatar className="h-7 w-7 md:h-8 md:w-8">
                 <AvatarImage
                   src={user?.avatarUrl || '/default-avatar.png'}
                   alt={user?.name || 'Avatar'}
