@@ -1,4 +1,4 @@
-import { Calendar, Globe, Heart, Tag } from 'lucide-react'
+import { Calendar, Globe, Heart, Tag, Terminal } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -36,16 +36,15 @@ export default async function Portfolios({ params }: { params: Params }) {
   const { template } = await getPortfolio(slug)
 
   const dateUpdated = new Date(template.createdAt).toLocaleDateString()
-
   const date = new Date().toISOString()
 
   return (
-    <div className="flex  flex-col bg-zinc-950 text-gray-100">
+    <div className="flex flex-col bg-zinc-950 text-gray-100">
       <div className="">
         <div className="container mx-auto px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
           <BackButton />
 
-          <div className="grid items-center gap-8  lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
             <div className="relative">
               <Image
                 src={template.imgTemplate ?? '/PMEU.jpg'}
@@ -173,8 +172,8 @@ export default async function Portfolios({ params }: { params: Params }) {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <Card className="border-zinc-800 bg-zinc-900">
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="h-fit border-zinc-800 bg-zinc-900">
               <CardContent className="p-6">
                 <h3 className="mb-4 text-lg font-semibold text-purple-400">
                   Descrição
@@ -183,7 +182,7 @@ export default async function Portfolios({ params }: { params: Params }) {
               </CardContent>
             </Card>
 
-            <Card className="border-zinc-800 bg-zinc-900">
+            <Card className="h-fit border-zinc-800 bg-zinc-900">
               <CardContent className="p-6">
                 <h3 className="mb-4 text-lg font-semibold text-purple-400">
                   Tecnologias
@@ -202,22 +201,69 @@ export default async function Portfolios({ params }: { params: Params }) {
               </CardContent>
             </Card>
 
-            <Card className="border-zinc-800 bg-zinc-900">
+            <Card className="h-fit border-zinc-800 bg-zinc-900">
               <CardContent className="p-6">
                 <h3 className="mb-4 text-lg font-semibold text-purple-400">
                   Estatísticas
                 </h3>
                 <div className="space-y-4">
-                  {/* <div className="flex items-center gap-2">
-                    <Eye className="h-4 w-4 text-purple-400" />
-                    <span className="text-gray-300">1.2k visualizações</span>
-                  </div> */}
                   <div className="flex items-center gap-2">
                     <Heart className="h-4 w-4 text-purple-400" />
                     <span className="text-gray-300">
                       {template.likes} curtidas
                     </span>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="h-fit border-zinc-800 bg-zinc-900">
+              <CardContent className="p-6">
+                <h3 className="mb-4 text-lg font-semibold text-purple-400">
+                  <Terminal className="mr-2 inline-block h-5 w-5" />
+                  Guia de Instalação
+                </h3>
+                <div className="space-y-4 text-gray-300">
+                  <ol className="list-decimal space-y-2 pl-4">
+                    <li>Faça o download do template</li>
+                    <li>Descompacte o arquivo baixado</li>
+                    <li>Abra a pasta no terminal</li>
+                    <li>
+                      Execute um dos comandos:
+                      <div className="mt-2 space-y-2">
+                        <code className="block rounded bg-zinc-800 p-2">
+                          npm install
+                        </code>
+                        <code className="block rounded bg-zinc-800 p-2">
+                          pnpm install
+                        </code>
+                        <code className="block rounded bg-zinc-800 p-2">
+                          yarn install
+                        </code>
+                      </div>
+                    </li>
+                    <li>
+                      Para personalizar:
+                      <ul className="mt-2 list-disc pl-4">
+                        <li>
+                          Acesse a pasta{' '}
+                          <code className="rounded bg-zinc-800 px-1">
+                            utils
+                          </code>
+                        </li>
+                        <li>
+                          Abra o arquivo{' '}
+                          <code className="rounded bg-zinc-800 px-1">
+                            constants.js
+                          </code>
+                        </li>
+                        <li>
+                          Edite as informações de perfil e descrições conforme
+                          necessário
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
                 </div>
               </CardContent>
             </Card>
