@@ -1,10 +1,11 @@
-import { Calendar, ExternalLink, Globe, Heart, Tag } from 'lucide-react'
+import { Calendar, Globe, Heart, Tag } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 
 import BackButton from '@/components/backButton'
+import ButtonDownloadPortfolio from '@/components/button-download-portfolio'
 import ButtonFavorite from '@/components/buttonFavorite'
 import ButtonLike from '@/components/buttonLike'
 import { Badge } from '@/components/ui/badge'
@@ -130,13 +131,7 @@ export default async function Portfolios({ params }: { params: Params }) {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button
-                  variant="outline"
-                  className="flex items-center gap-2 border-0 bg-gradient-to-r from-purple-600 to-purple-800 text-white hover:from-purple-700 hover:to-purple-900"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Baixar Portfólio
-                </Button>
+                <ButtonDownloadPortfolio nameTemplate={template.slug} />
 
                 {/* <Button
                   variant="outline"

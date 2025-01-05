@@ -2,6 +2,8 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
+import AlertInitial from '@/components/divAlert'
+
 export const metadata: Metadata = {
   title: {
     default: 'Reposhift',
@@ -44,6 +46,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`min-h-screen bg-[#09090B] text-white antialiased`}>
+        <div>
+          <AlertInitial />
+        </div>
         {children}
       </body>
     </html>
