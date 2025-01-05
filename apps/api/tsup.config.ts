@@ -1,10 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: [
-    'src/**/*.{ts,js,tsx}', // Inclua todos os arquivos necessários
-    '!src/templates/**/*', // Exclua arquivos do diretório "templates"
-  ],
+  entry: ['src/**/*.{ts,js,tsx}', '!src/templates/**/*'],
   splitting: false,
   sourcemap: true,
   clean: true,

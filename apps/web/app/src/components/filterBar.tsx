@@ -1,4 +1,3 @@
-// components/FilterBar.tsx
 import { Badge } from './ui/badge'
 import {
   Select,

@@ -1,4 +1,3 @@
-// useStore.ts
 import { useEffect, useState } from 'react'
 
 const useStore = <T, F>(

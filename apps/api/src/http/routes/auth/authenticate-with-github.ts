@@ -82,12 +82,6 @@ export async function authenticateWithGithub(app: FastifyInstance) {
           html_url: z.string().url(),
           repos_url: z.string().url(),
         })
-        // .transform((data) => {
-        //   return {
-        //     ...data,
-        //     email: data.email?.toLowerCase(),
-        //   }
-        // })
         .parse(githubUserData)
 
       if (email === null) {

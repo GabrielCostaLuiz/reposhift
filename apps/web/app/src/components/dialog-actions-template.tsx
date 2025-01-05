@@ -115,11 +115,7 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="name">Nome</Label>
               <Input
                 id="name"
-                // value={formData.name}
                 {...register('name', { required: true })}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, name: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
               />
               {errors.name && (
@@ -131,7 +127,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="slug">Slug</Label>
               <Input
                 id="slug"
-                // value={formData.slug}
                 disabled
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('slug', { required: true })}
@@ -145,10 +140,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="urlGithub">URL do Github</Label>
               <Input
                 id="urlGithub"
-                // value={formData.urlGithub}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, urlGithub: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('urlGithub', { required: true })}
               />
@@ -161,10 +152,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="imgTemplate">Imagem Github</Label>
               <Input
                 id="imgTemplate"
-                // value={formData.imgTemplate}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, imgTemplate: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('imgTemplate', { required: true })}
               />
@@ -179,10 +166,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="urlDemo">URL do Demo</Label>
               <Input
                 id="urlDemo"
-                // value={formData.urlDemo}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, urlDemo: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('urlDemo', { required: true })}
               />
@@ -195,10 +178,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="reference">Referência</Label>
               <Input
                 id="reference"
-                // value={formData.reference}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, reference: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('reference', { required: true })}
               />
@@ -210,10 +189,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="types">Tipos (separados por vírgula)</Label>
               <Input
                 id="types"
-                // value={formData.types}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, types: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('types', { required: true })}
               />
@@ -225,10 +200,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="techs">Tecnologias (separados por vírgula)</Label>
               <Input
                 id="techs"
-                // value={formData.techs}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, techs: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('techs', { required: true })}
               />
@@ -241,10 +212,6 @@ export default function DialogActionsTemplate() {
               <Label htmlFor="description">Descrição</Label>
               <Textarea
                 id="description"
-                // value={formData.description}
-                // onChange={(e) =>
-                //   setFormData({ ...formData, description: e.target.value })
-                // }
                 className="border-gray-700 bg-zinc-900 text-white"
                 {...register('description', { required: true })}
               />
@@ -256,13 +223,6 @@ export default function DialogActionsTemplate() {
             </div>
           </div>
           <DialogFooter>
-            {/* <Button
-            variant="outline"
-            onClick={() => setIsCreateOpen(false)}
-            className="border-gray-700 text-gray-300 hover:border-gray-600"
-          >
-            Cancelar
-          </Button> */}
             <Button
               type="submit"
               className="mt-5 bg-purple-500 text-white hover:bg-purple-600"

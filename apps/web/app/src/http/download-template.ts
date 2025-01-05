@@ -28,7 +28,7 @@ export async function getTemplateZip({
           linkedin,
           apiGithub,
         }),
-        // json: true,
+
         headers: {
           'Content-Type': 'application/json',
         },

@@ -31,16 +31,6 @@ export async function generateMetadata({ params }: { params: Params }) {
   }
 }
 
-// export async function generateStaticParams() {
-//   const posts = await fetch('https://api.vercel.app/blog', {
-//     cache: 'force-cache',
-//   }).then((res) => res.json())
-
-//   return posts.map((post: Post) => ({
-//     id: String(post.id),
-//   }))
-// }
-
 export default async function Portfolios({ params }: { params: Params }) {
   const { slug } = await params
   const { template } = await getPortfolio(slug)

@@ -8,18 +8,15 @@ import { auth } from '@/http/middlewares/auth'
 import z from 'zod'
 
 const createUniqueFolderName = async (baseDir: string, name: string) => {
-  // Obtém a data no formato dd-mm-yyyy
   const timestamp = new Date()
   const day = String(timestamp.getDate()).padStart(2, '0')
   const month = String(timestamp.getMonth() + 1).padStart(2, '0')
   const year = timestamp.getFullYear()
   const formattedDate = `${day}-${month}-${year}`
 
-  // Gera o nome inicial da pasta
   let newFolderName = `template-${name}-${formattedDate}`
   let folderPath = path.join(baseDir, newFolderName)
 
-  // Verifica se a pasta já existe
   let counter = 1
   while (
     await fs
@@ -27,7 +24,6 @@ const createUniqueFolderName = async (baseDir: string, name: string) => {
       .then(() => true)
       .catch(() => false)
   ) {
-    // Se a pasta já existir, incrementa o contador e tenta novamente
     newFolderName = `template-${name}-${formattedDate}-${counter}`
     folderPath = path.join(baseDir, newFolderName)
     counter++

@@ -31,14 +31,6 @@ app.register(fastifySwagger, {
     info: {
       title: 'Reposhift Api',
       description: 'API da Reposhift',
-      // contact: {
-      //   name: 'Gabriel',
-      //   email: 'XXXXXXXXXXXXXXXXXXX',
-      // },
-      // license: {
-      //   name: 'MIT',
-      //   url: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-      // },
       version: '1.0.0',
     },
     components: {

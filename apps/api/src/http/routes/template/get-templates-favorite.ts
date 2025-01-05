@@ -30,8 +30,8 @@ export async function getTemplatesFavorite(app: FastifyInstance) {
                   techs: z.array(z.string()),
                   description: z.string(),
                   likes: z.number(),
-                  createdAt: z.string(), // ISO format
-                  updatedAt: z.string(), // ISO format
+                  createdAt: z.string(),
+                  updatedAt: z.string(),
                 })
               ),
             }),
@@ -43,15 +43,13 @@ export async function getTemplatesFavorite(app: FastifyInstance) {
       },
       async (request, reply) => {
         try {
-          // Obtém o ID do usuário atual do middleware
           const userId = await request.getCurrentUserId()
 
-          // Busca os templates curtidos pelo usuário
           const templates = await prisma.templates.findMany({
             where: {
               favoriteBy: {
                 some: {
-                  id: userId, // Relacionamento com o usuário
+                  id: userId,
                 },
               },
             },

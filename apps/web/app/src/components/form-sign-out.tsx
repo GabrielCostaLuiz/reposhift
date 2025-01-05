@@ -5,7 +5,6 @@ async function signOutGitHub() {
     const response = await fetch('/api/auth/sign-out')
 
     if (response.ok) {
-      // Redirecionar para a página de autenticação
       window.location.href = '/auth'
     } else {
       console.error('Erro ao deslogar:', response.statusText)

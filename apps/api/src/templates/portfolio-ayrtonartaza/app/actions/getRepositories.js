@@ -58,7 +58,6 @@ export async function getRepos() {
   } catch (error) {
     console.error('Erro ao buscar dados dos repositórios:', error)
 
-    // Check if the error message contains rate limit exceeded
     if (error.message.includes('rate limit exceeded')) {
       return {
         error:
