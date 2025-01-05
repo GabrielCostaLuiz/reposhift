@@ -11,47 +11,42 @@ import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 
 export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
   return (
-    <Card className="group overflow-hidden border-gray-800 bg-[#18181B]">
+    <Card className="group flex h-full flex-col overflow-hidden border-gray-800 bg-zinc-900 transition-colors hover:bg-zinc-900/80">
       <CardHeader className="relative p-0">
         <img
           src={portfolio.imgTemplate}
           alt={`imagem do portfolio ${portfolio.name}`}
-          className="h-48 w-full object-cover transition-transform group-hover:scale-105 sm:h-56 md:h-64"
+          className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </CardHeader>
-      <CardContent className="p-4 sm:p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="mb-2 line-clamp-1 text-lg font-semibold capitalize text-white sm:text-xl">
+
+      <CardContent className="flex-1 space-y-4 p-4">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="line-clamp-1 text-base font-semibold capitalize text-gray-100 sm:text-lg">
             {portfolio.name}
           </h3>
-          <div className=" space-x-2">
+          <div className="flex shrink-0 gap-1.5">
             <ButtonFavorite idPortfolio={portfolio.id} />
             <ButtonLike likes={portfolio.likes} idPortfolio={portfolio.id} />
-
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              className={`w-fit bg-black/50 p-2 text-purple-500 backdrop-blur-sm hover:bg-black/70`}
-            >
-              <FaFileDownload />
-              <span className="text-sm ">20</span>
-            </Button> */}
           </div>
         </div>
 
-        <div className="flex items-center justify-between text-xs text-gray-400 sm:text-sm">
+        <div className="flex flex-col gap-2 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
           <span className="line-clamp-1 capitalize">
             por {portfolio.reference}
           </span>
-          <span>{new Date(portfolio.createdAt).toLocaleDateString()}</span>
+          <span className="shrink-0">
+            {new Date(portfolio.createdAt).toLocaleDateString()}
+          </span>
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col items-stretch justify-between gap-3 p-4 pt-0 sm:flex-row sm:items-center sm:gap-0 sm:p-6">
-        <div className="space-x-2">
+
+      <CardFooter className="flex flex-col gap-4 p-4 pt-0">
+        <div className="flex flex-wrap gap-1.5">
           {portfolio.types.map((type) => (
             <Badge
               key={type}
-              className="bg-purple-500/10 text-center capitalize text-purple-400 hover:bg-purple-500/20 sm:text-left"
+              className="bg-purple-500/10 px-2 py-0.5 text-xs capitalize text-purple-400 transition-colors hover:bg-purple-500/20"
             >
               {type}
             </Badge>
@@ -61,7 +56,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Template }) {
         <Button
           asChild
           variant="outline"
-          className="w-full border-gray-700 text-gray-300 hover:border-purple-500 hover:bg-purple-500/10 hover:text-purple-400 sm:w-auto"
+          className="w-full border-gray-700 text-sm text-gray-300 transition-colors hover:border-purple-500 hover:bg-purple-500/10 hover:text-purple-400"
         >
           <Link href={`/portfolios/${portfolio.slug}`}>Ver Detalhes</Link>
         </Button>
