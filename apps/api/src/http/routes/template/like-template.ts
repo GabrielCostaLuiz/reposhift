@@ -47,7 +47,6 @@ export async function updateLike(app: FastifyInstance) {
         )
 
         if (userAlreadyLiked) {
-          // Remove o like
           await prisma.templates.update({
             where: { id: templateId },
             data: {

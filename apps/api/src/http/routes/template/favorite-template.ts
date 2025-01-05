@@ -46,7 +46,6 @@ export async function updateFavorite(app: FastifyInstance) {
         )
 
         if (userAlreadyFavorited) {
-          // Remove o favorite
           await prisma.templates.update({
             where: { id: templateId },
             data: {

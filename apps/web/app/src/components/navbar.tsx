@@ -24,12 +24,7 @@ const itemsNavBar = [
     icon: <PiHouseBold size={24} />,
     iconCurrentLink: <PiHouseFill size={24} />,
   },
-  // {
-  //   name: 'Portfólios',
-  //   href: '/portfolios',
-  //   icon: <FaRegFolderOpen size={24} />,
-  //   iconCurrentLink: <FaFolderOpen size={24} />,
-  // },
+
   {
     name: 'Favoritos',
     href: '/favoritos',

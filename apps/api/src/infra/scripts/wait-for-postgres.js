@@ -11,7 +11,7 @@ function checkPostgres() {
     if (error) {
       console.error('Error:', stderr || error.message)
       process.stdout.write('.')
-      setTimeout(checkPostgres, 2000) // Rechecar após 2 segundos
+      setTimeout(checkPostgres, 2000)
       return
     }
 

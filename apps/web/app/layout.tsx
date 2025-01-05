@@ -29,13 +29,6 @@ export const metadata: Metadata = {
     locale: 'pt-BR',
     type: 'website',
   },
-
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   title: 'Reposhift',
-  //   description: 'Geração de portfolios automatizados',
-  //   images: ['XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'],
-  // },
 }
 
 export default function RootLayout({

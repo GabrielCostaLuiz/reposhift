@@ -35,13 +35,13 @@ const getAllTemplatesFavorite = async () => {
   const response = await getTemplateFavorite()
   const templates: TemplateApiResponse[] = response.templates
 
-  // Ordenar os templates por likes (descendente)
+
   templates.sort((a, b) => b.likes - a.likes)
 
   return templates
 }
 
-// State types
+
 interface States {
   templates: TemplateApiResponse[]
   templatesFavorites: string[]
@@ -59,7 +59,7 @@ interface Actions {
 
 type Store = States & Actions
 
-// useTemplatesStore
+
 export const useTemplatesStore = create<Store>()(
   persist(
     (set) => ({
@@ -111,8 +111,4 @@ export const useTemplatesStore = create<Store>()(
     }
   )
 )
-// Função para inicializar os templates ao carregar a aplicação
-// export const initializeTemplates = async () => {
-//   const templates = await getAllTemplates()
-//   useTemplatesStore.getState().setTemplates(templates)
-// }
+

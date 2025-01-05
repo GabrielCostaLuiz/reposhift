@@ -4,14 +4,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "esModuleInterop": true,
-    "target": "ESNext", // Alvo de compilação moderno
+    "target": "ESNext",
     "paths": {
       "@/*": ["./src/*"]
     }
-    // "module": "ESNext",
-    // "moduleResolution": "Node",
-    // "skipLibCheck": true,
-    // "allowJs": true,
-    // "noEmit": true
   }
 }

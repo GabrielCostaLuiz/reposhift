@@ -1,4 +1,5 @@
 'use client'
+import { env } from '@saas/env'
 import React from 'react'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa'
@@ -68,11 +69,14 @@ async function fetcher(key: string) {
 }
 
 const BackendStatusPage = () => {
+  const url = env.NEXT_PUBLIC_API_URL
   const { data, error, isLoading } = useSWR(
-    'http://localhost:3333/status',
+    // 'http://localhost:3333/status',
+    `${url}/status`,
+
     fetcher,
     {
-      refreshInterval: 10000, // 10 segundos
+      refreshInterval: 10000,
     },
   )
 
