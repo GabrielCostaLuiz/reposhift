@@ -98,7 +98,7 @@ const BackendStatusPage = () => {
   }).format(new Date())
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-gray-900 px-4 py-12">
       <div className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-xl">
         {!isLoading && error && (
           <div className="mb-4 flex items-center space-x-3 border-l-4 border-yellow-500 bg-yellow-100 p-4">
