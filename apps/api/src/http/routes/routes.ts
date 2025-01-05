@@ -4,6 +4,7 @@ import { authenticateWithGithub, getProfile } from './auth'
 import {
   createTemplate,
   deleteTemplate,
+  downloadTemplate,
   getTemplate,
   getTemplates,
   getTemplatesFavorite,
@@ -22,4 +23,5 @@ export async function routes(app: FastifyInstance) {
   app.register(updateFavorite)
   app.register(getTemplate)
   app.register(deleteTemplate)
+  app.register(downloadTemplate)
 }

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #5222d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  color: var(--background);
+  background: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section h2 {
+  margin-bottom: 2rem;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-size: 1.6rem;
+}
+
+.buttonPurple {
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+  text-transform: capitalize;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+}
+
+p {
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+.iconFooter {
+  color: #dbffff;
+}

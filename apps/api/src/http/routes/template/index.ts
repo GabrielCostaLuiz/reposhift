@@ -5,6 +5,7 @@ import { updateFavorite } from './favorite-template'
 import { getTemplatesFavorite } from './get-templates-favorite'
 import { getTemplate } from './get-template'
 import { deleteTemplate } from './delete-template'
+import { downloadTemplate } from './download-template'
 
 export {
   createTemplate,
@@ -14,4 +15,5 @@ export {
   updateFavorite,
   getTemplate,
   deleteTemplate,
+  downloadTemplate,
 }
