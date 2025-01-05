@@ -14,8 +14,7 @@
       "dependsOn": ["^check-types"]
     },
     "test": {
-      "cache": false, 
-      "inputs": [".env*"]
+      "cache": false
     },
     "dev": {
       "cache": false,

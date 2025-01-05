@@ -45,6 +45,7 @@ Então, bem-vindo(a) ao **REPOSHIFT**. Espero que você aproveite acompanhar ess
 
 Vamos lá? 🚀
 
+
 ---
 
 ### Um adendo
@@ -205,7 +206,7 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 
   Se a página não retornar "ONLINE" ou apresentar outro erro, pode ser que o serviço tenha sido inativado devido à inatividade dos servidores gratuitos que estamos utilizando. Aqui estão algumas ações que o **usuário** pode tomar para resolver a situação:
 
-  ### O que fazer se o sistema não estiver "ONLINE":
+  ### O que fazer se o sistema não estiver "ONLINE": 
 
   1. **Tente novamente mais tarde**:  
      Caso o serviço tenha sido inativado por inatividade no **Render** (plano gratuito), pode ser que o servidor esteja temporariamente inativo. Tente acessar a página novamente após alguns minutos.
@@ -233,3 +234,472 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 Apesar de eu ter planejado avançar mais no projeto, os problemas com a hospedagem tomaram mais tempo do que eu esperava. Como meu tempo de programação diária é limitado, entre 3 e 4 horas, esses contratempos atrasaram o progresso, mas, ao mesmo tempo, me proporcionaram muito aprendizado.
 
 Agora, tudo está funcionando, e o sistema está mais estável para os próximos passos. A experiência foi valiosa, e o importante é que tudo finalmente está funcionando conforme esperado. Vamos em frente! 💪
+Um adendo: Alem do curso da rocketseat eu comprei a do curso.dev e o Filipe Deschamps é outro professor excepcional, sempre pulava os videos dele por ser videos mais tecnicos e de nivel mais pleno/senior, antes eu queria somente fazer minhas Pokedex e não pensar nas partes mais dificeis da programação, pois escrever um codigo todo mundo sabe, mas e a parte mais densa de (coloque aqui uma palavra ou frase em realação ao que estou querendo dizer gpt), de ser realmente um Dev competente com foco muito grande na parte tecnica, então eu sempre estarei comentando ele, pois estou construindo esse SaaS através do curso.dev, que vejo como um curso muito mas muito valioso para qualquer tipo de Dev, pois ele traz uma didatica incrivel e ensinamentos valiosos para o crescimento com o Dev. Então esse foi mais um dos passos que eu dei para me tornar um Dev melhor que sou hoje.
+Sempre irei iniciar falando o que aprendi assistindo os videos dele que normalmente assisto na ida e volta do trabalho e depois o que implementei no projeto
+Tentarei trazer atualizações diarias, porem as vezes possa ser que eu não traga, porem o cronograma continuara na sequencia do dia anterior.
+
+### Um adendo
+
+Além do curso da Rocketseat, comprei também o curso.dev, e o Filipe Deschamps é outro professor excepcional. Sempre pulava os vídeos dele por serem mais técnicos e de nível mais pleno/sênior. Antes, eu queria apenas fazer minhas Pokedex e não pensar nas partes mais difíceis da programação. Pois, escrever um código todo mundo sabe, mas e a parte mais densa da programação, de se tornar realmente um desenvolvedor competente com um foco muito grande na parte técnica? Então, comecei a acompanhar as aulas dele e sempre comento o que aprendi e como implementei isso no projeto.
+
+Estou construindo este SaaS com base no conteúdo do curso.dev, que considero extremamente valioso para qualquer desenvolvedor. Ele traz uma didática incrível e ensinamentos essenciais para o crescimento como dev.
+
+Sempre que aprender algo novo nas aulas do Filipe, vou compartilhar aqui o que implementei no projeto.
+
+---
+
+### Atualizações Diárias
+
+Tentarei trazer atualizações diárias, mas pode ser que, em alguns dias, eu não consiga. No entanto, o cronograma seguirá a sequência do dia anterior.
+
+---
+
+
+## **Dia 1 - Introdução ao Projeto**
+
+
+### Introdução
+
+Primeiro dia de programação do meu **SaaS**. Estava realmente animado, até porque no dia anterior (que na verdade era o mesmo dia de hoje 😂) eu fui dormir às 3h da manhã, sabendo que tinha que acordar às 6h. Estava procurando nomes, conversando com o **GPT** para alinhar algumas ideias, escolhendo cores e outras coisas que sempre imaginamos quando queremos começar um projeto, né? 😅
+
+No entanto, decidi dar um passo de cada vez para não me sobrecarregar e acabar me desmotivando com a grande demanda. A ideia era **não me frustrar por não conseguir concluir metade das tarefas no primeiro dia e desistir**.
+
+### Aprendizado do Dia 1
+
+Logo cedo, indo para o trabalho, fui assistindo as aulas do **Filipe Deschamps**. E à tarde, voltando do trabalho, também continuei assistindo as aulas. As aulas de hoje foram mais tranquilas, pois já tinha conhecimento sobre **Git**, **GitHub** e **deploy na Vercel**. Uma das novidades foi aprender sobre **Issues** e **Milestones** no GitHub.
+
+
+Comecei criando o repositorio RepoShift e criei algumas Issues e Milestones, logo em seguida fui concluindo algumas delas, a primeira Milestones foi a de "Em Construção" e vinculei algumas Issues a ela para conclui-las.
+Criei o projeto com TurboRepo, utilizei as configurações que aprendi no video da RocketSeat que tive a ideia desse SaaS e subi o projeto para o GitHub
+
+=======
+### Atividades no Projeto - Dia 1
+
+- **Criação do Repositório e Organização**:  
+  Criei o repositório **RepoShift** e configurei algumas **Issues** e **Milestones**. A primeira Milestone foi a de `"Em Construção"` e vinculei algumas Issues a ela para organizá-las.
+
+- **Configuração do Projeto**:  
+  Configurei o projeto usando **TurboRepo**, aplicando as configurações que aprendi no vídeo da **RocketSeat**.
+
+- **Criação do Projeto Base com Next.js**:  
+  Criei o projeto base utilizando **Next.js**, que será a fundação do meu SaaS.
+
+- **Hospedagem na Vercel**:  
+  Hospedei o projeto na **Vercel**, o que já me permitiu ter o ambiente de desenvolvimento pronto e acessível online.
+
+- **Conclusão das Issues da Milestone 0**:  
+  Finalizei as Issues relacionadas à criação do repositório, modelagem das configurações do **TurboRepo** e criação da página `"Em Construção"`, todas pertencentes à Milestone 0.
+
+- **Pesquisa e Escolha do Logo**:  
+  Realizei uma pesquisa em alguns logos e escolhi um **logo provisório** para o **RepoShift**.
+
+- **Compra do Domínio**:  
+  Comprei o domínio **reposhift.com.br** e atualizei as configurações na **Vercel** para apontar para o domínio adquirido.
+
+---
+
+## **Dia 2 - Conexão Backend e Frontend**
+
+### Avanços no Projeto - Dia 2
+
+- **Finalização da Compra do Domínio e Implementação na Vercel**:  
+  **reposhift.com.br no ar** 😀 Hoje finalizei a implementação do domínio na **Vercel**, configurando o **DNS** no **registro.br**.
+
+- **Adição da Milestone 01: Fundação e Milestone 1.1: Fundação Web**:  
+  Criei mais duas **Milestones** no repositório do **GitHub** e adicionei e finalizei algumas Issues da Milestone 01.
+
+- **Criação da Primeira API do Frontend e Rota do Backend**:  
+  Criei uma rota no backend para utilizar a **API criada no frontend**, com o intuito de testar a conexão do backend com o frontend. Realizei o acesso à URL `localhost:port/api/v1/status` só para testar o status da conexão.
+
+- **Primeiro Teste do Sistema**:  
+  No backend, fiz a adição do **primeiro teste**, que verificava se a conexão da API estava funcionando corretamente, retornando os dados esperados.
+
+- **Criação do Banco de Dados Local**:  
+  Subi o **Docker** localmente na minha máquina, fiz a adição do `docker-compose.yml` e executei o comando para subir um container da imagem do **PostgreSQL**, que será o banco de dados usado na aplicação.
+
+### Considerações do Dia 2
+
+Hoje irei mudar um pouco o meu computador, instalando o **Linux** nele. Apesar disso, vou manter um dual boot, né? Vamos ver se vou voltar feliz ou triste por ter feito alguma **merda no computador kkkk**, mas enfim, por hoje foi isso.
+
+---
+
+## **Dia 3 - Configuração do Prisma e Testes**
+
+### Introdução ao Dia 3
+
+Hoje foi um dia de grandes avanços no meu projeto, agora programando diretamente no meu **Linux**, e felizmente tudo deu certo com a instalação! 🐧 Além disso, aprendi bastante sobre testes e configurações no backend, o que deixou o sistema mais robusto e organizado.
+
+### Aprendizado do Dia 3
+
+Dediquei boa parte do meu tempo a aprender e configurar o **Prisma** no projeto. Já tinha ouvido falar bastante sobre ele, mas agora foi a hora de colocar em prática. Além disso, explorei o uso do **Fastify Swagger** para documentar a API de forma automatizada e compreendi como estruturar as **variáveis de ambiente** para melhorar a manutenção do código. O dia também foi de bastante prática com testes e integração entre os serviços do projeto.
+
+### Atividades no Projeto - Dia 3
+
+- **Integração do Prisma no Projeto**:  
+  Adicionei o **Prisma** ao backend e configurei o banco de dados para trabalhar com o **PostgreSQL** no container Docker. Também criei uma **seed** para popular dados iniciais no banco, o que facilita testes e desenvolvimento inicial.
+
+- **Configuração de Variáveis de Ambiente**:  
+  Centralizei todas as configurações sensíveis no arquivo `.env`, como credenciais do banco de dados e configurações do servidor. Além disso, ajustei o arquivo `docker-compose.yml` para utilizar essas variáveis de ambiente, deixando o setup mais organizado e seguro.
+
+- **Criação de Testes**:  
+  Desenvolvi **testes básicos** para verificar a conexão do backend com o banco de dados e a integração com o frontend.
+
+  - **Teste 1**: Verificava a conexão do backend com o banco.
+  - **Teste 2**: Validava o retorno da rota `/status` do frontend, que por sua vez fazia uma chamada ao backend e verificava a resposta.
+
+- **Página de Status do Sistema**:  
+  Criei uma **página de status** no frontend para monitorar o funcionamento das APIs e a conexão com o banco de dados. Isso vai ser útil para acompanhar a saúde do sistema durante o desenvolvimento e em produção.
+
+- **Documentação Automática da API**:  
+  Integrei o **Fastify Swagger** ao backend para gerar documentação gráfica automática das rotas da API. Agora é possível acessar `/docs` no servidor (quando o backend estiver hospedado) para visualizar e testar as rotas diretamente na interface.
+
+### Considerações do Dia 3
+
+Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado. 😊
+=======
+
+---
+
+## **Dia 5 - Criação do Banco de Dados de Teste e Preview na Vercel**
+
+### Introdução ao Dia 5
+
+Hoje foi um dia focado na criação do banco de dados de teste e no deploy de um **preview** da aplicação na **Vercel**. Foi ótimo ver o sistema rodando na Vercel pela primeira vez, mesmo que em um ambiente de teste. Além disso, aprendi bastante sobre como preparar o banco de dados para testes e a importância de um ambiente de staging.
+
+### Aprendizado do Dia 5
+
+O principal aprendizado de hoje foi sobre a criação e configuração de um banco de dados de teste, para garantir que o backend e o frontend pudessem ser validados de forma isolada antes de qualquer deploy de produção. Também, consegui configurar um **preview** na **Vercel**, o que me permitiu ver a aplicação rodando de forma mais próxima do ambiente de produção.
+
+### Atividades no Projeto - Dia 5
+
+- **Criação do Banco de Dados de Teste**:  
+  Criei um banco de dados separado para o ambiente de testes, garantindo que os dados não fossem misturados com os de produção. Esse banco de dados é usado exclusivamente para garantir que o sistema funcione corretamente sem afetar a integridade dos dados reais.
+
+- **Deploy na Vercel (Preview)**:  
+  Configurei um deploy de preview na **Vercel**, o que me permite testar a aplicação antes de fazer o deploy para produção. Isso é essencial para validar alterações sem afetar a aplicação ao vivo.
+
+- **Testes de Integração com o Banco de Dados de Teste**:  
+  Realizei testes para verificar se o sistema estava utilizando corretamente o banco de dados de teste. Isso envolveu criar e excluir dados temporários para garantir que o comportamento do sistema estava conforme o esperado.
+
+### Considerações do Dia 5
+
+O dia foi bastante produtivo e me permitiu testar o sistema de forma mais segura, sem comprometer os dados reais. Além disso, ver a aplicação rodando na Vercel, mesmo que em um ambiente de teste, foi uma grande conquista! Agora posso focar em preparar a versão de produção com mais confiança.
+
+---
+
+## **Dia 6 - Organização dos Scripts no `package.json` e Estabilização do `pnpm test` e `pnpm dev`**
+
+### Introdução ao Dia 6
+
+Hoje o foco foi na organização dos scripts no **`package.json`** para facilitar o gerenciamento de comandos como **`pnpm test`** e **`pnpm dev`**. Também investi tempo estabilizando o fluxo de desenvolvimento, garantindo que os testes rodassem corretamente e que o servidor fosse iniciado sem problemas.
+
+### Aprendizado do Dia 6
+
+A principal lição de hoje foi a importância de manter o **`package.json`** bem organizado, com scripts claros e úteis para facilitar o fluxo de trabalho, tanto para testes quanto para o desenvolvimento contínuo. Além disso, o processo de estabilização dos scripts me ajudou a resolver alguns problemas com a configuração do ambiente.
+
+### Atividades no Projeto - Dia 6
+
+- **Organização dos Scripts no `package.json`**:  
+  Organizei os scripts dentro do **`package.json`** para melhorar a manutenção e o fluxo de trabalho. Isso incluiu comandos para rodar os testes e iniciar o servidor de desenvolvimento com **`pnpm dev`**. A ideia foi garantir que o projeto fosse executado sem complicações.
+
+  - **Script `pnpm dev`**:  
+    Configurado para rodar o servidor de desenvolvimento e garantir que a aplicação esteja rodando no ambiente de desenvolvimento sem erros.
+
+  - **Script `pnpm test`**:  
+    Organizei os testes para serem rodados com o comando **`pnpm test`**, simplificando o processo de verificação do código durante o desenvolvimento. Isso também inclui a integração com o framework de testes utilizado no projeto.
+
+- **Estabilização do `pnpm test`**:  
+  Ajustei a configuração para que os testes fossem executados corretamente em todos os ambientes. Isso envolveu a instalação de dependências adicionais e ajustes nos arquivos de configuração.
+
+- **Estabilização do `pnpm dev`**:  
+  Resolvi problemas com a execução do servidor de desenvolvimento, corrigindo erros de configuração e garantindo que o ambiente fosse iniciado sem problemas.
+
+### Considerações do Dia 6
+
+Hoje foi um dia de ajustes finais para garantir que o fluxo de desenvolvimento fosse o mais tranquilo possível. Organizar os scripts no **`package.json`** e estabilizar os comandos foi um passo importante para tornar o projeto mais eficiente e fácil de manter. Agora, o ambiente de desenvolvimento está mais estável, e posso focar em avançar com o desenvolvimento das funcionalidades principais.
+
+---
+
+## **Dia 7 - Criação de Telas no Frontend, Padronização de Commits e Fluxo de Autenticação com GitHub Apps no Backend**
+
+### Introdução ao Dia 7
+
+Hoje foi um dia produtivo focado no desenvolvimento de funcionalidades essenciais tanto no frontend quanto no backend. No frontend, criei telas principais da aplicação, enquanto no backend implementei o fluxo de autenticação com **GitHub Apps**, permitindo login seguro e integrado. Também instalei o **Commitizen** para padronizar os commits no repositório.
+
+---
+
+### Aprendizado do Dia 7
+
+- **Frontend**:  
+  Desenvolvi interfaces organizadas e práticas para navegação do usuário.
+- **Backend**:  
+  Aprendi a integrar o fluxo de autenticação via **GitHub Apps**, usando OAuth para login.
+- **Controle de Versão**:  
+  A integração do **Commitizen** trouxe clareza e consistência ao histórico de commits.
+
+---
+
+### Atividades no Projeto - Dia 7
+
+#### **Frontend**
+
+1. **Tela de Login**:  
+   Desenvolvi a tela de login com integração ao fluxo de autenticação do **GitHub Apps**. O botão "Entrar com GitHub" redireciona o usuário para a página de autorização da API do GitHub.
+
+2. **Tela Home**:  
+   Criação da tela inicial da aplicação com informações relevantes para o usuário.
+
+3. **Tela de Portfólios**:  
+   Desenvolvi a tela de exibição e gerenciamento de portfólios, permitindo uma navegação prática.
+
+4. **Tela de Favoritos**:  
+   Tela para visualização e gerenciamento de itens favoritos, personalizada para o usuário.
+
+---
+
+#### **Backend - Fluxo de Autenticação com GitHub Apps**
+
+1. **Integração com GitHub Apps**:
+
+   - Configurei um aplicativo no GitHub Developer Apps para obter as **credenciais de cliente** (client_id e client_secret).
+   - O frontend redireciona o usuário para a página de autenticação do GitHub, onde ele concede acesso ao aplicativo.
+
+2. **Recepção do Código de Autorização**:
+
+   - Após a autenticação, o GitHub redireciona para o backend com um **código de autorização**.
+   - O backend troca esse código por um **access token** usando a API OAuth do GitHub.
+
+3. **Geração e Armazenamento do Token**:
+
+   - O token recebido do GitHub é usado para obter os dados básicos do usuário (nome, email, avatar, etc.).
+   - Um token JWT é gerado pelo backend para autenticação nas próximas requisições.
+   - O token JWT é armazenado em **cookies HTTP-only**, garantindo maior segurança contra ataques como XSS.
+
+4. **Validação do Token em Rotas Protegidas**:
+
+   - Um middleware verifica a validade do token JWT para todas as rotas protegidas.
+   - Caso o token seja inválido ou ausente, o usuário é redirecionado para a tela de login.
+
+5. **Logout**:
+   - Endpoint para limpar os cookies, removendo o token do cliente e encerrando a sessão do usuário.
+
+---
+
+#### **Padronização de Commits**
+
+1. **Instalação do Commitizen**:  
+   Adicionei o Commitizen ao repositório para padronizar mensagens de commit no formato **Conventional Commits**.
+
+2. **Verificação de Commits**:  
+   Configurei ferramentas como **Husky** e **Lint-Staged** para garantir que apenas commits válidos sejam aceitos.
+
+---
+
+### Considerações do Dia 7
+
+O dia de hoje foi um marco para o desenvolvimento do projeto. Concluí telas importantes no frontend e implementei o fluxo completo de autenticação com **GitHub Apps**, garantindo uma experiência de login segura e integrada. Além disso, a padronização dos commits trouxe mais organização e clareza ao histórico do repositório, melhorando a manutenção e colaboração no projeto.
+
+---
+
+## **Dia 8 - Tela de Administração, Ajustes na Home e Implementação de Templates**
+
+### Introdução ao Dia 8
+
+Hoje avancei no desenvolvimento da aplicação com foco na criação e gerenciamento de templates e na organização do fluxo administrativo. Concentrei-me em criar uma tela de administração restrita para usuários com permissões de administrador, além de realizar melhorias na home e nas rotas da API.
+
+---
+
+### Aprendizado do Dia 8
+
+- **Frontend**:  
+  Aprimorei o fluxo de gerenciamento de templates e conectei o frontend ao backend para buscar os dados do banco.
+- **Backend**:  
+  Configurei novas rotas para criar e buscar templates, além de preparar o backend para manipular os dados cadastrados.
+- **Organização**:  
+  Planejei melhorias futuras para edição e exclusão de templates, criando uma base sólida para adicionar funcionalidades posteriormente.
+
+---
+
+### Atividades no Projeto - Dia 8
+
+#### **Tela de Administração**
+
+1. **Acesso Restrito**:
+
+   - Criei uma tela exclusiva para administradores, com autenticação e validação para acesso seguro.
+   - Apenas usuários com permissão de administrador podem visualizar e utilizar essa tela.
+
+2. **Controle de Portfólios**:
+
+   - Adicionei funcionalidade para que o administrador possa adicionar novos portfólios ao projeto.
+   - A interface permite visualizar todos os portfólios cadastrados no sistema, facilitando o gerenciamento.
+
+3. **Botões de Edição e Exclusão**:
+   - Adicionei botões para edição e exclusão de portfólios, mas a implementação dessas funcionalidades será realizada futuramente.
+
+---
+
+#### **Ajustes na Home**
+
+1. **Exibição Dinâmica de Projetos**:
+   - Ajustei a home para buscar os projetos diretamente do banco de dados.
+   - Agora, a listagem de projetos é carregada dinamicamente, garantindo que as informações estejam sempre atualizadas.
+
+---
+
+#### **Criação e Visualização de Templates**
+
+1. **Fluxo de Adição**:
+
+   - Adicionei uma funcionalidade na tela de administração para criar novos templates e salvar no banco de dados.
+
+2. **Visualização de Templates**:
+
+   - Agora, consigo listar todos os templates já cadastrados no sistema na tela de administração.
+   - Essa funcionalidade facilita o controle e a organização dos templates existentes.
+
+3. **Rotas de API**:
+   - Configurei as rotas do backend para:
+     - **GET**: Buscar todos os templates cadastrados no banco.
+     - **POST**: Criar novos templates com as informações enviadas pelo frontend.
+
+---
+
+### Planejamento Futuro
+
+- Implementar as funcionalidades de edição e exclusão de templates, aproveitando os botões já adicionados à interface.
+- Aprimorar o design das telas para proporcionar uma melhor experiência ao usuário, especialmente na área administrativa.
+
+---
+
+### Considerações do Dia 8
+
+O dia de hoje foi focado em organizar o fluxo administrativo e estruturar o gerenciamento de portfólios e templates. A tela de administração trouxe um controle mais robusto, enquanto os ajustes na home conectaram a interface ao banco de dados, tornando o conteúdo dinâmico e atualizado. Com essas melhorias, o projeto está mais próximo de ser um produto funcional e escalável.
+
+---
+
+## **Dia 9 - Funcionalidades de Curtir e Salvar como Favorito**
+
+### Introdução ao Dia 9
+
+Hoje, implementei funcionalidades de curtir e salvar projetos como favoritos, permitindo que os usuários marquem os projetos que mais gostam. Além disso, criei a página de favoritos, onde é possível visualizar todos os projetos que o usuário marcou como favoritos. Esse avanço facilita a personalização da experiência do usuário na plataforma.
+
+---
+
+### Aprendizado do Dia 9
+
+- **Frontend**:
+
+  - Adicionei as opções de curtir e salvar como favorito diretamente na interface de visualização dos projetos.
+  - A página de favoritos foi criada para exibir os projetos que o usuário marcou como favoritos.
+
+- **Backend**:
+  - Criei rotas para gerenciar a adição e remoção de favoritos.
+  - Implementei o sistema de persistência de favoritos no banco de dados, associando os usuários aos projetos que escolheram como favoritos.
+
+---
+
+### Atividades no Projeto - Dia 9
+
+#### **Funcionalidade de Curtir e Salvar como Favorito**
+
+1. **Botões de Curtir e Salvar**:
+
+   - Adicionei botões de "curtir" e "salvar como favorito" na página de visualização dos projetos.
+   - O usuário pode clicar nesses botões para marcar projetos como seus favoritos.
+
+2. **Persistência no Banco de Dados**:
+   - Quando um projeto é marcado como favorito, o sistema armazena essa informação no banco de dados, associando o usuário ao projeto favorito.
+   - A funcionalidade também permite remover um projeto dos favoritos quando o usuário clicar novamente no botão de "favoritar".
+
+---
+
+#### **Página de Favoritos**
+
+1. **Exibição dos Favoritos**:
+
+   - Criei a página `/favoritos`, que lista todos os projetos que o usuário marcou como favoritos.
+   - A página é dinâmica e exibe os projetos salvos diretamente do banco de dados.
+
+2. **Interação do Usuário**:
+   - Quando o usuário acessa a página de favoritos, ele pode visualizar os projetos que escolheu marcar como favoritos e pode interagir com eles da mesma forma que na página principal (curtir, comentar, etc.).
+
+---
+
+#### **Rotas de API**
+
+1. **GET - Listar Favoritos**:
+
+   - Criei uma rota **GET** para buscar todos os projetos favoritos de um usuário. A rota retorna os projetos favoritos armazenados no banco de dados.
+
+2. **POST - Adicionar Favorito**:
+
+   - Implementei a rota **POST** para adicionar um projeto aos favoritos do usuário. Essa ação é registrada no banco de dados.
+
+3. **DELETE - Remover Favorito**:
+   - Adicionei uma rota **DELETE** para remover um projeto da lista de favoritos de um usuário. Isso garante que o usuário possa gerenciar sua lista de favoritos de forma eficiente.
+
+---
+
+### Considerações do Dia 9
+
+Hoje, consegui implementar uma funcionalidade interessante para melhorar a experiência do usuário, permitindo que ele salve projetos como favoritos e visualize esses projetos na página dedicada. A integração com o banco de dados para persistir os favoritos está funcionando bem, e a estrutura do projeto foi enriquecida com essas novas funcionalidades. No futuro, posso adicionar mais interações e visualizações para tornar a página de favoritos ainda mais útil e dinâmica.
+
+---
+
+### Atividades no Projeto - Dia 10
+
+#### **Tela de Detalhes dos Templates**
+
+1. **Reorganização da Interface**:
+
+   - Trabalhei na tela de detalhes dos templates, criando uma estrutura mais clara e fácil de navegar.
+   - A visualização dos templates foi otimizada, com uma distribuição melhor dos elementos, facilitando a leitura e a comparação.
+
+2. **Painel Lateral de Informações**:
+   - Implementei um painel lateral que exibe informações adicionais sobre o template, como características principais e opções de personalização.
+   - Esse painel foi pensado para melhorar a fluidez da navegação sem sair da tela principal.
+
+---
+
+#### **Melhorias de Usabilidade**
+
+1. **Reorganização dos Elementos de Navegação**:
+
+   - Reorganizei os elementos de navegação para criar um fluxo de interação mais intuitivo.
+   - Isso inclui a reorganização do menu de navegação, garantindo que o usuário consiga acessar facilmente as seções mais importantes.
+
+2. **Ajustes nos Formulários**:
+   - Melhorei os campos de formulários, agora com validação mais visível e feedback em tempo real, para facilitar o preenchimento e evitar erros.
+   - A experiência de preencher os dados foi simplificada, tornando as ações mais rápidas e eficientes.
+
+---
+
+#### **Aprimoramento de UX**
+
+1. **Otimização das Transições e Feedbacks Visuais**:
+
+   - Implementei transições suaves e feedbacks visuais claros, como animações para botões e indicadores de carregamento, garantindo que o usuário tenha uma experiência mais fluida e agradável.
+
+2. **Ajuste na Navegação de Edição e Visualização**:
+   - Simplifiquei as ações de edição e visualização de templates, garantindo que o usuário não precise de múltiplos cliques para realizar ações simples.
+   - A interface foi projetada para ser o mais intuitiva possível, com botões visíveis e diretos.
+
+---
+
+#### **Ajustes de UI**
+
+1. **Melhorias nas Cores e Fontes**:
+
+   - Fiz ajustes nas cores e fontes, buscando melhorar a legibilidade e o destaque das informações essenciais na tela.
+   - As cores foram harmonizadas para criar uma estética visual coerente e agradável.
+
+2. **Reorganização dos Ícones e Botões**:
+   - Reposicionei e redimensionei ícones e botões para facilitar a interação do usuário e tornar a interface mais limpa e eficiente.
+   - As imagens dos templates também foram reposicionadas para garantir uma visualização mais atraente e organizada.
+
+---
+
+### Considerações do Dia 10
+
+Hoje, concentrei-me em melhorar significativamente a tela de detalhes dos templates, aprimorando a usabilidade, a experiência do usuário (UX) e a interface do usuário (UI). As mudanças têm o objetivo de tornar a navegação mais fluida e intuitiva, com maior foco na clareza das informações. A experiência geral foi otimizada, com ajustes nas transições e nos elementos interativos, oferecendo uma navegação mais agradável. Com isso, a plataforma ficou mais eficiente e acessível para o usuário.

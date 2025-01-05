@@ -21,15 +21,14 @@ export async function getStatus(app: FastifyInstance) {
       const databaseOpenConnectionsResult: [{ count: number }] =
         await prisma.$queryRaw`SELECT COUNT(*)::int FROM pg_stat_database WHERE datname = ${databaseName};`
 
-      // console.log(databaseOpenConnectionsResult)
       const databaseOpenConnectionsValue =
         databaseOpenConnectionsResult[0].count
 
       return reply.status(200).send({
         name: 'Banco de Dados',
-        status: 'On',
+        status: 'online',
         message: 'Database is connected',
-        // uptime: new Date().getTime() - process.uptime(),
+
         updated_at: updatedAt,
         dependencies: {
           database: {
@@ -45,10 +44,10 @@ export async function getStatus(app: FastifyInstance) {
 
       return reply.status(500).send({
         name: 'Banco de Dados',
-        status: 'Off',
+        status: 'offline',
         message: 'Database is not connected',
         error: errorMessage,
-        // uptime: new Date().getTime() - process.uptime(),
+
         updated_at: updatedAt,
       })
     }
