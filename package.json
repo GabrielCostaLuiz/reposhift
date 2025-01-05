@@ -12,7 +12,8 @@
     "services:stop": "node ./scripts/docker/stop-docker.js",
     "services:down": "node ./scripts/docker/down-docker.js",
     "prepare": "husky",
-    "commit": "cz"
+    "commit": "cz",
+    "start": "turbo start"
   },
   "devDependencies": {
     "@commitlint/cli": "19.6.1",
