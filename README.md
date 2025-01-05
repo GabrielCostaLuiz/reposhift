@@ -157,7 +157,7 @@ Dediquei boa parte do meu tempo a aprender e configurar o **Prisma** no projeto.
 
 ### Considerações do Dia 3
 
-  Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado.
+Encerrando o dia com um sentimento de **produtividade e organização**! Foi muito bom ver o sistema ganhando forma e ficando cada vez mais estruturado. Amanhã pretendo continuar avançando nas funcionalidades principais e integrar mais testes para garantir que tudo funcione como esperado.
 
 ---
 
@@ -207,7 +207,7 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 
   Se a página não retornar "ONLINE" ou apresentar outro erro, pode ser que o serviço tenha sido inativado devido à inatividade dos servidores gratuitos que estamos utilizando. Aqui estão algumas ações que o **usuário** pode tomar para resolver a situação:
 
-  ### O que fazer se o sistema não estiver "ONLINE": 
+  ### O que fazer se o sistema não estiver "ONLINE":
 
   1. **Tente novamente mais tarde**:  
      Caso o serviço tenha sido inativado por inatividade no **Render** (plano gratuito), pode ser que o servidor esteja temporariamente inativo. Tente acessar a página novamente após alguns minutos.
@@ -581,3 +581,47 @@ Hoje, consegui implementar uma funcionalidade interessante para melhorar a exper
 ### Considerações do Dia 10
 
 Hoje, concentrei-me em melhorar significativamente a tela de detalhes dos templates, aprimorando a usabilidade, a experiência do usuário (UX) e a interface do usuário (UI). As mudanças têm o objetivo de tornar a navegação mais fluida e intuitiva, com maior foco na clareza das informações. A experiência geral foi otimizada, com ajustes nas transições e nos elementos interativos, oferecendo uma navegação mais agradável. Com isso, a plataforma ficou mais eficiente e acessível para o usuário.
+
+---
+
+### Atividades no Projeto - Dia 11 e 12
+
+#### **Finalização das Funções do SaaS para o MVP**
+
+1. **Desenvolvimento da Função de Download de Templates**:
+
+   - Concluí a implementação da **função de download de templates**, a funcionalidade principal do MVP.
+   - O processo foi integrado ao banco de dados, garantindo que os templates possam ser baixados com facilidade e eficiência pelos usuários.
+
+2. **Testes no Ambiente de Desenvolvimento**:
+
+   - Realizei testes extensivos no modo de desenvolvimento para garantir que todas as funções, especialmente o download dos templates, estivessem funcionando corretamente.
+   - Ajustei os detalhes da interface e a lógica por trás da geração de templates, validando a fluidez e o desempenho do sistema.
+
+---
+
+#### **Transição para Produção**
+
+1. **Migração para o Ambiente de Produção**:
+
+   - Após validar as funcionalidades em desenvolvimento, comecei a migração do MVP para o ambiente de produção.
+   - O objetivo era garantir que a plataforma estivesse funcional e livre de erros quando colocada em operação real.
+
+2. **Problemas com o Caminho do Renderizador para o Download de Templates**:
+
+   - Enfrentei dificuldades para configurar o caminho correto do servidor de produção para os arquivos de template, impedindo o funcionamento do download em produção.
+   - Investiguei o problema e realizei ajustes nas configurações do servidor para corrigir o caminho do renderizador, resolvendo o erro.
+
+---
+
+#### **Resolução de Problemas e Conclusão**
+
+1. **Resolução do Problema de Caminho no Servidor**:
+
+   - Após corrigir a configuração do caminho, os templates passaram a ser acessados corretamente no servidor de produção, permitindo que o download funcionasse como esperado.
+   - A solução foi aplicada com êxito e testada em diversas situações, garantindo estabilidade e confiabilidade.
+
+2. **Conclusão do MVP e Implementação Final**:
+
+   - Com as funcionalidades completas e corrigidas, o MVP foi colocado em produção e está funcionando de forma estável.
+   - Agora, o SaaS está pronto para ser utilizado e testado por usuários reais, com a capacidade de expandir e adicionar novas funcionalidades nos próximos dias.

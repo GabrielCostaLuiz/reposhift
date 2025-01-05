@@ -69,13 +69,13 @@ export async function downloadTemplate(app: FastifyInstance) {
         try {
           // Usando process.cwd() para obter o caminho base do projeto
           const baseDir = path.join(process.cwd(), 'src', 'templates')
-          
+
           // Garantir que o diretório base existe
           await ensureDirectoryExists(baseDir)
-          
+
           const originalTemplatePath = path.join(baseDir, nameTemplate)
           const tempDir = path.join(baseDir, 'temp')
-          
+
           // Garantir que o diretório temp existe
           await ensureDirectoryExists(tempDir)
 
