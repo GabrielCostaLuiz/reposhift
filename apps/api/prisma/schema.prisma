@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String?
+  email        String   @unique
+  passwordHash String?  @map("password_hash")
+  avatarUrl    String?  @map("avatar_url")
+  htmlUrl      String   @map("html_url")
+  reposUrl     String   @map("repos_url")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  tokens              Token[]
+  accounts            Account[]
+  templatesLiked      Templates[] @relation("UserLikedTemplates")
+  templatesFavorite   Templates[] @relation("UserFavoriteTemplates")
+  templatesDownloaded Templates[] @relation("UserDownloadedTemplates")
+
+  @@map("users")
+}
+
+enum TokenType {
+  PASSWORD_RECOVER
+}
+
+model Token {
+  id        String    @id @default(uuid())
+  type      TokenType
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  @@map("tokens")
+}
+
+enum AccountProvider {
+  GITHUB
+}
+
+model Account {
+  id                String          @id @default(uuid())
+  provider          AccountProvider
+  providerAccountId String          @unique @map("provider_account_id")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  @@unique([provider, userId])
+  @@map("accounts")
+}
+
+model Templates {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String
+  reference   String
+  imgTemplate String   @map("img_template")
+  urlGithub   String   @map("url_github")
+  urlDemo     String   @map("url_demo")
+  likes       Int
+  types       String[]
+  techs       String[]
+  description String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  likedBy      User[] @relation("UserLikedTemplates")
+  favoriteBy   User[] @relation("UserFavoriteTemplates")
+  downloadedBy User[] @relation("UserDownloadedTemplates")
+
+  @@map("templates")
+}
