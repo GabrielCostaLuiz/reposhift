@@ -16,10 +16,5 @@ export default defineConfig({
     '.png': 'file',
     '.svg': 'file',
   },
-  external: [
-    'next/*',
-    'react',
-    'react-dom',
-    'react-icons/*',
-  ],
+  external: ['next/*', 'react', 'react-dom', 'react-icons/*'],
 })

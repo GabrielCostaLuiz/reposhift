@@ -2,7 +2,6 @@
   "name": "portfolio-ayrtonartaza",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "NODE_NO_WARNINGS=1 next build",
