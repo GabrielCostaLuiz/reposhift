@@ -1,5 +1,6 @@
 'use client'
 import { env } from '@saas/env'
+import Link from 'next/link'
 import React from 'react'
 import { BiLoaderAlt } from 'react-icons/bi'
 import { FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa'
@@ -177,6 +178,15 @@ const BackendStatusPage = () => {
               </span>
             </div>
           )}
+        </div>
+
+        <div className="my-5">
+          <Link
+            href="/"
+            className="m-auto flex w-fit rounded-lg bg-red-600 px-3 py-2"
+          >
+            Voltar para Home
+          </Link>
         </div>
 
         <div className="pt-4 text-center text-sm text-gray-400">

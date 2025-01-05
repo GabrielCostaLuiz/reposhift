@@ -2,6 +2,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { IoRocket, IoRocketOutline } from 'react-icons/io5'
+import {
+  MdSignalWifiStatusbar3Bar,
+  MdSignalWifiStatusbar4Bar,
+} from 'react-icons/md'
 import { PiHouseBold, PiHouseFill } from 'react-icons/pi'
 
 import FormSignOutGithub from '@/components/form-sign-out'
@@ -30,6 +35,18 @@ const itemsNavBar = [
     href: '/favoritos',
     icon: <FaRegHeart size={24} />,
     iconCurrentLink: <FaHeart size={24} />,
+  },
+  {
+    name: 'Jornada',
+    href: '/jornada',
+    icon: <IoRocketOutline size={24} />,
+    iconCurrentLink: <IoRocket size={24} />,
+  },
+  {
+    name: 'Status',
+    href: '/status',
+    icon: <MdSignalWifiStatusbar3Bar size={24} />,
+    iconCurrentLink: <MdSignalWifiStatusbar4Bar size={24} />,
   },
 ]
 

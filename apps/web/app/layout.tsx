@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Reposhift',
     description: 'Geração de portfolios automatizados',
-    url: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    // url: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
     siteName: 'Reposhift',
-    images: [
-      {
-        url: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        width: 1200,
-        height: 630,
-      },
-    ],
+    // images: [
+    //   {
+    //     url: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    //     width: 1200,
+    //     height: 630,
+    //   },
+    // ],
     locale: 'pt-BR',
     type: 'website',
   },
