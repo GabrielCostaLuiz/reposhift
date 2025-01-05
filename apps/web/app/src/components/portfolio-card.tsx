@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+
 import ButtonFavorite from './buttonFavorite'
 import ButtonLike from './buttonLike'
 import type { Template } from './portfolio-grid'

@@ -57,7 +57,7 @@ export default function NavBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 shadow-lg md:sticky md:top-0 md:h-screen md:w-20 lg:w-24">
       <div className="flex h-14 flex-row items-center justify-between p-2 md:h-full md:flex-col md:p-3">
-        <nav className="flex-1 w-full">
+        <nav className="w-full flex-1">
           <ul className="flex flex-row items-center justify-around gap-1 md:flex-col md:gap-4">
             {itemsNavBar.map((item) => {
               const currentLink = pathName === item.href
@@ -110,7 +110,9 @@ export default function NavBar() {
                     {user ? user.name : 'Minha Conta'}
                   </p>
                   {user?.email && (
-                    <p className="text-xs leading-none text-gray-400">{user.email}</p>
+                    <p className="text-xs leading-none text-gray-400">
+                      {user.email}
+                    </p>
                   )}
                 </div>
               </DropdownMenuLabel>

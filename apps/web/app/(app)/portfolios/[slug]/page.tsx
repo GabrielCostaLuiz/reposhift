@@ -34,7 +34,7 @@ export default async function Portfolios({ params }: { params: Params }) {
   const { template } = await getPortfolio(slug)
 
   const dateUpdated = new Date(template.createdAt).toLocaleDateString()
-  const date = new Date().toISOString()
+  // const date = new Date().toISOString()
 
   return (
     <div className="min-h-screen bg-zinc-950 text-gray-100">
@@ -91,7 +91,7 @@ export default async function Portfolios({ params }: { params: Params }) {
                 fill
                 priority
                 alt={`Imagem ${template.name}`}
-                className="rounded-lg imgEdit object-cover shadow-lg "
+                className="imgEdit rounded-lg object-cover shadow-lg "
               />
               <div className="absolute right-2 top-2 flex flex-wrap gap-2 sm:right-4 sm:top-4">
                 {template.types.map((type, i) => (
