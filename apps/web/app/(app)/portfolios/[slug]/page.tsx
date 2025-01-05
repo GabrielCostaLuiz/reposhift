@@ -217,6 +217,18 @@ export default async function Portfolios({ params }: { params: Params }) {
                       </li>
                     </ul>
                   </li>
+                  <li>
+                    Visualize se está da maneira que você quer ( você é livre
+                    para modificar o layout )
+                  </li>
+                  <li>
+                    Hospede seu novo site em alguma plataforma ( recomendo a
+                    vercel )
+                  </li>
+                  <li>
+                    Se acaso for usar a vercel, coloque o template em seu github
+                    e importe pela vercel para hospedar seu novo portfolio
+                  </li>
                 </ol>
               </div>
             </CardContent>
