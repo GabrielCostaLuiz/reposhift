@@ -22,6 +22,7 @@ export async function GET(request: NextRequest) {
   responseCookie.set('token', token, {
     path: '/',
     maxAge: 60 * 60 * 24 * 7, // 7days
+    // sameSite: process.env.NODE_ENV === 'production' && 'none',
     sameSite: 'none',
     secure: true,
   })
