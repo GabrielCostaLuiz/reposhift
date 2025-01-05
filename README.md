@@ -207,7 +207,7 @@ Apesar das dificuldades, aprendi muito com cada erro e consegui contornar os pro
 
   Se a página não retornar "ONLINE" ou apresentar outro erro, pode ser que o serviço tenha sido inativado devido à inatividade dos servidores gratuitos que estamos utilizando. Aqui estão algumas ações que o **usuário** pode tomar para resolver a situação:
 
-  ### O que fazer se o sistema não estiver "ONLINE":
+  ### O que fazer se o sistema não estiver "ONLINE": 
 
   1. **Tente novamente mais tarde**:  
      Caso o serviço tenha sido inativado por inatividade no **Render** (plano gratuito), pode ser que o servidor esteja temporariamente inativo. Tente acessar a página novamente após alguns minutos.
