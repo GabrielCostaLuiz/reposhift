@@ -19,13 +19,11 @@ async function getPortfolio(slug: string) {
   const template = await getTemplate({
     templateSlug: slug,
   })
-
   return template
 }
 
 export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params
-
   return {
     title: slug,
   }
@@ -39,26 +37,27 @@ export default async function Portfolios({ params }: { params: Params }) {
   const date = new Date().toISOString()
 
   return (
-    <div className="flex flex-col bg-zinc-950 text-gray-100">
-      <div className="">
+    <div className="flex min-h-screen flex-col bg-zinc-950 text-gray-100">
+      <div className="flex-1">
         <div className="container mx-auto px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
-          <BackButton />
+          <div className="mb-6">
+            <BackButton />
+          </div>
 
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div className="relative">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="relative w-full">
               <Image
                 src={template.imgTemplate ?? '/PMEU.jpg'}
-                // src={'/PMEU.jpg'}
                 width={720}
                 height={720}
                 alt={`Imagem ${template.name}`}
                 className="aspect-video w-full rounded-lg object-cover shadow-lg"
               />
-              <div className="absolute right-4 top-4 flex gap-2">
+              <div className="absolute right-2 top-2 flex flex-wrap gap-2 sm:right-4 sm:top-4">
                 {template.types.map((type, i) => (
                   <Badge
                     key={type + i}
-                    className="bg-purple-600 capitalize text-white"
+                    className="bg-purple-600 text-sm capitalize text-white"
                   >
                     {type}
                   </Badge>
@@ -66,32 +65,30 @@ export default async function Portfolios({ params }: { params: Params }) {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div className="space-y-4">
-                <div className="flex gap-3">
-                  <h1 className="text-3xl font-bold capitalize text-gray-100">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h1 className="text-2xl font-bold capitalize text-gray-100 sm:text-3xl">
                     {template.name}
                   </h1>
-                  <ButtonFavorite idPortfolio={template.id} />
-                  <ButtonLike
-                    idPortfolio={template.id}
-                    likes={template.likes}
-                  />
+                  <div className="flex gap-2">
+                    <ButtonFavorite idPortfolio={template.id} />
+                    <ButtonLike
+                      idPortfolio={template.id}
+                      likes={template.likes}
+                    />
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-sm text-gray-400">
+                <div className="grid grid-cols-1 gap-3 text-sm text-gray-400 sm:grid-cols-2">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    <span>Última atualização: {dateUpdated}</span>
+                    <span className="text-sm">Última atualização: {dateUpdated}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Tag className="h-4 w-4" />
                     <span>Versão 2.0.0</span>
                   </div>
-                  {/* <div className="flex items-center gap-2">
-                    <Download className="h-4 w-4" />
-                    <span>1.5k downloads</span>
-                  </div> */}
                   <div className="flex items-center gap-2">
                     <Globe className="h-4 w-4" />
                     <span>Licença MIT</span>
@@ -100,11 +97,6 @@ export default async function Portfolios({ params }: { params: Params }) {
               </div>
 
               <div className="flex items-center gap-4">
-                {/* <img
-                  src="/PMEU.jpg"
-                  alt="teste"
-                  className="h-10 w-10 rounded-full"
-                /> */}
                 <div>
                   <p className="font-medium text-gray-100">
                     Ref: {template.reference}
@@ -121,22 +113,14 @@ export default async function Portfolios({ params }: { params: Params }) {
 
               <div className="flex flex-wrap gap-4">
                 <ButtonDownloadPortfolio nameTemplate={template.slug} />
-
-                {/* <Button
-                  variant="outline"
-                  className="border-purple-600 text-purple-400 hover:bg-purple-900/20"
-                >
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Compartilhar
-                </Button> */}
               </div>
 
-              <Card className="border-zinc-800 bg-zinc-900/50 ">
+              <Card className="border-zinc-800 bg-zinc-900/50">
                 <CardContent className="p-4">
                   <h4 className="mb-3 text-sm font-medium text-purple-400">
                     Links Rápidos
                   </h4>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <Link
                       href={template.urlGithub}
                       target="_blank"
@@ -172,10 +156,10 @@ export default async function Portfolios({ params }: { params: Params }) {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-8">
-            <div className="grid gap-8 lg:grid-cols-2">
+          <div className="mt-8 grid gap-6 sm:mt-12">
+            <div className="grid gap-6 lg:grid-cols-2">
               <Card className="h-fit border-zinc-800 bg-zinc-900">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <h3 className="mb-4 text-lg font-semibold text-purple-400">
                     Descrição
                   </h3>
@@ -184,7 +168,7 @@ export default async function Portfolios({ params }: { params: Params }) {
               </Card>
 
               <Card className="h-fit border-zinc-800 bg-zinc-900">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <h3 className="mb-4 text-lg font-semibold text-purple-400">
                     <Terminal className="mr-2 inline-block h-5 w-5" />
                     Guia de Instalação
@@ -197,13 +181,13 @@ export default async function Portfolios({ params }: { params: Params }) {
                       <li>
                         Execute um dos comandos:
                         <div className="mt-2 space-y-2">
-                          <code className="block rounded bg-zinc-800 p-2">
+                          <code className="block w-full overflow-x-auto rounded bg-zinc-800 p-2">
                             npm install
                           </code>
-                          <code className="block rounded bg-zinc-800 p-2">
+                          <code className="block w-full overflow-x-auto rounded bg-zinc-800 p-2">
                             pnpm install
                           </code>
-                          <code className="block rounded bg-zinc-800 p-2">
+                          <code className="block w-full overflow-x-auto rounded bg-zinc-800 p-2">
                             yarn install
                           </code>
                         </div>
@@ -235,9 +219,9 @@ export default async function Portfolios({ params }: { params: Params }) {
               </Card>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-2">
               <Card className="h-fit border-zinc-800 bg-zinc-900">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <h3 className="mb-4 text-lg font-semibold text-purple-400">
                     Tecnologias
                   </h3>
@@ -256,7 +240,7 @@ export default async function Portfolios({ params }: { params: Params }) {
               </Card>
 
               <Card className="h-fit border-zinc-800 bg-zinc-900">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <h3 className="mb-4 text-lg font-semibold text-purple-400">
                     Estatísticas
                   </h3>
