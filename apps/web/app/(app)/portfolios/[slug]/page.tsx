@@ -33,7 +33,11 @@ export default async function Portfolios({ params }: { params: Params }) {
   const { slug } = await params
   const { template } = await getPortfolio(slug)
 
-  const dateUpdated = new Date(template.createdAt).toLocaleDateString()
+  const dateUpdated = new Date(template.createdAt).toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  })
   // const date = new Date().toISOString()
   console.log(template.imgTemplate)
   return (
