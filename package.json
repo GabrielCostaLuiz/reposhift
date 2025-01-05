@@ -13,7 +13,7 @@
     "services:down": "node ./scripts/docker/down-docker.js",
     "prepare": "husky",
     "commit": "cz",
-    "start": "turbo start"
+    "verify": "pnpm run lint && pnpm run test && pnpm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "19.6.1",

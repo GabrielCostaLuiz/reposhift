@@ -35,7 +35,7 @@ export default async function Portfolios({ params }: { params: Params }) {
 
   const dateUpdated = new Date(template.createdAt).toLocaleDateString()
   // const date = new Date().toISOString()
-
+  console.log(template.imgTemplate)
   return (
     <div className="min-h-screen bg-zinc-950 text-gray-100">
       <div className="container mx-auto px-4 py-6 lg:px-8">
@@ -65,14 +65,11 @@ export default async function Portfolios({ params }: { params: Params }) {
               <CardContent className="p-4">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
+                    <div className="">
                       <ButtonLike
                         idPortfolio={template.id}
                         likes={template.likes}
                       />
-                      <span className="text-sm text-gray-400">
-                        {template.likes} curtidas
-                      </span>
                     </div>
                     <ButtonFavorite idPortfolio={template.id} />
                   </div>
@@ -89,7 +86,6 @@ export default async function Portfolios({ params }: { params: Params }) {
               <Image
                 src={template.imgTemplate ?? '/PMEU.jpg'}
                 fill
-                priority
                 alt={`Imagem ${template.name}`}
                 className="imgEdit rounded-lg object-cover shadow-lg "
               />
